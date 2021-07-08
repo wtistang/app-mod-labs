@@ -1,0 +1,15 @@
+
+/home/ibmdemo/cp4a-labs/shared/startWAS.sh
+
+cd /home/ibmdemo/Downloads/
+
+ls -l
+
+tar xvfz transformationadvisor-Linux_Evaluation_Server1.tgz
+
+cd /home/ibmdemo/Downloads/transformationadvisor-2.1.1
+
+sudo ./bin/transformationadvisor -w /opt/IBM/WebSphere/AppServer -p AppSrv01 wsadmin passw0rd 
+
+
+

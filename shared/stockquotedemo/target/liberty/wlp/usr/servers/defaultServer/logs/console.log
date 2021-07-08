@@ -1,0 +1,22 @@
+Launching defaultServer (WebSphere Application Server 17.0.0.4/wlp-1.0.19.201712061531) on OpenJDK 64-Bit Server VM, version 1.8.0_162-8u162-b12-0ubuntu0.16.04.2-b12 (en_US)
+[AUDIT   ] CWWKE0001I: The server defaultServer has been launched.
+[AUDIT   ] CWWKE0100I: This product is licensed for development, and limited production use. The full license terms can be viewed here: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/17.0.0.4/lafiles/en.html
+[AUDIT   ] CWWKZ0058I: Monitoring dropins for applications. 
+[AUDIT   ] CWWKS4104A: LTPA keys created in 0.363 seconds. LTPA key file: /home/ibmdemo/eclipse-workspace1/stockquotedemo/target/liberty/wlp/usr/servers/defaultServer/resources/security/ltpa.keys
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://localhost:9080/javametrics/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://localhost:9080/javametrics-dash/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://localhost:9080/stockquotedemo-1.0-SNAPSHOT/
+[AUDIT   ] CWWKZ0001I: Application javametrics-dash started in 0.856 seconds.
+[AUDIT   ] CWWKZ0001I: Application stockquotedemo-1.0-SNAPSHOT started in 0.856 seconds.
+[AUDIT   ] CWWKZ0001I: Application javametrics-rest started in 0.860 seconds.
+[AUDIT   ] CWWKF0012I: The server installed the following features: [jsp-2.3, ejbLite-3.2, managedBeans-1.0, servlet-3.1, jsf-2.2, beanValidation-1.1, ssl-1.0, jndi-1.0, appSecurity-2.0, jsonp-1.0, jdbc-4.1, jaxrs-2.0, el-3.0, jaxrsClient-2.0, json-1.0, jpaContainer-2.1, cdi-1.2, distributedMap-1.0, webProfile-7.0, websocket-1.1, jpa-2.1].
+[AUDIT   ] CWWKF0011I: The server defaultServer is ready to run a smarter planet.
+[AUDIT   ] CWWKE0055I: Server shutdown requested on Monday, May 7, 2018 at 5:39 AM. The server defaultServer is shutting down.
+[AUDIT   ] CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://localhost:9080/javametrics-dash/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://localhost:9080/stockquotedemo-1.0-SNAPSHOT/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://localhost:9080/javametrics/
+[AUDIT   ] CWWKZ0009I: The application javametrics-rest has stopped successfully.
+[AUDIT   ] CWWKZ0009I: The application stockquotedemo-1.0-SNAPSHOT has stopped successfully.
+[AUDIT   ] CWWKZ0009I: The application javametrics-dash has stopped successfully.
+[AUDIT   ] CWWKE0036I: The server defaultServer stopped after 9.493 seconds.

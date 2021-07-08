@@ -1,0 +1,6 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      1     1/16/20 8:04:24:222 PST     1/16/20 8:04:24:222 PST java.lang.ClassNotFoundException com.ibm.ws.jdbc.internal.JDBCDriverService 234
+                                                                            - /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/myMember/logs/ffdc/ffdc_20.01.16_08.04.24.0.log
+------+------+---------------------------+---------------------------+---------------------------

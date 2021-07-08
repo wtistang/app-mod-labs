@@ -1,0 +1,48 @@
+cd /home/ibmdemo/app-mod-labs/dk0200
+
+oc login https://api.demo.ibmdte.net:6443
+
+kubectl version --client
+
+kubectl get nodes
+
+kubectl describe node master1
+
+kubectl get pods -n default
+
+kubectl get pods --all-namespaces 
+
+cd /home/ibmdemo/app-mod-labs/dk0100
+
+docker build . -t simpleapp
+
+cd /home/ibmdemo/app-mod-labs/dk0200
+
+oc new-project dk0200
+
+export INTERNAL_REG_HOST=`oc get route default-route --template='{{ .spec.host }}' -n openshift-image-registry`
+
+export CLUSTER_URL=`echo $INTERNAL_REG_HOST | sed 's/default-route-openshift-image-registry.//g'`
+
+docker login -u $(oc whoami) -p $(oc whoami -t) $INTERNAL_REG_HOST
+
+docker tag simpleapp:latest $INTERNAL_REG_HOST/`oc project -q`/simpleapp:latest
+
+docker push $INTERNAL_REG_HOST/`oc project -q`/simpleapp:latest
+
+ls -l
+
+cat kube01.yaml 
+
+kubectl apply -f kube01.yaml
+
+kubectl get pod
+
+cat kube02.yaml 
+
+kubectl apply -f kube02.yaml
+
+cat kube03.yaml 
+
+kubectl apply -f kube03.yaml
+  

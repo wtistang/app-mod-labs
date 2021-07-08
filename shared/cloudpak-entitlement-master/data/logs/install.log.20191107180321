@@ -1,0 +1,1386 @@
+2019-11-07 18:03:24,081 p=10 u=root |  Executing playbook install.yaml
+2019-11-07 18:03:24,088 p=10 u=root |  Starting Install ***************************************************************
+2019-11-07 18:03:24,088 p=10 u=root |  - Install on hosts: 127.0.0.1 -
+
+2019-11-07 18:03:24,115 p=10 u=root |  Login To Cluster...
+2019-11-07 18:03:25,872 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/login.sh",
+    "delta": "0:00:01.350781",
+    "end": "2019-11-07 18:03:25.838458",
+    "rc": 0,
+    "start": "2019-11-07 18:03:24.487677",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Using provided cluster configuration.\nLogged in as admin.",
+    "stdout_lines": [
+        "Using provided cluster configuration.",
+        "Logged in as admin."
+    ]
+}
+2019-11-07 18:03:25,881 p=10 u=root |  Get Cluster Server Address...
+2019-11-07 18:03:27,394 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "cmd": "oc whoami --show-server",
+    "delta": "0:00:01.334990",
+    "end": "2019-11-07 18:03:27.364895",
+    "rc": 0,
+    "start": "2019-11-07 18:03:26.029905",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "https://master.ibm.demo:8443",
+    "stdout_lines": [
+        "https://master.ibm.demo:8443"
+    ]
+}
+2019-11-07 18:03:27,404 p=10 u=root |  Save Cluster Server Address...
+2019-11-07 18:03:27,428 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_facts": {
+        "clusterUrl": "https://master.ibm.demo:8443"
+    },
+    "changed": false
+}
+2019-11-07 18:03:27,437 p=10 u=root |  Check Cluster Version...
+2019-11-07 18:03:28,977 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "cmd": "python3 /installer/playbook/roles/openshift/scripts/check-version.py",
+    "delta": "0:00:01.365485",
+    "end": "2019-11-07 18:03:28.950512",
+    "rc": 0,
+    "start": "2019-11-07 18:03:27.585027",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "OpenShift 3.11 detected.",
+    "stdout_lines": [
+        "OpenShift 3.11 detected."
+    ]
+}
+2019-11-07 18:03:28,986 p=10 u=root |  Check Cluster Administrator Role...
+2019-11-07 18:03:30,507 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "cmd": "oc auth can-i '*' '*' --all-namespaces",
+    "delta": "0:00:01.346349",
+    "end": "2019-11-07 18:03:30.474433",
+    "failed_when_result": false,
+    "rc": 0,
+    "start": "2019-11-07 18:03:29.128084",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "yes",
+    "stdout_lines": [
+        "yes"
+    ]
+}
+2019-11-07 18:03:30,516 p=10 u=root |  Get Authorization Endpoint...
+2019-11-07 18:03:32,068 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "cmd": "python3 /installer/playbook/roles/openshift/scripts/get-authorization-endpoint.py",
+    "delta": "0:00:01.373539",
+    "end": "2019-11-07 18:03:32.039847",
+    "rc": 0,
+    "start": "2019-11-07 18:03:30.666308",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "https://master.ibm.demo:8443/oauth/authorize",
+    "stdout_lines": [
+        "https://master.ibm.demo:8443/oauth/authorize"
+    ]
+}
+2019-11-07 18:03:32,077 p=10 u=root |  Save Authorization Endpoint...
+2019-11-07 18:03:32,101 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_facts": {
+        "cluster": {
+            "authorizationEndpoint": "https://master.ibm.demo:8443/oauth/authorize"
+        }
+    },
+    "changed": false
+}
+2019-11-07 18:03:32,112 p=10 u=root |  Get Default Cluster Subdomain...
+2019-11-07 18:03:34,066 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/get_default_domain.sh",
+    "delta": "0:00:01.767975",
+    "end": "2019-11-07 18:03:34.039989",
+    "rc": 0,
+    "start": "2019-11-07 18:03:32.272014",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "10.0.10.2.nip.io",
+    "stdout_lines": [
+        "10.0.10.2.nip.io"
+    ]
+}
+2019-11-07 18:03:34,075 p=10 u=root |  Set Cluster Subdomain...
+2019-11-07 18:03:34,096 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_facts": {
+        "clusterSubdomain": "10.0.10.2.nip.io"
+    },
+    "changed": false
+}
+2019-11-07 18:03:34,110 p=10 u=root |  Check Entitled Registry Variables...
+2019-11-07 18:03:35,451 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check-registry.sh",
+    "delta": "0:00:01.150906",
+    "end": "2019-11-07 18:03:35.424052",
+    "rc": 0,
+    "start": "2019-11-07 18:03:34.273146",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+2019-11-07 18:03:35,461 p=10 u=root |  Install Istio...
+2019-11-07 18:03:43,335 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "/installer/playbook/../scripts/istio/install.sh /installer/playbook/../data/istio.yaml",
+    "delta": "0:00:07.692309",
+    "end": "2019-11-07 18:03:43.306661",
+    "rc": 0,
+    "start": "2019-11-07 18:03:35.614352",
+    "stderr": "Warning: ServiceAccount 'istio-galley-service-account' not found",
+    "stderr_lines": [
+        "Warning: ServiceAccount 'istio-galley-service-account' not found"
+    ],
+    "stdout": "scc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-ingress-service-account\"]\nscc \"anyuid\" added to: [\"system:serviceaccount:istio-system:default\"]\nscc \"anyuid\" added to: [\"system:serviceaccount:istio-system:prometheus\"]\nscc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-egressgateway-service-account\"]\nscc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-citadel-service-account\"]\nscc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-ingressgateway-service-account\"]\nscc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-cleanup-old-ca-service-account\"]\nscc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-mixer-post-install-account\"]\nscc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-mixer-service-account\"]\nscc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-pilot-service-account\"]\nscc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-sidecar-injector-service-account\"]\ncluster role \"cluster-admin\" added: \"istio-galley-service-account\"\nscc \"anyuid\" added to: [\"system:serviceaccount:istio-system:cluster-local-gateway-service-account\"]\nnamespace/istio-system created\ncustomresourcedefinition.apiextensions.k8s.io/virtualservices.networking.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/destinationrules.networking.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/serviceentries.networking.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/gateways.networking.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/envoyfilters.networking.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/clusterrbacconfigs.rbac.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/policies.authentication.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/meshpolicies.authentication.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/httpapispecbindings.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/httpapispecs.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/quotaspecbindings.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/quotaspecs.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/rules.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/attributemanifests.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/bypasses.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/circonuses.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/deniers.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/fluentds.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/kubernetesenvs.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/listcheckers.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/memquotas.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/noops.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/opas.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/prometheuses.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/rbacs.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/redisquotas.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/signalfxs.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/solarwindses.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/stackdrivers.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/statsds.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/stdios.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/apikeys.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/authorizations.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/checknothings.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/kuberneteses.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/listentries.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/logentries.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/edges.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/metrics.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/quotas.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/reportnothings.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/tracespans.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/rbacconfigs.rbac.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/serviceroles.rbac.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/servicerolebindings.rbac.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/adapters.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/instances.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/templates.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/handlers.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/cloudwatches.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/dogstatsds.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/sidecars.networking.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/zipkins.config.istio.io created\ncustomresourcedefinition.apiextensions.k8s.io/clusterissuers.certmanager.k8s.io created\ncustomresourcedefinition.apiextensions.k8s.io/issuers.certmanager.k8s.io created\ncustomresourcedefinition.apiextensions.k8s.io/certificates.certmanager.k8s.io created\ncustomresourcedefinition.apiextensions.k8s.io/orders.certmanager.k8s.io created\ncustomresourcedefinition.apiextensions.k8s.io/challenges.certmanager.k8s.io created\nconfigmap/istio created\nserviceaccount/istio-ingressgateway-service-account created\nserviceaccount/istio-pilot-service-account created\nserviceaccount/istio-multi created\nclusterrole.rbac.authorization.k8s.io/istio-ingressgateway-istio-system created\nclusterrole.rbac.authorization.k8s.io/istio-pilot-istio-system created\nclusterrole.rbac.authorization.k8s.io/istio-reader created\nclusterrolebinding.rbac.authorization.k8s.io/istio-ingressgateway-istio-system created\nclusterrolebinding.rbac.authorization.k8s.io/istio-pilot-istio-system created\nclusterrolebinding.rbac.authorization.k8s.io/istio-multi created\nrole.rbac.authorization.k8s.io/istio-ingressgateway-sds created\nrolebinding.rbac.authorization.k8s.io/istio-ingressgateway-sds created\nservice/istio-ingressgateway created\nservice/istio-pilot created\ndeployment.extensions/istio-ingressgateway created\ndeployment.extensions/istio-pilot created\nhorizontalpodautoscaler.autoscaling/istio-ingressgateway created\nhorizontalpodautoscaler.autoscaling/istio-pilot created\npoddisruptionbudget.policy/istio-ingressgateway created\npoddisruptionbudget.policy/istio-pilot created",
+    "stdout_lines": [
+        "scc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-ingress-service-account\"]",
+        "scc \"anyuid\" added to: [\"system:serviceaccount:istio-system:default\"]",
+        "scc \"anyuid\" added to: [\"system:serviceaccount:istio-system:prometheus\"]",
+        "scc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-egressgateway-service-account\"]",
+        "scc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-citadel-service-account\"]",
+        "scc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-ingressgateway-service-account\"]",
+        "scc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-cleanup-old-ca-service-account\"]",
+        "scc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-mixer-post-install-account\"]",
+        "scc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-mixer-service-account\"]",
+        "scc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-pilot-service-account\"]",
+        "scc \"anyuid\" added to: [\"system:serviceaccount:istio-system:istio-sidecar-injector-service-account\"]",
+        "cluster role \"cluster-admin\" added: \"istio-galley-service-account\"",
+        "scc \"anyuid\" added to: [\"system:serviceaccount:istio-system:cluster-local-gateway-service-account\"]",
+        "namespace/istio-system created",
+        "customresourcedefinition.apiextensions.k8s.io/virtualservices.networking.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/destinationrules.networking.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/serviceentries.networking.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/gateways.networking.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/envoyfilters.networking.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/clusterrbacconfigs.rbac.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/policies.authentication.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/meshpolicies.authentication.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/httpapispecbindings.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/httpapispecs.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/quotaspecbindings.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/quotaspecs.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/rules.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/attributemanifests.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/bypasses.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/circonuses.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/deniers.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/fluentds.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/kubernetesenvs.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/listcheckers.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/memquotas.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/noops.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/opas.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/prometheuses.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/rbacs.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/redisquotas.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/signalfxs.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/solarwindses.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/stackdrivers.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/statsds.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/stdios.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/apikeys.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/authorizations.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/checknothings.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/kuberneteses.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/listentries.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/logentries.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/edges.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/metrics.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/quotas.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/reportnothings.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/tracespans.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/rbacconfigs.rbac.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/serviceroles.rbac.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/servicerolebindings.rbac.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/adapters.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/instances.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/templates.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/handlers.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/cloudwatches.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/dogstatsds.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/sidecars.networking.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/zipkins.config.istio.io created",
+        "customresourcedefinition.apiextensions.k8s.io/clusterissuers.certmanager.k8s.io created",
+        "customresourcedefinition.apiextensions.k8s.io/issuers.certmanager.k8s.io created",
+        "customresourcedefinition.apiextensions.k8s.io/certificates.certmanager.k8s.io created",
+        "customresourcedefinition.apiextensions.k8s.io/orders.certmanager.k8s.io created",
+        "customresourcedefinition.apiextensions.k8s.io/challenges.certmanager.k8s.io created",
+        "configmap/istio created",
+        "serviceaccount/istio-ingressgateway-service-account created",
+        "serviceaccount/istio-pilot-service-account created",
+        "serviceaccount/istio-multi created",
+        "clusterrole.rbac.authorization.k8s.io/istio-ingressgateway-istio-system created",
+        "clusterrole.rbac.authorization.k8s.io/istio-pilot-istio-system created",
+        "clusterrole.rbac.authorization.k8s.io/istio-reader created",
+        "clusterrolebinding.rbac.authorization.k8s.io/istio-ingressgateway-istio-system created",
+        "clusterrolebinding.rbac.authorization.k8s.io/istio-pilot-istio-system created",
+        "clusterrolebinding.rbac.authorization.k8s.io/istio-multi created",
+        "role.rbac.authorization.k8s.io/istio-ingressgateway-sds created",
+        "rolebinding.rbac.authorization.k8s.io/istio-ingressgateway-sds created",
+        "service/istio-ingressgateway created",
+        "service/istio-pilot created",
+        "deployment.extensions/istio-ingressgateway created",
+        "deployment.extensions/istio-pilot created",
+        "horizontalpodautoscaler.autoscaling/istio-ingressgateway created",
+        "horizontalpodautoscaler.autoscaling/istio-pilot created",
+        "poddisruptionbudget.policy/istio-ingressgateway created",
+        "poddisruptionbudget.policy/istio-pilot created"
+    ]
+}
+2019-11-07 18:03:43,344 p=10 u=root |  Switch To Kabanero Project...
+2019-11-07 18:03:45,329 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "/installer/playbook/../scripts/common/create_project.sh kabanero",
+    "delta": "0:00:01.812745",
+    "end": "2019-11-07 18:03:45.303035",
+    "rc": 0,
+    "start": "2019-11-07 18:03:43.490290",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Now using project \"kabanero\" on server \"https://master.ibm.demo:8443\".\n\nYou can add applications to this project with the 'new-app' command. For example, try:\n\n    oc new-app centos/ruby-25-centos7~https://github.com/sclorg/ruby-ex.git\n\nto build a new example application in Ruby.\nnamespace/kabanero annotated",
+    "stdout_lines": [
+        "Now using project \"kabanero\" on server \"https://master.ibm.demo:8443\".",
+        "",
+        "You can add applications to this project with the 'new-app' command. For example, try:",
+        "",
+        "    oc new-app centos/ruby-25-centos7~https://github.com/sclorg/ruby-ex.git",
+        "",
+        "to build a new example application in Ruby.",
+        "namespace/kabanero annotated"
+    ]
+}
+2019-11-07 18:03:45,338 p=10 u=root |  Install Kabanero Enterprise Operator...
+2019-11-07 18:03:48,110 p=10 u=root |    Retrying... (1 of 4)
+2019-11-07 18:03:55,388 p=10 u=root |  127.0.0.1 done: {
+    "attempts": 2,
+    "changed": true,
+    "cmd": "oc apply -f /installer/playbook/../scripts/kabanero/kabanero-operators.yaml",
+    "delta": "0:00:02.111633",
+    "end": "2019-11-07 18:03:55.356503",
+    "rc": 0,
+    "start": "2019-11-07 18:03:53.244870",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "namespace/kabanero configured\ndeployment.apps/knative-eventing-operator configured\nrole.rbac.authorization.k8s.io/knative-eventing-operator configured\nclusterrole.rbac.authorization.k8s.io/knative-eventing-operator configured\nrolebinding.rbac.authorization.k8s.io/knative-eventing-operator unchanged\nclusterrolebinding.rbac.authorization.k8s.io/knative-eventing-operator configured\nserviceaccount/knative-eventing-operator unchanged\ncustomresourcedefinition.apiextensions.k8s.io/knativeeventings.eventing.knative.dev configured\ndeployment.apps/knative-serving-operator configured\nrole.rbac.authorization.k8s.io/knative-serving-operator configured\nclusterrole.rbac.authorization.k8s.io/knative-serving-operator configured\nrolebinding.rbac.authorization.k8s.io/knative-serving-operator unchanged\nclusterrolebinding.rbac.authorization.k8s.io/knative-serving-operator configured\nserviceaccount/knative-serving-operator unchanged\ncustomresourcedefinition.apiextensions.k8s.io/knativeservings.serving.knative.dev configured\nnamespace/knative-sources configured\nserviceaccount/controller-manager unchanged\nclusterrole.rbac.authorization.k8s.io/eventing-sources-controller configured\nclusterrolebinding.rbac.authorization.k8s.io/eventing-sources-controller configured\nclusterrolebinding.rbac.authorization.k8s.io/eventing-sources-addressable-resolver configured\ncustomresourcedefinition.apiextensions.k8s.io/githubsources.sources.eventing.knative.dev configured\nservice/controller unchanged\nstatefulset.apps/controller-manager configured\ndeployment.apps/openshift-pipelines-operator configured\nclusterrole.rbac.authorization.k8s.io/openshift-pipelines-operator configured\nclusterrolebinding.rbac.authorization.k8s.io/openshift-pipelines-operator configured\nserviceaccount/openshift-pipelines-operator unchanged\nnamespace/openshift-pipelines configured\ncustomresourcedefinition.apiextensions.k8s.io/config.operator.tekton.dev configured\nconfig.operator.tekton.dev/cluster created\nclusterrole.rbac.authorization.k8s.io/knative-serving-operator configured\nclusterrole.rbac.authorization.k8s.io/knative-eventing-operator configured\ncustomresourcedefinition.apiextensions.k8s.io/kabaneros.kabanero.io configured\ncustomresourcedefinition.apiextensions.k8s.io/collections.kabanero.io configured\nserviceaccount/kabanero-operator unchanged\ndeployment.apps/kabanero-operator configured\nclusterrole.rbac.authorization.k8s.io/kabanero-operator configured\nclusterrolebinding.rbac.authorization.k8s.io/kabanero-operator configured",
+    "stdout_lines": [
+        "namespace/kabanero configured",
+        "deployment.apps/knative-eventing-operator configured",
+        "role.rbac.authorization.k8s.io/knative-eventing-operator configured",
+        "clusterrole.rbac.authorization.k8s.io/knative-eventing-operator configured",
+        "rolebinding.rbac.authorization.k8s.io/knative-eventing-operator unchanged",
+        "clusterrolebinding.rbac.authorization.k8s.io/knative-eventing-operator configured",
+        "serviceaccount/knative-eventing-operator unchanged",
+        "customresourcedefinition.apiextensions.k8s.io/knativeeventings.eventing.knative.dev configured",
+        "deployment.apps/knative-serving-operator configured",
+        "role.rbac.authorization.k8s.io/knative-serving-operator configured",
+        "clusterrole.rbac.authorization.k8s.io/knative-serving-operator configured",
+        "rolebinding.rbac.authorization.k8s.io/knative-serving-operator unchanged",
+        "clusterrolebinding.rbac.authorization.k8s.io/knative-serving-operator configured",
+        "serviceaccount/knative-serving-operator unchanged",
+        "customresourcedefinition.apiextensions.k8s.io/knativeservings.serving.knative.dev configured",
+        "namespace/knative-sources configured",
+        "serviceaccount/controller-manager unchanged",
+        "clusterrole.rbac.authorization.k8s.io/eventing-sources-controller configured",
+        "clusterrolebinding.rbac.authorization.k8s.io/eventing-sources-controller configured",
+        "clusterrolebinding.rbac.authorization.k8s.io/eventing-sources-addressable-resolver configured",
+        "customresourcedefinition.apiextensions.k8s.io/githubsources.sources.eventing.knative.dev configured",
+        "service/controller unchanged",
+        "statefulset.apps/controller-manager configured",
+        "deployment.apps/openshift-pipelines-operator configured",
+        "clusterrole.rbac.authorization.k8s.io/openshift-pipelines-operator configured",
+        "clusterrolebinding.rbac.authorization.k8s.io/openshift-pipelines-operator configured",
+        "serviceaccount/openshift-pipelines-operator unchanged",
+        "namespace/openshift-pipelines configured",
+        "customresourcedefinition.apiextensions.k8s.io/config.operator.tekton.dev configured",
+        "config.operator.tekton.dev/cluster created",
+        "clusterrole.rbac.authorization.k8s.io/knative-serving-operator configured",
+        "clusterrole.rbac.authorization.k8s.io/knative-eventing-operator configured",
+        "customresourcedefinition.apiextensions.k8s.io/kabaneros.kabanero.io configured",
+        "customresourcedefinition.apiextensions.k8s.io/collections.kabanero.io configured",
+        "serviceaccount/kabanero-operator unchanged",
+        "deployment.apps/kabanero-operator configured",
+        "clusterrole.rbac.authorization.k8s.io/kabanero-operator configured",
+        "clusterrolebinding.rbac.authorization.k8s.io/kabanero-operator configured"
+    ]
+}
+2019-11-07 18:03:55,396 p=10 u=root |  Configure Kabanero Enterprise Operator Service Account...
+2019-11-07 18:03:56,921 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "oc adm policy add-cluster-role-to-user cluster-admin -z kabanero-operator -n kabanero",
+    "delta": "0:00:01.357181",
+    "end": "2019-11-07 18:03:56.893834",
+    "rc": 0,
+    "start": "2019-11-07 18:03:55.536653",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "cluster role \"cluster-admin\" added: \"kabanero-operator\"",
+    "stdout_lines": [
+        "cluster role \"cluster-admin\" added: \"kabanero-operator\""
+    ]
+}
+2019-11-07 18:03:56,930 p=10 u=root |  Check For Kabanero Enterprise Operator...
+2019-11-07 18:03:58,478 p=10 u=root |    Retrying... (1 of 31)
+2019-11-07 18:04:05,990 p=10 u=root |    Retrying... (2 of 31)
+2019-11-07 18:04:13,563 p=10 u=root |    Retrying... (3 of 31)
+2019-11-07 18:04:21,103 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_loop_var": "item",
+    "attempts": 4,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero name=kabanero-operator kabanero-operator",
+    "delta": "0:00:01.373007",
+    "end": "2019-11-07 18:04:21.070140",
+    "item": "kabanero-operator",
+    "rc": 0,
+    "start": "2019-11-07 18:04:19.697133",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All kabanero-operator pods are running.",
+    "stdout_lines": [
+        "All kabanero-operator pods are running."
+    ]
+}
+2019-11-07 18:04:22,623 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_loop_var": "item",
+    "attempts": 1,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero name=knative-eventing-operator knative-eventing-operator",
+    "delta": "0:00:01.351700",
+    "end": "2019-11-07 18:04:22.589488",
+    "item": "knative-eventing-operator",
+    "rc": 0,
+    "start": "2019-11-07 18:04:21.237788",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All knative-eventing-operator pods are running.",
+    "stdout_lines": [
+        "All knative-eventing-operator pods are running."
+    ]
+}
+2019-11-07 18:04:24,160 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_loop_var": "item",
+    "attempts": 1,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero name=knative-serving-operator knative-serving-operator",
+    "delta": "0:00:01.353830",
+    "end": "2019-11-07 18:04:24.127383",
+    "item": "knative-serving-operator",
+    "rc": 0,
+    "start": "2019-11-07 18:04:22.773553",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All knative-serving-operator pods are running.",
+    "stdout_lines": [
+        "All knative-serving-operator pods are running."
+    ]
+}
+2019-11-07 18:04:25,692 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_loop_var": "item",
+    "attempts": 1,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero name=openshift-pipelines-operator openshift-pipelines-operator",
+    "delta": "0:00:01.367736",
+    "end": "2019-11-07 18:04:25.660502",
+    "item": "openshift-pipelines-operator",
+    "rc": 0,
+    "start": "2019-11-07 18:04:24.292766",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All openshift-pipelines-operator pods are running.",
+    "stdout_lines": [
+        "All openshift-pipelines-operator pods are running."
+    ]
+}
+2019-11-07 18:04:25,695 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "msg": "All items completed",
+    "results": [
+        {
+            "ansible_loop_var": "item",
+            "attempts": 4,
+            "changed": false,
+            "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero name=kabanero-operator kabanero-operator",
+            "delta": "0:00:01.373007",
+            "end": "2019-11-07 18:04:21.070140",
+            "failed": false,
+            "invocation": {
+                "module_args": {
+                    "_raw_params": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero name=kabanero-operator kabanero-operator",
+                    "_uses_shell": true,
+                    "argv": null,
+                    "chdir": null,
+                    "creates": null,
+                    "executable": null,
+                    "removes": null,
+                    "stdin": null,
+                    "stdin_add_newline": true,
+                    "strip_empty_ends": true,
+                    "warn": true
+                }
+            },
+            "item": "kabanero-operator",
+            "rc": 0,
+            "start": "2019-11-07 18:04:19.697133",
+            "stderr": "",
+            "stderr_lines": [],
+            "stdout": "All kabanero-operator pods are running.",
+            "stdout_lines": [
+                "All kabanero-operator pods are running."
+            ]
+        },
+        {
+            "ansible_loop_var": "item",
+            "attempts": 1,
+            "changed": false,
+            "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero name=knative-eventing-operator knative-eventing-operator",
+            "delta": "0:00:01.351700",
+            "end": "2019-11-07 18:04:22.589488",
+            "failed": false,
+            "invocation": {
+                "module_args": {
+                    "_raw_params": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero name=knative-eventing-operator knative-eventing-operator",
+                    "_uses_shell": true,
+                    "argv": null,
+                    "chdir": null,
+                    "creates": null,
+                    "executable": null,
+                    "removes": null,
+                    "stdin": null,
+                    "stdin_add_newline": true,
+                    "strip_empty_ends": true,
+                    "warn": true
+                }
+            },
+            "item": "knative-eventing-operator",
+            "rc": 0,
+            "start": "2019-11-07 18:04:21.237788",
+            "stderr": "",
+            "stderr_lines": [],
+            "stdout": "All knative-eventing-operator pods are running.",
+            "stdout_lines": [
+                "All knative-eventing-operator pods are running."
+            ]
+        },
+        {
+            "ansible_loop_var": "item",
+            "attempts": 1,
+            "changed": false,
+            "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero name=knative-serving-operator knative-serving-operator",
+            "delta": "0:00:01.353830",
+            "end": "2019-11-07 18:04:24.127383",
+            "failed": false,
+            "invocation": {
+                "module_args": {
+                    "_raw_params": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero name=knative-serving-operator knative-serving-operator",
+                    "_uses_shell": true,
+                    "argv": null,
+                    "chdir": null,
+                    "creates": null,
+                    "executable": null,
+                    "removes": null,
+                    "stdin": null,
+                    "stdin_add_newline": true,
+                    "strip_empty_ends": true,
+                    "warn": true
+                }
+            },
+            "item": "knative-serving-operator",
+            "rc": 0,
+            "start": "2019-11-07 18:04:22.773553",
+            "stderr": "",
+            "stderr_lines": [],
+            "stdout": "All knative-serving-operator pods are running.",
+            "stdout_lines": [
+                "All knative-serving-operator pods are running."
+            ]
+        },
+        {
+            "ansible_loop_var": "item",
+            "attempts": 1,
+            "changed": false,
+            "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero name=openshift-pipelines-operator openshift-pipelines-operator",
+            "delta": "0:00:01.367736",
+            "end": "2019-11-07 18:04:25.660502",
+            "failed": false,
+            "invocation": {
+                "module_args": {
+                    "_raw_params": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero name=openshift-pipelines-operator openshift-pipelines-operator",
+                    "_uses_shell": true,
+                    "argv": null,
+                    "chdir": null,
+                    "creates": null,
+                    "executable": null,
+                    "removes": null,
+                    "stdin": null,
+                    "stdin_add_newline": true,
+                    "strip_empty_ends": true,
+                    "warn": true
+                }
+            },
+            "item": "openshift-pipelines-operator",
+            "rc": 0,
+            "start": "2019-11-07 18:04:24.292766",
+            "stderr": "",
+            "stderr_lines": [],
+            "stdout": "All openshift-pipelines-operator pods are running.",
+            "stdout_lines": [
+                "All openshift-pipelines-operator pods are running."
+            ]
+        }
+    ]
+}
+2019-11-07 18:04:25,703 p=10 u=root |  Switch To Kabanero Project...
+2019-11-07 18:04:27,446 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "/installer/playbook/../scripts/common/create_project.sh kabanero",
+    "delta": "0:00:01.571698",
+    "end": "2019-11-07 18:04:27.420593",
+    "rc": 0,
+    "start": "2019-11-07 18:04:25.848895",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Already on project \"kabanero\" on server \"https://master.ibm.demo:8443\".",
+    "stdout_lines": [
+        "Already on project \"kabanero\" on server \"https://master.ibm.demo:8443\"."
+    ]
+}
+2019-11-07 18:04:27,456 p=10 u=root |  Check For Knative Webhook...
+2019-11-07 18:04:29,008 p=10 u=root |    Retrying... (1 of 31)
+2019-11-07 18:04:36,560 p=10 u=root |    Retrying... (2 of 31)
+2019-11-07 18:04:44,057 p=10 u=root |    Retrying... (3 of 31)
+2019-11-07 18:04:51,581 p=10 u=root |  127.0.0.1 ok: {
+    "attempts": 4,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh knative-serving role=webhook webhook",
+    "delta": "0:00:01.355502",
+    "end": "2019-11-07 18:04:51.544887",
+    "rc": 0,
+    "start": "2019-11-07 18:04:50.189385",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All webhook pods are running.",
+    "stdout_lines": [
+        "All webhook pods are running."
+    ]
+}
+2019-11-07 18:04:51,593 p=10 u=root |  Install Tekton Webhooks Extension...
+2019-11-07 18:04:53,450 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "oc apply -f /installer/playbook/../scripts/tekton/openshift-webhooks-extension.yaml",
+    "delta": "0:00:01.678584",
+    "end": "2019-11-07 18:04:53.420303",
+    "rc": 0,
+    "start": "2019-11-07 18:04:51.741719",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "serviceaccount/tekton-webhooks-extension created\nclusterrole.rbac.authorization.k8s.io/tekton-webhooks-extension-minimal created\nclusterrolebinding.rbac.authorization.k8s.io/tekton-webhooks-extension-minimal created\ndeployment.apps/webhooks-extension created\nservice/webhooks-extension created\nservice.serving.knative.dev/webhooks-extension-sink created\ntask.tekton.dev/monitor-result-task created",
+    "stdout_lines": [
+        "serviceaccount/tekton-webhooks-extension created",
+        "clusterrole.rbac.authorization.k8s.io/tekton-webhooks-extension-minimal created",
+        "clusterrolebinding.rbac.authorization.k8s.io/tekton-webhooks-extension-minimal created",
+        "deployment.apps/webhooks-extension created",
+        "service/webhooks-extension created",
+        "service.serving.knative.dev/webhooks-extension-sink created",
+        "task.tekton.dev/monitor-result-task created"
+    ]
+}
+2019-11-07 18:04:53,460 p=10 u=root |  Check For Tekton Webhooks Extension...
+2019-11-07 18:04:55,026 p=10 u=root |    Retrying... (1 of 31)
+2019-11-07 18:05:02,599 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_loop_var": "item",
+    "attempts": 2,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero app=webhooks-extension webhooks-extension",
+    "delta": "0:00:01.392521",
+    "end": "2019-11-07 18:05:02.563756",
+    "item": "webhooks-extension",
+    "rc": 0,
+    "start": "2019-11-07 18:05:01.171235",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All webhooks-extension pods are running.",
+    "stdout_lines": [
+        "All webhooks-extension pods are running."
+    ]
+}
+2019-11-07 18:05:02,601 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "msg": "All items completed",
+    "results": [
+        {
+            "ansible_loop_var": "item",
+            "attempts": 2,
+            "changed": false,
+            "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero app=webhooks-extension webhooks-extension",
+            "delta": "0:00:01.392521",
+            "end": "2019-11-07 18:05:02.563756",
+            "failed": false,
+            "invocation": {
+                "module_args": {
+                    "_raw_params": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero app=webhooks-extension webhooks-extension",
+                    "_uses_shell": true,
+                    "argv": null,
+                    "chdir": null,
+                    "creates": null,
+                    "executable": null,
+                    "removes": null,
+                    "stdin": null,
+                    "stdin_add_newline": true,
+                    "strip_empty_ends": true,
+                    "warn": true
+                }
+            },
+            "item": "webhooks-extension",
+            "rc": 0,
+            "start": "2019-11-07 18:05:01.171235",
+            "stderr": "",
+            "stderr_lines": [],
+            "stdout": "All webhooks-extension pods are running.",
+            "stdout_lines": [
+                "All webhooks-extension pods are running."
+            ]
+        }
+    ]
+}
+2019-11-07 18:05:02,609 p=10 u=root |  Install Tekton Dashboard...
+2019-11-07 18:05:04,509 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "oc apply -f /installer/playbook/../scripts/tekton/openshift-tekton-dashboard.yaml",
+    "delta": "0:00:01.721382",
+    "end": "2019-11-07 18:05:04.483308",
+    "rc": 0,
+    "start": "2019-11-07 18:05:02.761926",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "serviceaccount/tekton-dashboard created\ncustomresourcedefinition.apiextensions.k8s.io/extensions.dashboard.tekton.dev created\nclusterrole.rbac.authorization.k8s.io/tekton-dashboard-minimal created\nclusterrolebinding.rbac.authorization.k8s.io/tekton-dashboard-minimal created\ndeployment.apps/tekton-dashboard created\nroute.route.openshift.io/tekton-dashboard created\nservice/tekton-dashboard created\npipeline.tekton.dev/pipeline0 created\ntask.tekton.dev/pipeline0-task created",
+    "stdout_lines": [
+        "serviceaccount/tekton-dashboard created",
+        "customresourcedefinition.apiextensions.k8s.io/extensions.dashboard.tekton.dev created",
+        "clusterrole.rbac.authorization.k8s.io/tekton-dashboard-minimal created",
+        "clusterrolebinding.rbac.authorization.k8s.io/tekton-dashboard-minimal created",
+        "deployment.apps/tekton-dashboard created",
+        "route.route.openshift.io/tekton-dashboard created",
+        "service/tekton-dashboard created",
+        "pipeline.tekton.dev/pipeline0 created",
+        "task.tekton.dev/pipeline0-task created"
+    ]
+}
+2019-11-07 18:05:04,518 p=10 u=root |  Check For Tekton Dashboard...
+2019-11-07 18:05:06,087 p=10 u=root |    Retrying... (1 of 31)
+2019-11-07 18:05:13,651 p=10 u=root |    Retrying... (2 of 31)
+2019-11-07 18:05:21,181 p=10 u=root |    Retrying... (3 of 31)
+2019-11-07 18:05:28,751 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_loop_var": "item",
+    "attempts": 4,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero app=tekton-dashboard tekton-dashboard",
+    "delta": "0:00:01.393925",
+    "end": "2019-11-07 18:05:28.713896",
+    "item": "tekton-dashboard",
+    "rc": 0,
+    "start": "2019-11-07 18:05:27.319971",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All tekton-dashboard pods are running.",
+    "stdout_lines": [
+        "All tekton-dashboard pods are running."
+    ]
+}
+2019-11-07 18:05:28,753 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "msg": "All items completed",
+    "results": [
+        {
+            "ansible_loop_var": "item",
+            "attempts": 4,
+            "changed": false,
+            "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero app=tekton-dashboard tekton-dashboard",
+            "delta": "0:00:01.393925",
+            "end": "2019-11-07 18:05:28.713896",
+            "failed": false,
+            "invocation": {
+                "module_args": {
+                    "_raw_params": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero app=tekton-dashboard tekton-dashboard",
+                    "_uses_shell": true,
+                    "argv": null,
+                    "chdir": null,
+                    "creates": null,
+                    "executable": null,
+                    "removes": null,
+                    "stdin": null,
+                    "stdin_add_newline": true,
+                    "strip_empty_ends": true,
+                    "warn": true
+                }
+            },
+            "item": "tekton-dashboard",
+            "rc": 0,
+            "start": "2019-11-07 18:05:27.319971",
+            "stderr": "",
+            "stderr_lines": [],
+            "stdout": "All tekton-dashboard pods are running.",
+            "stdout_lines": [
+                "All tekton-dashboard pods are running."
+            ]
+        }
+    ]
+}
+2019-11-07 18:05:28,765 p=10 u=root |  Wait For Knative ConfigMap...
+2019-11-07 18:05:30,291 p=10 u=root |  127.0.0.1 ok: {
+    "attempts": 1,
+    "changed": false,
+    "cmd": "oc -n knative-serving get configmap config-domain",
+    "delta": "0:00:01.341287",
+    "end": "2019-11-07 18:05:30.258228",
+    "rc": 0,
+    "start": "2019-11-07 18:05:28.916941",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "NAME            DATA      AGE\nconfig-domain   1         1m",
+    "stdout_lines": [
+        "NAME            DATA      AGE",
+        "config-domain   1         1m"
+    ]
+}
+2019-11-07 18:05:30,301 p=10 u=root |  Configure Tekton Dashboard...
+2019-11-07 18:05:31,842 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "/installer/playbook/../scripts/tekton/configure.sh '10.0.10.2.nip.io'",
+    "delta": "0:00:01.361988",
+    "end": "2019-11-07 18:05:31.813310",
+    "rc": 0,
+    "start": "2019-11-07 18:05:30.451322",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "configmap/config-domain patched",
+    "stdout_lines": [
+        "configmap/config-domain patched"
+    ]
+}
+2019-11-07 18:05:31,852 p=10 u=root |  Get Tekton Dashboard Route...
+2019-11-07 18:05:33,415 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "oc get route tekton-dashboard --no-headers -o=jsonpath='{.status.ingress[0].host}'",
+    "delta": "0:00:01.386902",
+    "end": "2019-11-07 18:05:33.388731",
+    "rc": 0,
+    "start": "2019-11-07 18:05:32.001829",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "tekton-dashboard-kabanero.10.0.10.2.nip.io",
+    "stdout_lines": [
+        "tekton-dashboard-kabanero.10.0.10.2.nip.io"
+    ]
+}
+2019-11-07 18:05:33,424 p=10 u=root |  set_fact...
+2019-11-07 18:05:33,448 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_facts": {
+        "tektonDashboard": "https://tekton-dashboard-kabanero.10.0.10.2.nip.io"
+    },
+    "changed": false
+}
+2019-11-07 18:05:33,456 p=10 u=root |  Install Transformation Advisor Operator...
+2019-11-07 18:05:36,907 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "/installer/playbook/../scripts/transadv/install.sh",
+    "delta": "0:00:03.270983",
+    "end": "2019-11-07 18:05:36.880198",
+    "rc": 0,
+    "start": "2019-11-07 18:05:33.609215",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Now using project \"ta\" on server \"https://master.ibm.demo:8443\".\n\nYou can add applications to this project with the 'new-app' command. For example, try:\n\n    oc new-app centos/ruby-25-centos7~https://github.com/sclorg/ruby-ex.git\n\nto build a new example application in Ruby.\nnamespace/ta annotated\ncustomresourcedefinition.apiextensions.k8s.io/tarhs.charts.ta.cloud.ibm.com created\ndeployment.apps/ta-operator created\nrole.rbac.authorization.k8s.io/ta-operator created\nrolebinding.rbac.authorization.k8s.io/ta-operator created\nserviceaccount/ta-operator created\nscc \"anyuid\" added to: [\"system:serviceaccount:ta:default\"]\ncluster role \"cluster-admin\" added: \"system:serviceaccount:ta:ta-operator\"",
+    "stdout_lines": [
+        "Now using project \"ta\" on server \"https://master.ibm.demo:8443\".",
+        "",
+        "You can add applications to this project with the 'new-app' command. For example, try:",
+        "",
+        "    oc new-app centos/ruby-25-centos7~https://github.com/sclorg/ruby-ex.git",
+        "",
+        "to build a new example application in Ruby.",
+        "namespace/ta annotated",
+        "customresourcedefinition.apiextensions.k8s.io/tarhs.charts.ta.cloud.ibm.com created",
+        "deployment.apps/ta-operator created",
+        "role.rbac.authorization.k8s.io/ta-operator created",
+        "rolebinding.rbac.authorization.k8s.io/ta-operator created",
+        "serviceaccount/ta-operator created",
+        "scc \"anyuid\" added to: [\"system:serviceaccount:ta:default\"]",
+        "cluster role \"cluster-admin\" added: \"system:serviceaccount:ta:ta-operator\""
+    ]
+}
+2019-11-07 18:05:36,917 p=10 u=root |  Check For Transformation Advisor Operator...
+2019-11-07 18:05:38,526 p=10 u=root |    Retrying... (1 of 31)
+2019-11-07 18:05:46,089 p=10 u=root |    Retrying... (2 of 31)
+2019-11-07 18:05:53,637 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_loop_var": "item",
+    "attempts": 3,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh ta name=ta-operator ta-operator",
+    "delta": "0:00:01.383201",
+    "end": "2019-11-07 18:05:53.602817",
+    "item": "ta-operator",
+    "rc": 0,
+    "start": "2019-11-07 18:05:52.219616",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All ta-operator pods are running.",
+    "stdout_lines": [
+        "All ta-operator pods are running."
+    ]
+}
+2019-11-07 18:05:53,638 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "msg": "All items completed",
+    "results": [
+        {
+            "ansible_loop_var": "item",
+            "attempts": 3,
+            "changed": false,
+            "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh ta name=ta-operator ta-operator",
+            "delta": "0:00:01.383201",
+            "end": "2019-11-07 18:05:53.602817",
+            "failed": false,
+            "invocation": {
+                "module_args": {
+                    "_raw_params": "/installer/playbook/../scripts/common/check_pods_by_label.sh ta name=ta-operator ta-operator",
+                    "_uses_shell": true,
+                    "argv": null,
+                    "chdir": null,
+                    "creates": null,
+                    "executable": null,
+                    "removes": null,
+                    "stdin": null,
+                    "stdin_add_newline": true,
+                    "strip_empty_ends": true,
+                    "warn": true
+                }
+            },
+            "item": "ta-operator",
+            "rc": 0,
+            "start": "2019-11-07 18:05:52.219616",
+            "stderr": "",
+            "stderr_lines": [],
+            "stdout": "All ta-operator pods are running.",
+            "stdout_lines": [
+                "All ta-operator pods are running."
+            ]
+        }
+    ]
+}
+2019-11-07 18:05:53,646 p=10 u=root |  Switch To Kabanero Project...
+2019-11-07 18:05:55,384 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "/installer/playbook/../scripts/common/create_project.sh kabanero",
+    "delta": "0:00:01.556966",
+    "end": "2019-11-07 18:05:55.357293",
+    "rc": 0,
+    "start": "2019-11-07 18:05:53.800327",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Now using project \"kabanero\" on server \"https://master.ibm.demo:8443\".",
+    "stdout_lines": [
+        "Now using project \"kabanero\" on server \"https://master.ibm.demo:8443\"."
+    ]
+}
+2019-11-07 18:05:55,396 p=10 u=root |  Generate Landing Page Configuration...
+2019-11-07 18:05:56,156 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "checksum": "a05e8212806e0d40782503138b8b5a7ecb4fa8f6",
+    "dest": "/tmp/landing.yaml",
+    "gid": 0,
+    "group": "root",
+    "md5sum": "66297d72cd9abe97a28ef07f64a02ef5",
+    "mode": "0644",
+    "owner": "root",
+    "size": 3446,
+    "src": "/root/.ansible/tmp/ansible-tmp-1573149955.4151144-122901130306875/source",
+    "state": "file",
+    "uid": 0
+}
+2019-11-07 18:05:56,166 p=10 u=root |  Create Pull Secret...
+2019-11-07 18:05:57,949 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "/installer/playbook/../scripts/common/create_pull_secret.sh kabanero icpa-pull-secret",
+    "delta": "0:00:01.585630",
+    "end": "2019-11-07 18:05:57.923158",
+    "rc": 0,
+    "start": "2019-11-07 18:05:56.337528",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "secret/icpa-pull-secret created",
+    "stdout_lines": [
+        "secret/icpa-pull-secret created"
+    ]
+}
+2019-11-07 18:05:57,958 p=10 u=root |  Install Landing Page...
+2019-11-07 18:05:59,816 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "oc apply -n kabanero -f /tmp/landing.yaml",
+    "delta": "0:00:01.677908",
+    "end": "2019-11-07 18:05:59.783486",
+    "rc": 0,
+    "start": "2019-11-07 18:05:58.105578",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "deployment.apps/icpa-landing created\nservice/icpa-landing created\nroute.route.openshift.io/icpa-landing created\nserviceaccount/icpa-landing created\nclusterrolebinding.rbac.authorization.k8s.io/icpa-landing created\nclusterrole.rbac.authorization.k8s.io/icpa-landing created",
+    "stdout_lines": [
+        "deployment.apps/icpa-landing created",
+        "service/icpa-landing created",
+        "route.route.openshift.io/icpa-landing created",
+        "serviceaccount/icpa-landing created",
+        "clusterrolebinding.rbac.authorization.k8s.io/icpa-landing created",
+        "clusterrole.rbac.authorization.k8s.io/icpa-landing created"
+    ]
+}
+2019-11-07 18:05:59,826 p=10 u=root |  Check For Landing Page...
+2019-11-07 18:06:01,403 p=10 u=root |    Retrying... (1 of 31)
+2019-11-07 18:06:08,903 p=10 u=root |    Retrying... (2 of 31)
+2019-11-07 18:06:16,471 p=10 u=root |    Retrying... (3 of 31)
+2019-11-07 18:06:23,991 p=10 u=root |    Retrying... (4 of 31)
+2019-11-07 18:06:31,513 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_loop_var": "item",
+    "attempts": 5,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero app=icpa-landing icpa-landing",
+    "delta": "0:00:01.354938",
+    "end": "2019-11-07 18:06:31.480847",
+    "item": "icpa-landing",
+    "rc": 0,
+    "start": "2019-11-07 18:06:30.125909",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All icpa-landing pods are running.",
+    "stdout_lines": [
+        "All icpa-landing pods are running."
+    ]
+}
+2019-11-07 18:06:31,515 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "msg": "All items completed",
+    "results": [
+        {
+            "ansible_loop_var": "item",
+            "attempts": 5,
+            "changed": false,
+            "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero app=icpa-landing icpa-landing",
+            "delta": "0:00:01.354938",
+            "end": "2019-11-07 18:06:31.480847",
+            "failed": false,
+            "invocation": {
+                "module_args": {
+                    "_raw_params": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero app=icpa-landing icpa-landing",
+                    "_uses_shell": true,
+                    "argv": null,
+                    "chdir": null,
+                    "creates": null,
+                    "executable": null,
+                    "removes": null,
+                    "stdin": null,
+                    "stdin_add_newline": true,
+                    "strip_empty_ends": true,
+                    "warn": true
+                }
+            },
+            "item": "icpa-landing",
+            "rc": 0,
+            "start": "2019-11-07 18:06:30.125909",
+            "stderr": "",
+            "stderr_lines": [],
+            "stdout": "All icpa-landing pods are running.",
+            "stdout_lines": [
+                "All icpa-landing pods are running."
+            ]
+        }
+    ]
+}
+2019-11-07 18:06:31,523 p=10 u=root |  Add Web Console Extensions...
+2019-11-07 18:06:33,885 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "/installer/playbook/roles/landing/scripts/webconsole_nav.sh add 'https://ibm-cp-applications.10.0.10.2.nip.io'",
+    "delta": "0:00:02.174959",
+    "end": "2019-11-07 18:06:33.859040",
+    "rc": 0,
+    "start": "2019-11-07 18:06:31.684081",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "configmap/webconsole-config configured",
+    "stdout_lines": [
+        "configmap/webconsole-config configured"
+    ]
+}
+2019-11-07 18:06:33,894 p=10 u=root |  set_fact...
+2019-11-07 18:06:33,930 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_facts": {
+        "landingDashboard": "https://ibm-cp-applications.10.0.10.2.nip.io"
+    },
+    "changed": false
+}
+2019-11-07 18:06:33,939 p=10 u=root |  Switch To Application Navigator Project...
+2019-11-07 18:06:35,960 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "/installer/playbook/../scripts/common/create_project.sh kappnav",
+    "delta": "0:00:01.841325",
+    "end": "2019-11-07 18:06:35.934319",
+    "rc": 0,
+    "start": "2019-11-07 18:06:34.092994",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Now using project \"kappnav\" on server \"https://master.ibm.demo:8443\".\n\nYou can add applications to this project with the 'new-app' command. For example, try:\n\n    oc new-app centos/ruby-25-centos7~https://github.com/sclorg/ruby-ex.git\n\nto build a new example application in Ruby.\nnamespace/kappnav annotated",
+    "stdout_lines": [
+        "Now using project \"kappnav\" on server \"https://master.ibm.demo:8443\".",
+        "",
+        "You can add applications to this project with the 'new-app' command. For example, try:",
+        "",
+        "    oc new-app centos/ruby-25-centos7~https://github.com/sclorg/ruby-ex.git",
+        "",
+        "to build a new example application in Ruby.",
+        "namespace/kappnav annotated"
+    ]
+}
+2019-11-07 18:06:35,970 p=10 u=root |  Populate Application Navigator Operator Configuration...
+2019-11-07 18:06:36,294 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "checksum": "fc46f4eecc0cb557ffb872c7f7879fad927ca060",
+    "dest": "/tmp/kappnav-operator.yaml",
+    "gid": 0,
+    "group": "root",
+    "md5sum": "1565d2a96d8c4f7352aabac367fe5d50",
+    "mode": "0644",
+    "owner": "root",
+    "size": 2581,
+    "src": "/root/.ansible/tmp/ansible-tmp-1573149995.9884353-261275400941004/source",
+    "state": "file",
+    "uid": 0
+}
+2019-11-07 18:06:36,303 p=10 u=root |  Populate Application Navigator Custom Resource...
+2019-11-07 18:06:36,635 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "checksum": "85e3eab6de38400f8d645addb8142b5256eff94f",
+    "dest": "/tmp/kappnav.yaml",
+    "gid": 0,
+    "group": "root",
+    "md5sum": "9851a2f631228f1f6ad8197f1f9fe07f",
+    "mode": "0644",
+    "owner": "root",
+    "size": 4908,
+    "src": "/root/.ansible/tmp/ansible-tmp-1573149996.3218932-248771130364623/source",
+    "state": "file",
+    "uid": 0
+}
+2019-11-07 18:06:36,644 p=10 u=root |  Create Pull Secret...
+2019-11-07 18:06:38,404 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "/installer/playbook/../scripts/common/create_pull_secret.sh kappnav icpa-pull-secret",
+    "delta": "0:00:01.558089",
+    "end": "2019-11-07 18:06:38.374921",
+    "rc": 0,
+    "start": "2019-11-07 18:06:36.816832",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "secret/icpa-pull-secret created",
+    "stdout_lines": [
+        "secret/icpa-pull-secret created"
+    ]
+}
+2019-11-07 18:06:38,412 p=10 u=root |  Install Application Navigator Operator...
+2019-11-07 18:06:40,134 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "oc apply -f /tmp/kappnav-operator.yaml -n kappnav",
+    "delta": "0:00:01.550795",
+    "end": "2019-11-07 18:06:40.107396",
+    "rc": 0,
+    "start": "2019-11-07 18:06:38.556601",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "customresourcedefinition.apiextensions.k8s.io/kappnavs.kappnav.io created\nserviceaccount/helm-operator created\nclusterrole.rbac.authorization.k8s.io/helm-operator created\nclusterrolebinding.rbac.authorization.k8s.io/helm-operator created\ndeployment.apps/helm-operator created",
+    "stdout_lines": [
+        "customresourcedefinition.apiextensions.k8s.io/kappnavs.kappnav.io created",
+        "serviceaccount/helm-operator created",
+        "clusterrole.rbac.authorization.k8s.io/helm-operator created",
+        "clusterrolebinding.rbac.authorization.k8s.io/helm-operator created",
+        "deployment.apps/helm-operator created"
+    ]
+}
+2019-11-07 18:06:40,143 p=10 u=root |  Check For Application Navigator Operator...
+2019-11-07 18:06:41,708 p=10 u=root |    Retrying... (1 of 31)
+2019-11-07 18:06:49,250 p=10 u=root |    Retrying... (2 of 31)
+2019-11-07 18:06:56,790 p=10 u=root |  127.0.0.1 ok: {
+    "attempts": 3,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kappnav name=helm-operator helm-operator",
+    "delta": "0:00:01.385690",
+    "end": "2019-11-07 18:06:56.759798",
+    "rc": 0,
+    "start": "2019-11-07 18:06:55.374108",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All helm-operator pods are running.",
+    "stdout_lines": [
+        "All helm-operator pods are running."
+    ]
+}
+2019-11-07 18:06:56,799 p=10 u=root |  Install Application Navigator Custom Resource...
+2019-11-07 18:06:58,563 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "oc apply -f /tmp/kappnav.yaml -n kappnav",
+    "delta": "0:00:01.594806",
+    "end": "2019-11-07 18:06:58.538090",
+    "rc": 0,
+    "start": "2019-11-07 18:06:56.943284",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "kappnav.kappnav.io/instance created",
+    "stdout_lines": [
+        "kappnav.kappnav.io/instance created"
+    ]
+}
+2019-11-07 18:06:58,572 p=10 u=root |  Check For Application Navigator UI...
+2019-11-07 18:07:00,110 p=10 u=root |    Retrying... (1 of 31)
+2019-11-07 18:07:07,615 p=10 u=root |    Retrying... (2 of 31)
+2019-11-07 18:07:15,146 p=10 u=root |    Retrying... (3 of 31)
+2019-11-07 18:07:22,697 p=10 u=root |    Retrying... (4 of 31)
+2019-11-07 18:07:30,240 p=10 u=root |    Retrying... (5 of 31)
+2019-11-07 18:07:37,751 p=10 u=root |    Retrying... (6 of 31)
+2019-11-07 18:07:45,293 p=10 u=root |    Retrying... (7 of 31)
+2019-11-07 18:07:52,808 p=10 u=root |    Retrying... (8 of 31)
+2019-11-07 18:08:00,380 p=10 u=root |    Retrying... (9 of 31)
+2019-11-07 18:08:07,945 p=10 u=root |    Retrying... (10 of 31)
+2019-11-07 18:08:15,485 p=10 u=root |    Retrying... (11 of 31)
+2019-11-07 18:08:23,005 p=10 u=root |    Retrying... (12 of 31)
+2019-11-07 18:08:30,572 p=10 u=root |    Retrying... (13 of 31)
+2019-11-07 18:08:38,067 p=10 u=root |    Retrying... (14 of 31)
+2019-11-07 18:08:45,608 p=10 u=root |  127.0.0.1 ok: {
+    "attempts": 15,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kappnav app.kubernetes.io/component=kappnav-ui kappnav-ui",
+    "delta": "0:00:01.374918",
+    "end": "2019-11-07 18:08:45.576944",
+    "rc": 0,
+    "start": "2019-11-07 18:08:44.202026",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All kappnav-ui pods are running.",
+    "stdout_lines": [
+        "All kappnav-ui pods are running."
+    ]
+}
+2019-11-07 18:08:45,620 p=10 u=root |  Get Application Navigator UI Route...
+2019-11-07 18:08:47,137 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "oc get route kappnav-ui-service --no-headers -o=jsonpath='{.status.ingress[0].host}'",
+    "delta": "0:00:01.340773",
+    "end": "2019-11-07 18:08:47.109490",
+    "rc": 0,
+    "start": "2019-11-07 18:08:45.768717",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "kappnav-ui-service-kappnav.10.0.10.2.nip.io",
+    "stdout_lines": [
+        "kappnav-ui-service-kappnav.10.0.10.2.nip.io"
+    ]
+}
+2019-11-07 18:08:47,146 p=10 u=root |  set_fact...
+2019-11-07 18:08:47,171 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_facts": {
+        "appnavDashboard": "https://kappnav-ui-service-kappnav.10.0.10.2.nip.io"
+    },
+    "changed": false
+}
+2019-11-07 18:08:47,180 p=10 u=root |  Populate Kabanero Enterprise Custom Resource...
+2019-11-07 18:08:48,578 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "python3 -u /installer/playbook/roles/kabanero/scripts/inject_config.py /installer/playbook/../data/kabanero.yaml /tmp/kabanero.yaml    \n",
+    "delta": "0:00:01.207273",
+    "end": "2019-11-07 18:08:48.549793",
+    "rc": 0,
+    "start": "2019-11-07 18:08:47.342520",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "",
+    "stdout_lines": []
+}
+2019-11-07 18:08:48,586 p=10 u=root |  Install Kabanero Enterprise Custom Resource...
+2019-11-07 18:08:50,830 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "/installer/playbook/../scripts/kabanero/create-instance.sh 'kabanero' /tmp/kabanero.yaml",
+    "delta": "0:00:02.061699",
+    "end": "2019-11-07 18:08:50.804605",
+    "rc": 0,
+    "start": "2019-11-07 18:08:48.742906",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Now using project \"kabanero\" on server \"https://master.ibm.demo:8443\".\nkabanero.kabanero.io/kabanero created",
+    "stdout_lines": [
+        "Now using project \"kabanero\" on server \"https://master.ibm.demo:8443\".",
+        "kabanero.kabanero.io/kabanero created"
+    ]
+}
+2019-11-07 18:08:50,839 p=10 u=root |  Check For Kabanero CLI Service...
+2019-11-07 18:08:52,363 p=10 u=root |    Retrying... (1 of 31)
+2019-11-07 18:08:59,949 p=10 u=root |    Retrying... (2 of 31)
+2019-11-07 18:09:07,494 p=10 u=root |    Retrying... (3 of 31)
+2019-11-07 18:09:15,005 p=10 u=root |    Retrying... (4 of 31)
+2019-11-07 18:09:22,511 p=10 u=root |  127.0.0.1 ok: {
+    "attempts": 5,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero app=kabanero-cli kabanero-cli",
+    "delta": "0:00:01.338155",
+    "end": "2019-11-07 18:09:22.479906",
+    "rc": 0,
+    "start": "2019-11-07 18:09:21.141751",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All kabanero-cli pods are running.",
+    "stdout_lines": [
+        "All kabanero-cli pods are running."
+    ]
+}
+2019-11-07 18:09:22,519 p=10 u=root |  Check For Appsody Operator...
+2019-11-07 18:09:24,047 p=10 u=root |  127.0.0.1 ok: {
+    "attempts": 1,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh kabanero name=appsody-operator appsody-operator",
+    "delta": "0:00:01.340190",
+    "end": "2019-11-07 18:09:24.012640",
+    "rc": 0,
+    "start": "2019-11-07 18:09:22.672450",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All appsody-operator pods are running.",
+    "stdout_lines": [
+        "All appsody-operator pods are running."
+    ]
+}
+2019-11-07 18:09:24,055 p=10 u=root |  Populate Transformation Advisor Custom Resource...
+2019-11-07 18:09:24,381 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "checksum": "103d7babef27bb2df69c6f1cb479ed7e05336264",
+    "dest": "/tmp/transadv.yaml",
+    "gid": 0,
+    "group": "root",
+    "md5sum": "8d8fc24dd1c6241d00c1e4cb7fbe6fb4",
+    "mode": "0644",
+    "owner": "root",
+    "size": 3144,
+    "src": "/root/.ansible/tmp/ansible-tmp-1573150164.0806708-72317293076709/source",
+    "state": "file",
+    "uid": 0
+}
+2019-11-07 18:09:24,390 p=10 u=root |  Install Transformation Advisor Custom Resource...
+2019-11-07 18:09:26,926 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "/installer/playbook/../scripts/transadv/create-instance.sh 'ta' /tmp/transadv.yaml",
+    "delta": "0:00:02.347766",
+    "end": "2019-11-07 18:09:26.900030",
+    "rc": 0,
+    "start": "2019-11-07 18:09:24.552264",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Now using project \"ta\" on server \"https://master.ibm.demo:8443\".\nsecret/transformation-advisor-secret created\ntarh.charts.ta.cloud.ibm.com/ta created",
+    "stdout_lines": [
+        "Now using project \"ta\" on server \"https://master.ibm.demo:8443\".",
+        "secret/transformation-advisor-secret created",
+        "tarh.charts.ta.cloud.ibm.com/ta created"
+    ]
+}
+2019-11-07 18:09:26,934 p=10 u=root |  Check For Transformation Advisor UI...
+2019-11-07 18:09:28,528 p=10 u=root |    Retrying... (1 of 61)
+2019-11-07 18:09:36,071 p=10 u=root |    Retrying... (2 of 61)
+2019-11-07 18:09:43,575 p=10 u=root |    Retrying... (3 of 61)
+2019-11-07 18:09:51,099 p=10 u=root |    Retrying... (4 of 61)
+2019-11-07 18:09:58,598 p=10 u=root |    Retrying... (5 of 61)
+2019-11-07 18:10:06,128 p=10 u=root |    Retrying... (6 of 61)
+2019-11-07 18:10:13,644 p=10 u=root |  127.0.0.1 ok: {
+    "attempts": 7,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check_pods_by_label.sh ta chart=ta-rh-2.0.1,component=ui ui",
+    "delta": "0:00:01.352875",
+    "end": "2019-11-07 18:10:13.613427",
+    "rc": 0,
+    "start": "2019-11-07 18:10:12.260552",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All ui pods are running.",
+    "stdout_lines": [
+        "All ui pods are running."
+    ]
+}
+2019-11-07 18:10:13,656 p=10 u=root |  Check For Transformation Advisor Database...
+2019-11-07 18:10:15,202 p=10 u=root |  127.0.0.1 ok: {
+    "attempts": 1,
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/transadv/check_for_couchdb_pod.sh",
+    "delta": "0:00:01.346956",
+    "end": "2019-11-07 18:10:15.167867",
+    "rc": 0,
+    "start": "2019-11-07 18:10:13.820911",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "All couchdb pods are running.",
+    "stdout_lines": [
+        "All couchdb pods are running."
+    ]
+}
+2019-11-07 18:10:15,211 p=10 u=root |  Get Transformation Advisor UI Route...
+2019-11-07 18:10:16,745 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "cmd": "oc get route -o jsonpath='{range .items[*]}{@.metadata.name}{\":\"}{@.status.ingress[0].host}{\"\\n\"}{end}' | grep ta-rh-ui-route | cut -d':' -f2",
+    "delta": "0:00:01.351068",
+    "end": "2019-11-07 18:10:16.718294",
+    "rc": 0,
+    "start": "2019-11-07 18:10:15.367226",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "ta.apps.10.0.10.2.nip.io",
+    "stdout_lines": [
+        "ta.apps.10.0.10.2.nip.io"
+    ]
+}
+2019-11-07 18:10:16,754 p=10 u=root |  set_fact...
+2019-11-07 18:10:16,783 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_facts": {
+        "transadvDashboard": "https://ta.apps.10.0.10.2.nip.io"
+    },
+    "changed": false
+}
+2019-11-07 18:10:16,792 p=10 u=root |  Mark Installation Complete...
+2019-11-07 18:10:17,102 p=10 u=root |  127.0.0.1 done: {
+    "changed": true,
+    "checksum": "f25148593562ee1682e66bebf51c5d2aebda94c4",
+    "dest": "/tmp/post-install.txt",
+    "gid": 0,
+    "group": "root",
+    "md5sum": "611e08eba041dd908399304363503456",
+    "mode": "0644",
+    "owner": "root",
+    "size": 430,
+    "src": "/root/.ansible/tmp/ansible-tmp-1573150216.8130295-168618846520835/source",
+    "state": "file",
+    "uid": 0
+}
+2019-11-07 18:10:17,105 p=10 u=root |  - Play recap -
+2019-11-07 18:10:17,106 p=10 u=root |    127.0.0.1                  : ok=55   changed=28   unreachable=0    failed=0    rescued=0    ignored=0   
+2019-11-07 18:10:17,106 p=10 u=root |  Install successful *************************************************************
+2019-11-07 18:10:17,106 p=10 u=root |  Installation complete.
+
+Please see https://ibm-cp-applications.10.0.10.2.nip.io to get started and learn more about IBM Cloud Pak for Applications.
+
+The Tekton Dashboard is available at: https://tekton-dashboard-kabanero.10.0.10.2.nip.io.
+
+The IBM Transformation Advisor UI is available at: https://ta.apps.10.0.10.2.nip.io.
+
+The IBM Application Navigator UI is available at: https://kappnav-ui-service-kappnav.10.0.10.2.nip.io.
+

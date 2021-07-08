@@ -1,0 +1,14 @@
+
+ Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
+------+------+---------------------------+---------------------------+---------------------------
+     0      3    1/16/20 11:15:09:517 PST    1/16/20 11:15:14:027 PST javax.servlet.ServletException com.ibm.ws.webcontainer.servlet.FileServletWrapper.handleRequest 309
+                                                                            - /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/myController/logs/ffdc/ffdc_20.01.16_11.15.09.0.log
+     1      9    1/16/20 11:15:09:525 PST    1/16/20 11:15:14:029 PST com.ibm.ws.webcontainer.webapp.WebAppErrorReport com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter 82
+                                                                            - /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/myController/logs/ffdc/ffdc_20.01.16_11.15.09.1.log
+     2      6    1/16/20 11:15:09:690 PST    1/16/20 11:15:14:029 PST com.ibm.ws.webcontainer.webapp.WebAppErrorReport com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter 144
+                                                                            - /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/myController/logs/ffdc/ffdc_20.01.16_11.15.09.2.log
+     3      3    1/16/20 11:15:09:770 PST    1/16/20 11:15:14:030 PST java.io.IOException com.ibm.ws.webcontainer.webapp.WebApp.handleError 912
+                                                                            - /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/myController/logs/ffdc/ffdc_20.01.16_11.15.09.3.log
+     4      3    1/16/20 11:15:10:014 PST    1/16/20 11:15:14:032 PST java.lang.IllegalStateException com.ibm.ws.webcontainer.webapp.WebApp.reportRecursiveError 985
+                                                                            - /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/myController/logs/ffdc/ffdc_20.01.16_11.15.10.0.log
+------+------+---------------------------+---------------------------+---------------------------

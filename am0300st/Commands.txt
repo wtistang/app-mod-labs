@@ -1,0 +1,24 @@
+/home/ibmdemo/cp4a-labs/shared/startWAS.sh
+
+sudo /opt/IBM/WebSphere/AppServer/profiles/AppSrv01/bin/stopServer.sh server1
+
+cd /home/ibmdemo/Downloads/modresorts10war_migrationBundle 
+
+docker build . -t default-route-openshift-image-registry.apps.demo.ibmdte.net/demo/modresorts-twas:latest
+
+docker images |grep twas
+
+docker run --name modsorts-twas -p 9443:9443 -d default-route-openshift-image-registry.apps.demo.ibmdte.net/demo/modresorts-twas:latest
+
+oc login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
+
+oc new-project demo
+
+docker login -u ibmadmin -p $(oc whoami -t) default-route-openshift-image-registry.apps.demo.ibmdte.net
+
+docker push default-route-openshift-image-registry.apps.demo.ibmdte.net/demo/modresorts-twas:latest
+
+cd /home/ibmdemo/cp4a-labs/am0300st
+
+oc apply -f deploy -n demo
+

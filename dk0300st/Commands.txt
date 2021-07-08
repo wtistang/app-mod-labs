@@ -1,0 +1,9 @@
+oc get nodes
+
+kubectl get nodes
+
+oc get pods
+
+oc get pods -–all-namespaces 
+
+oc project dk0200

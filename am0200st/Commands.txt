@@ -1,0 +1,34 @@
+
+/home/ibmdemo/cp4a-labs/shared/startWAS.sh
+
+sudo /opt/IBM/WebSphere/AppServer/profiles/AppSrv01/bin/stopServer.sh server1
+
+/home/ibmdemo/cp4a-labs/shared/wlp/bin/server create server1
+
+cp /home/ibmdemo/Downloads/modresorts10war_migrationBundle/target/*.war /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/server1/apps
+
+cp /home/ibmdemo/Downloads/modresorts10war_migrationBundle/src/main/liberty/config/server.xml /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/server1/server.xml
+
+/home/ibmdemo/cp4a-labs/shared/wlp/bin/server start server1
+
+cat /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/server1/logs/messages.log
+
+/home/ibmdemo/cp4a-labs/shared/wlp/bin/server stop server1
+
+cd /home/ibmdemo/Downloads/modresorts10war_migrationBundle
+
+docker build --no-cache -t default-route-openshift-image-registry.apps.demo.ibmdte.net/modresorts10war/modresorts10war:latest .
+
+docker run -p 9080:9080 default-route-openshift-image-registry.apps.demo.ibmdte.net/modresorts10war/modresorts10war:latest
+
+oc login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
+
+oc new-project modresorts10war
+
+docker login -u ibmadmin -p $(oc whoami -t) default-route-openshift-image-registry.apps.demo.ibmdte.net
+
+docker push default-route-openshift-image-registry.apps.demo.ibmdte.net/modresorts10war/modresorts10war:latest
+
+
+
+

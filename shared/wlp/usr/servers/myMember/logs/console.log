@@ -1,0 +1,77 @@
+Launching myMember (WebSphere Application Server 19.0.0.6/wlp-1.0.29.cl190620190617-1530) on OpenJDK 64-Bit Server VM, version 1.8.0_232-8u232-b09-0ubuntu1~18.04.1-b09 (en_US)
+[AUDIT   ] CWWKE0001I: The server myMember has been launched.
+[AUDIT   ] CWWKE0100I: This product is licensed for development, and limited production use. The full license terms can be viewed here: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/19.0.0.6/lafiles/en.html
+[WARNING ] CWWKL0012W: The library [jdbcDriver[Derby_JDBC_Provider_(XA)]/library[${service.pid}]] specifies a file with name [/home/ibmdemo/Student/icp4a-labs/shared/derby.jar]. This file either does not exist or is incorrectly specified.
+[AUDIT   ] CWWKZ0058I: Monitoring dropins for applications.
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://workstation:9084/IBMJMXConnectorREST/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://workstation:9084/ibm/api/
+[ERROR   ] CWWKE0701E: FrameworkEvent ERROR org.osgi.framework.ServiceException: Exception in com.ibm.ws.resource.internal.ResourceFactoryTrackerData$1.getService()
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:225)
+	at [internal classes]
+Caused by: java.lang.RuntimeException: java.sql.SQLNonTransientException: DSRA4000E: No implementations of org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource40 are found for dataSource[PBW XA DataSource] with library com.ibm.ws.classloading.sharedlibrary_64. The name or location of JDBC driver JAR files might be incorrect or inaccessible. Searched in: []. Searched under packages: [org.apache.derby.jdbc].
+	at com.ibm.ws.resource.internal.ResourceFactoryTrackerData$1.getService(ResourceFactoryTrackerData.java:122)
+	... 1 more
+Caused by: java.sql.SQLNonTransientException: DSRA4000E: No implementations of org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource40 are found for dataSource[PBW XA DataSource] with library com.ibm.ws.classloading.sharedlibrary_64. The name or location of JDBC driver JAR files might be incorrect or inaccessible. Searched in: []. Searched under packages: [org.apache.derby.jdbc].
+	at com.ibm.ws.jdbc.internal.JDBCDriverService.classNotFound(JDBCDriverService.java:220)
+	... 1 more
+Caused by: java.lang.ClassNotFoundException: org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource40
+	at com.ibm.ws.classloading.internal.AppClassLoader.findClassCommonLibraryClassLoaders(AppClassLoader.java:544)
+	... 1 more
+ Event:org.osgi.framework.FrameworkEvent[source=com.ibm.ws.jdbc_1.0.29.cl190620190617-1530 [193]] 
+[ERROR   ] CWWKE0701E: FrameworkEvent ERROR org.osgi.framework.ServiceException: Exception in com.ibm.ws.resource.internal.ResourceFactoryTrackerData$1.getService()
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:225)
+	at [internal classes]
+	at org.apache.openjpa.persistence.PersistenceUnitInfoImpl.toOpenJPAProperties(PersistenceUnitInfoImpl.java:396)
+	at org.apache.openjpa.persistence.PersistenceProductDerivation.load(PersistenceProductDerivation.java:317)
+	at org.apache.openjpa.persistence.PersistenceProviderImpl.createContainerEntityManagerFactory(PersistenceProviderImpl.java:161)
+	at org.apache.openjpa.persistence.PersistenceProviderImpl.createContainerEntityManagerFactory(PersistenceProviderImpl.java:62)
+	at com.ibm.ws.jpa.management.JPAPUnitInfo.createEMFactory(JPAPUnitInfo.java:911)
+	at [internal classes]
+Caused by: java.lang.RuntimeException: java.sql.SQLNonTransientException: DSRA4000E: No implementations of org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource40 are found for dataSource[PBW XA DataSource] with library com.ibm.ws.classloading.sharedlibrary_64. The name or location of JDBC driver JAR files might be incorrect or inaccessible. Searched in: []. Searched under packages: [org.apache.derby.jdbc].
+	at com.ibm.ws.resource.internal.ResourceFactoryTrackerData$1.getService(ResourceFactoryTrackerData.java:122)
+	... 7 more
+Caused by: java.sql.SQLNonTransientException: DSRA4000E: No implementations of org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource40 are found for dataSource[PBW XA DataSource] with library com.ibm.ws.classloading.sharedlibrary_64. The name or location of JDBC driver JAR files might be incorrect or inaccessible. Searched in: []. Searched under packages: [org.apache.derby.jdbc].
+	at com.ibm.ws.jdbc.internal.JDBCDriverService.classNotFound(JDBCDriverService.java:220)
+	... 7 more
+Caused by: java.lang.ClassNotFoundException: org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource40
+	at com.ibm.ws.classloading.internal.AppClassLoader.findClassCommonLibraryClassLoaders(AppClassLoader.java:544)
+	... 7 more
+ Event:org.osgi.framework.FrameworkEvent[source=com.ibm.ws.jdbc_1.0.29.cl190620190617-1530 [193]] 
+[ERROR   ] CWWKE0701E: FrameworkEvent ERROR org.osgi.framework.ServiceException: Exception in com.ibm.ws.resource.internal.ResourceFactoryTrackerData$1.getService()
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:225)
+	at [internal classes]
+	at org.apache.openjpa.persistence.PersistenceUnitInfoImpl.toOpenJPAProperties(PersistenceUnitInfoImpl.java:409)
+	at org.apache.openjpa.persistence.PersistenceProductDerivation.load(PersistenceProductDerivation.java:317)
+	at org.apache.openjpa.persistence.PersistenceProviderImpl.createContainerEntityManagerFactory(PersistenceProviderImpl.java:161)
+	at org.apache.openjpa.persistence.PersistenceProviderImpl.createContainerEntityManagerFactory(PersistenceProviderImpl.java:62)
+	at com.ibm.ws.jpa.management.JPAPUnitInfo.createEMFactory(JPAPUnitInfo.java:911)
+	at [internal classes]
+Caused by: java.lang.RuntimeException: java.sql.SQLNonTransientException: DSRA4000E: No implementations of org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource40 are found for dataSource[PBW non-JTA DataSource] with library com.ibm.ws.classloading.sharedlibrary_64. The name or location of JDBC driver JAR files might be incorrect or inaccessible. Searched in: []. Searched under packages: [org.apache.derby.jdbc].
+	at com.ibm.ws.resource.internal.ResourceFactoryTrackerData$1.getService(ResourceFactoryTrackerData.java:122)
+	... 7 more
+Caused by: java.sql.SQLNonTransientException: DSRA4000E: No implementations of org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource40 are found for dataSource[PBW non-JTA DataSource] with library com.ibm.ws.classloading.sharedlibrary_64. The name or location of JDBC driver JAR files might be incorrect or inaccessible. Searched in: []. Searched under packages: [org.apache.derby.jdbc].
+	at com.ibm.ws.jdbc.internal.JDBCDriverService.classNotFound(JDBCDriverService.java:220)
+	... 7 more
+Caused by: java.lang.ClassNotFoundException: org.apache.derby.jdbc.EmbeddedConnectionPoolDataSource40
+	at com.ibm.ws.classloading.internal.AppClassLoader.findClassCommonLibraryClassLoaders(AppClassLoader.java:544)
+	... 7 more
+ Event:org.osgi.framework.FrameworkEvent[source=com.ibm.ws.jdbc_1.0.29.cl190620190617-1530 [193]] 
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://workstation:9084/PlantsByWebSphere/
+[AUDIT   ] CWWKZ0001I: Application PlantsByWebSphereV8 started in 4.809 seconds.
+[AUDIT   ] CWWKF0012I: The server installed the following features: [appSecurity-2.0, beanValidation-1.1, cdi-1.2, collectiveMember-1.0, distributedMap-1.0, ejbLite-3.2, el-3.0, javaMail-1.5, jaxrs-2.0, jaxrsClient-2.0, jdbc-4.1, jndi-1.0, jpa-2.0, jsf-2.2, json-1.0, jsp-2.3, restConnector-1.0, servlet-3.1, ssl-1.0].
+[AUDIT   ] CWWKF0011I: The myMember server is ready to run a smarter planet. The myMember server started in 12.247 seconds.
+[WARNING ] 
+
+*******************************************************************
+*** WARNING: Apache MyFaces-2 is running in DEVELOPMENT mode.   ***
+***                                         ^^^^^^^^^^^         ***
+*** Do NOT deploy to your live server(s) without changing this. ***
+*** See Application#getProjectStage() for more information.     ***
+*******************************************************************
+
+[AUDIT   ] CWWKE0085I: The server myMember is stopping because the JVM is exiting.
+[AUDIT   ] CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://workstation:9084/PlantsByWebSphere/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://workstation:9084/IBMJMXConnectorREST/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://workstation:9084/ibm/api/
+[AUDIT   ] CWWKZ0009I: The application PlantsByWebSphereV8 has stopped successfully.

@@ -1,0 +1,99 @@
+
+authentication:
+  ocp:
+    edgeIp: ""
+    endpointPort: 8443
+    secretName: "transformation-advisor-secret"
+  oidc:
+    endpointPort: 8443
+    clientId: ca5282946fac07867fbc937548cb35d3ebbace7e
+    clientSecret: 94b6cbce793d0606c0df9e8d656a159f0c06631b
+
+# Default values for couchdb.
+couchdb:
+  image: ibmcom/transformation-advisor-db:2.0.1
+  ## Configure resource requests and limits
+  ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+  resources:
+    requests:
+      memory: 1Gi
+      cpu: 500m
+    limits:
+      memory: 8Gi
+      cpu: 16000m
+  livenessProbe:
+    initialDelaySeconds: 60
+    timeoutSeconds: 3
+    periodSeconds: 5
+    failureThreshold: 6
+  readinessProbe:
+    initialDelaySeconds: 5
+    timeoutSeconds: 3
+    periodSeconds: 5
+    failureThreshold: 6
+
+  ## Enable persistence using Persistent Volume Claims
+  ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+  ##
+  persistence:
+    enabled: true
+    accessMode: "ReadWriteOnce"
+    size: 8Gi
+    useDynamicProvisioning: true
+
+    ## A manually managed Persistent Volume and Claim
+    ## Requires persistence.enabled: true
+    ## If defined, PVC must be created manually before volume will be bound
+    ##
+    existingClaim: ""
+
+    ##incase of minikube hostpath volume set to MANUAL
+    storageClassName: ""
+
+# Default values for transformation advisor.
+transadv:
+  image: ibmcom/transformation-advisor-server:2.0.1
+  publicUrl: ""
+
+  ## Configure resource requests and limits
+  ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+  resources:
+    requests:
+      memory: 1Gi
+      cpu: 500m
+    limits:
+      memory: 4Gi
+      cpu: 16000m
+  livenessProbe:
+    initialDelaySeconds: 60
+    timeoutSeconds: 3
+    periodSeconds: 5
+    failureThreshold: 6
+  readinessProbe:
+    initialDelaySeconds: 5
+    timeoutSeconds: 3
+    periodSeconds: 5
+    failureThreshold: 6
+
+# Default values for transformation advisor ui.
+transadvui:
+  image: ibmcom/transformation-advisor-ui:2.0.1
+  ## Configure resource requests and limits
+  ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+  resources:
+    requests:
+      memory: 1Gi
+      cpu: 500m
+    limits:
+      memory: 4Gi
+      cpu: 16000m
+  livenessProbe:
+    initialDelaySeconds: 60
+    timeoutSeconds: 3
+    periodSeconds: 5
+    failureThreshold: 6
+  readinessProbe:
+    initialDelaySeconds: 5
+    timeoutSeconds: 3
+    periodSeconds: 5
+    failureThreshold: 6

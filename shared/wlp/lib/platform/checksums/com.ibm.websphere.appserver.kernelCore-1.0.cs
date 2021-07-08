@@ -1,0 +1,27 @@
+#Mon Jun 17 18:13:47 BST 2019
+lib/com.ibm.ws.diagnostics_1.0.29.jar=88ecf4c004cab72d610e086d80cb9f87
+lib/com.ibm.ws.org.apache.aries.util_1.0.29.jar=1a81fd7daa1fffd54aca1d24bcd369d5
+lib/com.ibm.ws.org.apache.felix.scr_1.0.29.jar=919795612fbca8ac8b68a11ef58b54ec
+lib/com.ibm.ws.kernel.service_1.3.29.jar=06f14890fc656dd01fb8087996e3309a
+lib/com.ibm.ws.crypto.passwordutil_1.0.29.jar=5f666f36ca86f257eeb95121971f8eab
+lib/org.eclipse.osgi_3.14.0.jar=0ed73cff81c9910d5c95f469c6a8b029
+lib/com.ibm.ws.threading_1.1.29.jar=feb7e1507a4174830d2f21beb40d3c30
+lib/com.ibm.ws.config.ext_1.0.29.jar=fbab08b58bf93abab008b37689c214fb
+lib/com.ibm.ws.config_1.0.29.jar=353576e3e188120f49d2f182326b1e77
+lib/com.ibm.ws.org.apache.aries.jmx.api_1.0.29.jar=357d769db7c33e670694f87ca9ee541b
+lib/com.ibm.ws.kernel.filemonitor_1.0.29.jar=5809d7748b3cdc872c61504e0082ebfc
+lib/com.ibm.ws.org.eclipse.equinox.coordinator_1.0.29.jar=c2838ea0b7af8bcdabfa4caeb9f4b31e
+lib/platform/kernelCore-1.0.mf=691860280829c147dd0b783ab3771757
+lib/com.ibm.ws.org.jboss.jandex_1.0.29.jar=9c9ecb289760f48f7ab846ccbd4a91b2
+lib/com.ibm.ws.kernel.feature_1.0.29.jar=acceebb4f93ee689413a24795aa34921
+lib/com.ibm.ws.jmx_1.0.29.jar=6ff5a6e462fac24f38663872cf0c7f77
+lib/com.ibm.ws.kernel.instrument.serialfilter.serverconfig_1.0.29.jar=716b7f16ce312ea87b6764620d6aadea
+lib/com.ibm.ws.kernel.equinox.module_1.0.29.jar=d6fcb120c1c49275601f63cb0e6df84f
+lib/com.ibm.ws.event_1.0.29.jar=a99676654c7bb752d97571737a5b790a
+lib/com.ibm.ws.org.eclipse.equinox.metatype_1.0.29.jar=336ecc1bf4d49d4d59e49ec54951f48c
+lib/com.ibm.ws.kernel.metatype.helper_1.0.29.jar=e58d49293cf3c4173f0c611074509a64
+lib/com.ibm.ws.kernel.instrument.serialfilter_1.0.29.jar=7185c0a5cdd9872daef12e50eab65cf6
+lib/com.ibm.ws.org.eclipse.equinox.region_1.0.29.jar=d6d6e4171437214aeeceb16fed617d2e
+lib/com.ibm.ws.org.apache.aries.jmx.core.whiteboard_1.0.29.jar=04c9a201e954461429fdb96089bd47f4
+lib/com.ibm.ws.org.objectweb.asm_1.0.29.jar=a9289a84b0078b25374e0a23cf76ad86
+lib/com.ibm.ws.runtime.update_1.0.29.jar=e6ad029e116d187748d22fba50145f7a

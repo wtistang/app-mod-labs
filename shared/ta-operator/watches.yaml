@@ -1,0 +1,5 @@
+---
+- version: v1
+  group: charts.ta.cloud.ibm.com
+  kind: TaRh
+  chart: /opt/helm/helm-charts/ta-rh

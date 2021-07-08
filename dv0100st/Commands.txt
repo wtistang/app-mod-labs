@@ -1,0 +1,63 @@
+cd /home/ibmdemo
+
+git clone https://github.com/wtistang/tekton-lab.git
+
+cd tekton-lab
+
+ls -l
+
+cd tekton-pipeline
+ls -l
+
+oc login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
+
+oc new-project tekton-lab
+
+oc create serviceaccount tekton-sa -n tekton-lab
+
+oc adm policy add-scc-to-user privileged -n tekton-lab -z tekton-sa  
+
+oc adm policy add-role-to-user edit -n tekton-lab -z tekton-sa
+
+oc adm policy add-role-to-user system:image-builder -n tekton-lab -z tekton-sa
+
+oc get secret $(oc get secret -n tekton-lab | grep tekton-sa-token | head -1 | awk '{print $1}') -n tekton-lab -o jsonpath="{.data.token}" | base64 -d > token.txt
+
+cat token.txt
+
+oc create secret generic tekton-lab-deployer-secret --from-literal=user=sa --from-file=token=token.txt -n tekton-lab
+
+oc describe secret tekton-lab-deployer-secret
+
+cd /home/ibmdemo/tekton-lab/tekton-pipeline
+
+cat git-resource.yaml 
+
+cat img-resource.yaml 
+
+oc create -f git-resource.yaml
+oc create -f img-resource.yaml
+
+oc get pipelineresources 
+
+cat task.yaml
+
+oc create -f ./task.yaml
+oc get tasks
+
+cat oc-deploy.yaml
+
+cat deployment.yaml
+
+oc create -f ./oc-deploy.yaml
+oc get tasks
+
+cat pipeline.yaml
+
+oc create -f ./pipeline.yaml
+oc get pipelines
+
+
+
+
+

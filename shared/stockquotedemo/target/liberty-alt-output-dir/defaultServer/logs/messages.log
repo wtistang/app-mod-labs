@@ -1,0 +1,17 @@
+********************************************************************************
+product = WebSphere Application Server 17.0.0.4 (wlp-1.0.19.201712061531)
+wlp.install.dir = /home/ibmdemo/eclipse-workspace1/stockquotedemo/target/liberty/wlp/
+server.output.dir = /home/ibmdemo/eclipse-workspace1/stockquotedemo/target/liberty-alt-output-dir/defaultServer/
+java.home = /usr/lib/jvm/java-8-openjdk-amd64/jre
+java.version = 1.8.0_162
+java.runtime = OpenJDK Runtime Environment (1.8.0_162-8u162-b12-0ubuntu0.16.04.2-b12)
+os = Linux (4.4.0-122-generic; amd64) (en_US)
+process = 27315@icpce
+********************************************************************************
+[5/7/18 5:39:19:557 PDT] 0000000c com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server defaultServer has been launched.
+[5/7/18 5:39:19:583 PDT] 0000000c com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0100I: This product is licensed for development, and limited production use. The full license terms can be viewed here: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/17.0.0.4/lafiles/en.html
+[5/7/18 5:39:21:495 PDT] 0000000c com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 1.937 seconds
+[5/7/18 5:39:21:542 PDT] 0000001a com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[5/7/18 5:39:21:579 PDT] 0000001a com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 0.086 seconds.
+[5/7/18 5:39:21:580 PDT] 0000001a com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0036I: The server defaultServer has finished gathering a list of required features.
+[5/7/18 5:39:21:659 PDT] 0000000c com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: The server defaultServer stopped after 2.102 seconds.

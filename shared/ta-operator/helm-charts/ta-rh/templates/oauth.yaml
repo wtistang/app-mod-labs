@@ -1,0 +1,8 @@
+apiVersion: oauth.openshift.io/v1
+kind: OAuthClient
+metadata:
+  name: ca5282946fac07867fbc937548cb35d3ebbace7e # this value needs to be the same as in Values.authentication.oidc.clientId in cr.ymal
+secret: 94b6cbce793d0606c0df9e8d656a159f0c06631b # this value needs to be the same as in Values.authentication.oidc.clientSecret in cr.ymal
+redirectURIs:
+- "https://{{ .Values.route.hostname }}/auth/callback"
+grantMethod: auto

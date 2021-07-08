@@ -1,0 +1,27 @@
+2019-11-07 17:17:04,597 p=11 u=root |  Executing playbook install.yaml
+2019-11-07 17:17:04,605 p=11 u=root |  Starting Install ***************************************************************
+2019-11-07 17:17:04,605 p=11 u=root |  - Install on hosts: 127.0.0.1 -
+
+2019-11-07 17:17:04,631 p=11 u=root |  Login To Cluster...
+2019-11-07 17:17:36,391 p=11 u=root |  127.0.0.1 failed: {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/login.sh",
+    "delta": "0:00:31.354900",
+    "end": "2019-11-07 17:17:36.358738",
+    "msg": "non-zero return code",
+    "rc": 1,
+    "start": "2019-11-07 17:17:05.003838",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Using provided cluster configuration.\nNot logged in.",
+    "stdout_lines": [
+        "Using provided cluster configuration.",
+        "Not logged in."
+    ]
+}
+2019-11-07 17:17:36,395 p=11 u=root |  - Play recap -
+2019-11-07 17:17:36,395 p=11 u=root |    127.0.0.1                  : ok=0    changed=0    unreachable=0    failed=1    rescued=0    ignored=0   
+2019-11-07 17:17:36,395 p=11 u=root |  Install failed *****************************************************************

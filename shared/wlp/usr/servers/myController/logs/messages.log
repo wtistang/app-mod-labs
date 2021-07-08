@@ -1,0 +1,365 @@
+********************************************************************************
+product = WebSphere Application Server 19.0.0.6 (wlp-1.0.29.cl190620190617-1530)
+wlp.install.dir = /home/ibmdemo/cp4a-labs/shared/wlp/
+java.home = /usr/lib/jvm/java-8-openjdk-amd64/jre
+java.version = 1.8.0_232
+java.runtime = OpenJDK Runtime Environment (1.8.0_232-8u232-b09-0ubuntu1~18.04.1-b09)
+os = Linux (4.15.0-74-generic; amd64) (en_US)
+process = 20692@workstation
+********************************************************************************
+[1/16/20 11:13:24:595 PST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server myController has been launched.
+[1/16/20 11:13:24:624 PST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0100I: This product is licensed for development, and limited production use. The full license terms can be viewed here: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/19.0.0.6/lafiles/en.html
+[1/16/20 11:13:26:200 PST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 1.93 seconds
+[1/16/20 11:13:26:207 PST] 0000001c com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[1/16/20 11:13:26:733 PST] 00000013 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0007I: The security service is starting...
+[1/16/20 11:13:27:407 PST] 00000013 com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitoring dropins for applications.
+[1/16/20 11:13:27:461 PST] 00000020 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host workstation  (IPv4: 10.0.0.1) port 9082.
+[1/16/20 11:13:27:853 PST] 00000026 com.ibm.ws.security.token.ltpa.internal.LTPAKeyCreateTask    I CWWKS4105I: LTPA configuration is ready after 0.039 seconds.
+[1/16/20 11:13:27:873 PST] 00000013 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1123I: The collective authentication plugin with class name MemberCollectiveAuthenticationPlugin has been activated. 
+[1/16/20 11:13:28:093 PST] 00000016 com.ibm.ws.ssl.config.WSKeyStore                             I Successfully loaded default keystore: /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/myController/resources/security/key.p12 of type: PKCS12
+[1/16/20 11:13:28:097 PST] 00000013 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0008I: The security service is ready.
+[1/16/20 11:13:28:158 PST] 00000013 com.ibm.ws.security.jaspi.AuthConfigFactoryWrapper           I CWWKS1655I: The default Java Authentication SPI for Containers (JASPIC) AuthConfigFactory class com.ibm.ws.security.jaspi.ProviderRegistry is being used because the Java security property authconfigprovider.factory is not set. 
+[1/16/20 11:13:28:821 PST] 0000002e com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint-ssl has been started and is now listening for requests on host workstation  (IPv4: 10.0.0.1) port 9445.
+[1/16/20 11:13:29:140 PST] 00000013 com.ibm.ws.cache.ServerCache                                 I DYNA1001I: WebSphere Dynamic Cache instance named baseCache initialized successfully.
+[1/16/20 11:13:29:144 PST] 00000013 com.ibm.ws.cache.ServerCache                                 I DYNA1071I: The cache provider default is being used.
+[1/16/20 11:13:29:146 PST] 00000013 com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[1/16/20 11:13:29:720 PST] 00000013 appe.utils.common.customization.CustomizationManager:default I CWWKX6025I: The collective controller configuration parameter disableffdc is missing. The default value false is used.
+[1/16/20 11:13:30:236 PST] 00000013 service.multiplexed.impl.ReplicationServiceMultiplexer:10010 I Sync state changed to true
+[1/16/20 11:13:30:237 PST] 00000013 service.multiplexed.impl.ReplicationServiceMultiplexer:10010 I CWWKX6012I: The collective controller is temporarily unavailable, probably due to a change in the replica set. It should become available within a few seconds. Current active replica set is []. The configured replica set is [10.0.0.1:10010].
+[1/16/20 11:13:30:237 PST] 00000013 com.ibm.ws.frappe.paxos.impl.CommandsExecutor:10010          I CWWKX6013I: The collective controller state is {S_ACCEPTOR}, last proposed command is -1, the last accepted command is 118, the last executed command is 0 and the log is 118.
+[1/16/20 11:13:30:394 PST] 00000036 .utils.service.multiplexed.impl.UniverseAndReplicaData:10010 I CWWKX6009I: The collective controller successfully connected to replica 10.0.0.1:10010. Current active replica set is [10.0.0.1:10010]. The configured replica set is [10.0.0.1:10010]. The connected standby replicas are [].
+[1/16/20 11:13:30:742 PST] 00000013 com.ibm.ws.ui.internal.v1.pojo.POJOLoaderService             I CWWKX1015I: FILE persistence layer initialized for the Admin Center.
+[1/16/20 11:13:30:744 PST] 00000013 com.ibm.ws.ui.internal.v1.pojo.PlainTextLoaderService        I CWWKX1063I: FILE persistence layer initialized for the Admin Center tool data loader.
+[1/16/20 11:13:32:507 PST] 0000001c com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [adminCenter-1.0, appSecurity-2.0, appSecurity-3.0, beanValidation-2.0, cdi-2.0, collectiveController-1.0, collectiveMember-1.0, distributedMap-1.0, ejbLite-3.2, el-3.0, jaspic-1.1, jaxrs-2.1, jaxrsClient-2.1, jdbc-4.2, jndi-1.0, jpa-2.2, jpaContainer-2.2, jsf-2.3, json-1.0, jsonb-1.0, jsonp-1.1, jsp-2.3, managedBeans-1.0, restConnector-2.0, servlet-4.0, ssl-1.0, webProfile-8.0, websocket-1.1].
+[1/16/20 11:13:32:508 PST] 0000001c com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 6.381 seconds.
+[1/16/20 11:13:32:508 PST] 0000001c com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The myController server is ready to run a smarter planet. The myController server started in 8.315 seconds.
+[1/16/20 11:13:32:510 PST] 00000036 service.multiplexed.impl.ReplicationServiceMultiplexer:10010 I Sync state changed to true
+[1/16/20 11:13:32:878 PST] 0000002e com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: IBMJMXConnectorREST.
+[1/16/20 11:13:32:878 PST] 00000034 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: The Liberty Deploy Tool.
+[1/16/20 11:13:32:879 PST] 00000033 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: The Liberty Explore Tool.
+[1/16/20 11:13:32:878 PST] 00000038 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: The Liberty Server Config Tool.
+[1/16/20 11:13:32:878 PST] 00000031 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: com.ibm.ws.collective.rest.notify.
+[1/16/20 11:13:32:879 PST] 0000002c com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: ibm/api.
+[1/16/20 11:13:32:884 PST] 0000002c com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module ibm/api has been bound to default_host.
+[1/16/20 11:13:32:883 PST] 00000038 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module The Liberty Server Config Tool has been bound to default_host.
+[1/16/20 11:13:32:883 PST] 00000031 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module com.ibm.ws.collective.rest.notify has been bound to default_host.
+[1/16/20 11:13:32:882 PST] 00000033 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module The Liberty Explore Tool has been bound to default_host.
+[1/16/20 11:13:32:882 PST] 00000034 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module The Liberty Deploy Tool has been bound to default_host.
+[1/16/20 11:13:32:882 PST] 0000002e com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module IBMJMXConnectorREST has been bound to default_host.
+[1/16/20 11:13:32:887 PST] 0000002c com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/api/
+[1/16/20 11:13:32:893 PST] 0000002e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/IBMJMXConnectorREST/
+[1/16/20 11:13:32:895 PST] 0000002e com.ibm.ws.jmx.connector.server.rest.RESTAppListener         I CWWKX0103I: The JMX REST connector is running and is available at the following service URL: service:jmx:rest://workstation:9445/IBMJMXConnectorREST
+[1/16/20 11:13:32:896 PST] 0000002e com.ibm.ws.jmx.connector.server.rest.RESTAppListener         I CWWKX0103I: The JMX REST connector is running and is available at the following service URL: service:jmx:rest://workstation:9445/IBMJMXConnectorREST
+[1/16/20 11:13:32:899 PST] 00000034 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/adminCenter/deploy-1.0/
+[1/16/20 11:13:32:899 PST] 00000033 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/adminCenter/explore-1.0/
+[1/16/20 11:13:32:901 PST] 00000031 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/api/collective/notify/
+[1/16/20 11:13:32:902 PST] 00000038 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/adminCenter/serverConfig-1.0/
+[1/16/20 11:13:32:946 PST] 00000032 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: The Liberty Admin Center.
+[1/16/20 11:13:32:946 PST] 00000032 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module The Liberty Admin Center has been bound to default_host.
+[1/16/20 11:13:32:947 PST] 00000032 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/adminCenter/
+[1/16/20 11:13:33:003 PST] 00000027 com.ibm.ws.session.WASSessionCore                            I SESN8501I: The session manager did not find a persistent storage location; HttpSession objects will be stored in the local application server's memory.
+[1/16/20 11:13:33:116 PST] 00000027 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/myController/logs/state/plugin-cfg.xml.
+[1/16/20 11:13:33:278 PST] 00000020 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ibm/adminCenter/serverConfig-1.0
+[1/16/20 11:13:33:282 PST] 0000003e com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ibm/adminCenter/deploy-1.0
+[1/16/20 11:13:33:282 PST] 0000003d com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ibm/api
+[1/16/20 11:13:33:283 PST] 00000021 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ibm/api/collective/notify
+[1/16/20 11:13:33:282 PST] 0000001d com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/IBMJMXConnectorREST
+[1/16/20 11:13:33:282 PST] 0000001e com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ibm/adminCenter/explore-1.0
+[1/16/20 11:13:33:283 PST] 00000029 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/adminCenter
+[1/16/20 11:13:33:319 PST] 00000020 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 11:13:33:328 PST] 00000029 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 11:13:33:330 PST] 0000001e com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 11:13:33:330 PST] 0000001d com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 11:13:33:331 PST] 00000021 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 11:13:33:332 PST] 0000003d com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 11:13:33:332 PST] 0000003e com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 11:13:33:441 PST] 0000001d org.hibernate.validator.internal.util.Version                I HV000001: Hibernate Validator 6.0.13.Final
+[1/16/20 11:13:33:519 PST] 00000036 service.multiplexed.impl.ReplicationServiceMultiplexer:10010 I CWWKX6014I: This collective controller replica finished synchronizing the data with the other replicas. The log is 119.   
+[1/16/20 11:13:33:520 PST] 00000036 service.multiplexed.impl.ReplicationServiceMultiplexer:10010 I CWWKX6011I: The collective controller is ready, and can accept requests. The leader is 10.0.0.1:10010. Current active replica set is [10.0.0.1:10010]. The configured replica set is [10.0.0.1:10010].
+[1/16/20 11:13:33:531 PST] 00000039 m.ws.collective.repository.internal.CollectiveElectorFactory I CWWKX9079I: The CollectiveElectorFactory is available.
+[1/16/20 11:13:33:631 PST] 0000003b collective.repository.internal.CollectiveRepositoryMBeanImpl I CWWKX9000I: The CollectiveRepository MBean is available.
+[1/16/20 11:13:33:652 PST] 0000003b com.ibm.ws.ui.internal.v1.pojo.POJOLoaderService             I CWWKX1015I: COLLECTIVE persistence layer initialized for the Admin Center.
+[1/16/20 11:13:33:655 PST] 0000003b com.ibm.ws.ui.internal.v1.pojo.PlainTextLoaderService        I CWWKX1063I: COLLECTIVE persistence layer initialized for the Admin Center tool data loader.
+[1/16/20 11:13:33:808 PST] 0000003b ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1123I: The collective authentication plugin with class name CollectiveAuthenticationPluginImpl has been activated. 
+[1/16/20 11:13:33:814 PST] 0000003f collective.member.internal.publisher.RepositoryPublisherImpl I CWWKX8116I: The server STARTED state was successfully published to the collective repository.
+[1/16/20 11:13:33:824 PST] 0000002d ective.singleton.internal.SingletonServiceMessengerMBeanImpl I CWWKX1000I: The SingletonMessenger MBean is available.
+[1/16/20 11:13:33:826 PST] 0000003b om.ibm.ws.collective.repository.internal.SharedConfigManager I CWWKX9065I: The ControllerConfig MBean is available.
+[1/16/20 11:13:33:836 PST] 0000003b e.repository.internal.metadata.AdminMetadataManagerMBeanImpl I CWWKX9069I: The AdminMetadataManager MBean is available.
+[1/16/20 11:13:33:859 PST] 0000003b ws.collective.singleton.internal.SingletonServiceManagerImpl I CWWKX1002I: Singleton service FailoverSingletonService for scope collective is created.
+[1/16/20 11:13:33:910 PST] 0000003b om.ibm.ws.collective.singleton.internal.SingletonServiceImpl I CWWKX1019I: The local singleton candidate is elected leader: host=workstation; userdir=/home/ibmdemo/cp4a-labs/shared/wlp/usr/; server=myController; port=9445; service=FailoverSingletonService; scope=collective
+[1/16/20 11:13:33:925 PST] 0000003b lective.repository.internal.RepositoryConfigurationMBeanImpl I CWWKX9049I: The RepositoryConfiguration MBean is available.
+[1/16/20 11:13:33:987 PST] 0000003b m.ibm.ws.collective.command.internal.ServerCommandsMBeanImpl I CWWKX7200I: The ServerCommands MBean is available.
+[1/16/20 11:13:34:005 PST] 0000003b com.ibm.ws.collective.deploy.internal.DeployServiceImpl      I CWWKX7240I: The DeployService is available.
+[1/16/20 11:13:34:012 PST] 0000002e ws.collective.member.internal.publisher.ServerPathsPublisher I CWWKX8114I: The server's paths were successfully published to the collective repository. 
+[1/16/20 11:13:34:074 PST] 0000003b bm.ws.collective.repository.internal.ClusterManagerMBeanImpl I CWWKX9030I: The ClusterManager MBean is available.
+[1/16/20 11:13:34:085 PST] 00000037 com.ibm.ws.filetransfer.internal.mbean.FileService           I CWWKX7912I: The FileServiceMXBean attribute ReadList was successfully updated.
+[1/16/20 11:13:34:092 PST] 0000002d com.ibm.ws.filetransfer.internal.mbean.FileService           I CWWKX7912I: The FileServiceMXBean attribute WriteList was successfully updated.
+[1/16/20 11:13:34:138 PST] 0000001e com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[1/16/20 11:13:34:175 PST] 0000003e org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 11:13:34:176 PST] 0000003d org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 11:13:34:175 PST] 0000001e org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 11:13:34:176 PST] 00000020 org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 11:13:34:176 PST] 00000029 org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 11:13:34:176 PST] 0000001d org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 11:13:34:184 PST] 00000021 com.ibm.ws.wsoc.EndpointManager                              I CWWKH0046I: Adding a WebSocket ServerEndpoint with the following URI: /
+[1/16/20 11:13:34:186 PST] 00000021 org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 11:13:34:244 PST] 0000003b llective.repository.internal.CollectiveRegistrationMBeanImpl I CWWKX9003I: CollectiveRegistration MBean is available.
+[1/16/20 11:13:34:249 PST] 0000002c m.ws.collective.member.internal.publisher.HostAuthConfigImpl I CWWKX8122I: The default SSH key-based configuration is being used for the host authentication configuration.
+[1/16/20 11:13:34:251 PST] 0000002c com.ibm.ws.collective.member.ServerManagementPublisher       I CWWKX8154I: The remote host authentication for this server has been configured with the collective-wide SSH key.
+[1/16/20 11:13:34:270 PST] 00000026 com.ibm.ws.collective.member.ServerManagementPublisher       I CWWKX8112I: The server's host information was successfully published to the collective repository. 
+[1/16/20 11:13:34:509 PST] 0000001d com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [com.ibm.ws.jmx.connector.server.rest] [/IBMJMXConnectorREST] [JMXRESTProxyServlet]: Initialization successful.
+[1/16/20 11:13:41:403 PST] 0000003c collective.repository.internal.CollectiveRepositoryMBeanImpl I CWWKX9076I: The collective member myMember on host workstation with the user directory %2Fhome%2Fibmdemo%2Fcp4a-labs%2Fshared%2Fwlp%2Fusr connected to the collective controller.
+[1/16/20 11:14:56:141 PST] 0000002a com.ibm.ws.security.token.internal.TokenManagerImpl          I CWWKS4001I: The security token cannot be validated. This can be for the following reasons
+1. The security token was generated on another server using different keys.
+2. The token configuration or the security keys of the token service which created the token has been changed.
+3. The token service which created the token is no longer available.
+[1/16/20 11:14:56:308 PST] 00000052 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [com.ibm.ws.ui] [/adminCenter] [/login.jsp]: Initialization successful.
+[1/16/20 11:15:08:652 PST] 00000052 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [com.ibm.ws.ui] [/adminCenter] [/toolbox.jsp]: Initialization successful.
+[1/16/20 11:15:08:716 PST] 00000026 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [com.ibm.ws.rest.handler] [/ibm/api] [RESTProxyServlet]: Initialization successful.
+[1/16/20 11:15:09:011 PST] 00000026 com.ibm.ws.ui.internal.v1.pojo.POJOLoaderService             I CWWKX1006I: The Admin Center catalog loaded.
+[1/16/20 11:15:09:188 PST] 00000026 com.ibm.ws.ui.internal.v1.pojo.POJOLoaderService             I CWWKX1034I: The Admin Center toolbox for user admin loaded.
+[1/16/20 11:15:09:522 PST] 00000040 com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: "javax.servlet.ServletException: java.io.IOException: Broken pipe com.ibm.ws.webcontainer.servlet.FileServletWrapper.handleRequest 309" at ffdc_20.01.16_11.15.09.0.log
+[1/16/20 11:15:09:690 PST] 00000040 com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: "com.ibm.ws.webcontainer.webapp.WebAppErrorReport: javax.servlet.ServletException: java.io.IOException: Broken pipe com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter 82" at ffdc_20.01.16_11.15.09.1.log
+[1/16/20 11:15:09:726 PST] 00000040 com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: "com.ibm.ws.webcontainer.webapp.WebAppErrorReport: javax.servlet.ServletException: java.io.IOException: Broken pipe com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter 144" at ffdc_20.01.16_11.15.09.2.log
+[1/16/20 11:15:09:730 PST] 00000040 com.ibm.ws.webcontainer.srt                                  W SRVE8115W: WARNING: Cannot set status. Response already committed.
+[1/16/20 11:15:09:769 PST] 00000040 com.ibm.ws.webcontainer.srt                                  W SRVE8094W: WARNING: Cannot set header. Response already committed.  Stack trace of errant attempt to set header: 
+        at com.ibm.ws.webcontainer.srt.SRTServletResponse.addHeader(SRTServletResponse.java:2193)
+        at [internal classes].(Unknown Source)
+
+[1/16/20 11:15:10:006 PST] 00000040 com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: "java.io.IOException: Broken pipe com.ibm.ws.webcontainer.webapp.WebApp.handleError 912" at ffdc_20.01.16_11.15.09.3.log
+[1/16/20 11:15:10:008 PST] 00000040 com.ibm.ws.webcontainer.webapp                               E Error Page Exception: 
+                                                                                                               com.ibm.ws.ui
+                                                                                                               /adminCenter
+                                                                                                               Error Page Exception
+                                                                                                               com.ibm.ws.webcontainer.webapp.WebAppErrorReport: java.io.IOException: Broken pipe
+	at com.ibm.ws.webcontainer.webapp.WebApp.sendError(WebApp.java:4313)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1277)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4975)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:314)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1007)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:279)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1061)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:417)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:376)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:466)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:331)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:70)
+	at com.ibm.ws.channel.ssl.internal.SSLReadServiceContext$SSLReadCompletedCallback.complete(SSLReadServiceContext.java:1803)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:503)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:573)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:954)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1043)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:239)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: Broken pipe
+	at sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:51)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+	at com.ibm.ws.tcpchannel.internal.NioSocketIOChannel.write(NioSocketIOChannel.java:201)
+	at com.ibm.ws.tcpchannel.internal.NioSocketIOChannel.attemptWriteToSocketUsingNIO(NioSocketIOChannel.java:139)
+	at com.ibm.ws.tcpchannel.internal.SocketIOChannel.attemptWriteToSocket(SocketIOChannel.java:198)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:594)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.processWork(WorkQueueManager.java:303)
+	at com.ibm.ws.tcpchannel.internal.NioTCPWriteRequestContextImpl.processSyncWriteRequest(NioTCPWriteRequestContextImpl.java:65)
+	at com.ibm.ws.tcpchannel.internal.TCPWriteRequestContextImpl.write(TCPWriteRequestContextImpl.java:96)
+	at com.ibm.ws.channel.ssl.internal.SSLWriteServiceContext.write(SSLWriteServiceContext.java:171)
+	at com.ibm.ws.http.channel.internal.HttpServiceContextImpl.synchWrite(HttpServiceContextImpl.java:2692)
+	at com.ibm.ws.http.channel.internal.HttpServiceContextImpl.sendOutgoing(HttpServiceContextImpl.java:2339)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundServiceContextImpl.sendResponseBody(HttpInboundServiceContextImpl.java:797)
+	at com.ibm.ws.http.channel.internal.outbound.HttpOutputStreamImpl.flushBuffers(HttpOutputStreamImpl.java:514)
+	at com.ibm.ws.http.channel.internal.outbound.HttpOutputStreamImpl.writeToBuffers(HttpOutputStreamImpl.java:312)
+	at com.ibm.ws.http.channel.internal.outbound.HttpOutputStreamImpl.write(HttpOutputStreamImpl.java:655)
+	at com.ibm.ws.webcontainer.osgi.response.WCOutputStream.write(WCOutputStream.java:250)
+	at com.ibm.ws.webcontainer31.osgi.response.WCOutputStream31.write(WCOutputStream31.java:217)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.writeByBytes(FileServletWrapper.java:1019)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.writeResponseToClient(FileServletWrapper.java:962)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.service(FileServletWrapper.java:695)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.handleRequest(FileServletWrapper.java:518)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.handleRequest(FileServletWrapper.java:268)
+	at com.ibm.ws.webcontainer.extension.DefaultExtensionProcessor.handleRequest(DefaultExtensionProcessor.java:895)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:182)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.app.manager.wab.internal.OsgiDirectoryProtectionFilter.doFilter(OsgiDirectoryProtectionFilter.java:90)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:201)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:56)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:201)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:996)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1134)
+	... 20 more
+
+[1/16/20 11:15:10:194 PST] 00000040 com.ibm.ws.logging.internal.impl.IncidentImpl                I FFDC1015I: An FFDC Incident has been created: "java.lang.IllegalStateException: SRVE0199E: OutputStream already obtained com.ibm.ws.webcontainer.webapp.WebApp.reportRecursiveError 985" at ffdc_20.01.16_11.15.10.0.log
+[1/16/20 11:15:13:673 PST] 00000045 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [com.ibm.ws.ui.tool.explore] [/ibm/adminCenter/explore-1.0] [/index.jsp]: Initialization successful.
+[1/16/20 11:15:13:896 PST] 00000050 com.ibm.ws.webcontainer.srt                                  W SRVE8115W: WARNING: Cannot set status. Response already committed.
+[1/16/20 11:15:13:896 PST] 00000050 com.ibm.ws.webcontainer.srt                                  W SRVE8094W: WARNING: Cannot set header. Response already committed.  Stack trace of errant attempt to set header: 
+        at com.ibm.ws.webcontainer.srt.SRTServletResponse.addHeader(SRTServletResponse.java:2193)
+        at [internal classes].(Unknown Source)
+
+[1/16/20 11:15:13:897 PST] 00000050 com.ibm.ws.webcontainer.webapp                               E Error Page Exception: 
+                                                                                                               com.ibm.ws.ui.tool.explore
+                                                                                                               /ibm/adminCenter/explore-1.0
+                                                                                                               Error Page Exception
+                                                                                                               com.ibm.ws.webcontainer.webapp.WebAppErrorReport: java.io.IOException: Broken pipe
+	at com.ibm.ws.webcontainer.webapp.WebApp.sendError(WebApp.java:4313)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1277)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4975)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:314)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1007)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:279)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1061)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:417)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:376)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:466)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:331)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:70)
+	at com.ibm.ws.channel.ssl.internal.SSLReadServiceContext$SSLReadCompletedCallback.complete(SSLReadServiceContext.java:1803)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:503)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:573)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:954)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1043)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:239)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: Broken pipe
+	at sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:51)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+	at com.ibm.ws.tcpchannel.internal.NioSocketIOChannel.write(NioSocketIOChannel.java:201)
+	at com.ibm.ws.tcpchannel.internal.NioSocketIOChannel.attemptWriteToSocketUsingNIO(NioSocketIOChannel.java:139)
+	at com.ibm.ws.tcpchannel.internal.SocketIOChannel.attemptWriteToSocket(SocketIOChannel.java:198)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:594)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.processWork(WorkQueueManager.java:303)
+	at com.ibm.ws.tcpchannel.internal.NioTCPWriteRequestContextImpl.processAsyncWriteRequest(NioTCPWriteRequestContextImpl.java:102)
+	at com.ibm.ws.tcpchannel.internal.TCPWriteRequestContextImpl.writeInternal(TCPWriteRequestContextImpl.java:320)
+	at com.ibm.ws.tcpchannel.internal.NioTCPWriteRequestContextImpl.processSyncWriteRequest(NioTCPWriteRequestContextImpl.java:58)
+	at com.ibm.ws.tcpchannel.internal.TCPWriteRequestContextImpl.write(TCPWriteRequestContextImpl.java:96)
+	at com.ibm.ws.channel.ssl.internal.SSLWriteServiceContext.write(SSLWriteServiceContext.java:171)
+	at com.ibm.ws.http.channel.internal.HttpServiceContextImpl.synchWrite(HttpServiceContextImpl.java:2692)
+	at com.ibm.ws.http.channel.internal.HttpServiceContextImpl.sendOutgoing(HttpServiceContextImpl.java:2339)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundServiceContextImpl.sendResponseBody(HttpInboundServiceContextImpl.java:797)
+	at com.ibm.ws.http.channel.internal.outbound.HttpOutputStreamImpl.flushBuffers(HttpOutputStreamImpl.java:514)
+	at com.ibm.ws.http.channel.internal.outbound.HttpOutputStreamImpl.writeToBuffers(HttpOutputStreamImpl.java:312)
+	at com.ibm.ws.http.channel.internal.outbound.HttpOutputStreamImpl.write(HttpOutputStreamImpl.java:655)
+	at com.ibm.ws.webcontainer.osgi.response.WCOutputStream.write(WCOutputStream.java:250)
+	at com.ibm.ws.webcontainer31.osgi.response.WCOutputStream31.write(WCOutputStream31.java:217)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.writeByBytes(FileServletWrapper.java:1019)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.writeResponseToClient(FileServletWrapper.java:962)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.service(FileServletWrapper.java:695)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.handleRequest(FileServletWrapper.java:518)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.handleRequest(FileServletWrapper.java:268)
+	at com.ibm.ws.webcontainer.extension.DefaultExtensionProcessor.handleRequest(DefaultExtensionProcessor.java:895)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:182)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.app.manager.wab.internal.OsgiDirectoryProtectionFilter.doFilter(OsgiDirectoryProtectionFilter.java:90)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:201)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:56)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:201)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:996)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1134)
+	... 20 more
+
+[1/16/20 11:15:14:029 PST] 00000033 com.ibm.ws.webcontainer.srt                                  W SRVE8115W: WARNING: Cannot set status. Response already committed.
+[1/16/20 11:15:14:029 PST] 00000033 com.ibm.ws.webcontainer.srt                                  W SRVE8094W: WARNING: Cannot set header. Response already committed.  Stack trace of errant attempt to set header: 
+        at com.ibm.ws.webcontainer.srt.SRTServletResponse.addHeader(SRTServletResponse.java:2193)
+        at [internal classes].(Unknown Source)
+
+[1/16/20 11:15:14:030 PST] 00000033 com.ibm.ws.webcontainer.webapp                               E Error Page Exception: 
+                                                                                                               com.ibm.ws.ui.tool.explore
+                                                                                                               /ibm/adminCenter/explore-1.0
+                                                                                                               Error Page Exception
+                                                                                                               com.ibm.ws.webcontainer.webapp.WebAppErrorReport: java.io.IOException: Broken pipe
+	at com.ibm.ws.webcontainer.webapp.WebApp.sendError(WebApp.java:4313)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1277)
+	at com.ibm.ws.webcontainer.webapp.WebApp.handleRequest(WebApp.java:4975)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.handleRequest(DynamicVirtualHost.java:314)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:1007)
+	at com.ibm.ws.webcontainer.osgi.DynamicVirtualHost$2.run(DynamicVirtualHost.java:279)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink$TaskWrapper.run(HttpDispatcherLink.java:1061)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.wrapHandlerAndExecute(HttpDispatcherLink.java:417)
+	at com.ibm.ws.http.dispatcher.internal.channel.HttpDispatcherLink.ready(HttpDispatcherLink.java:376)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:532)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.handleNewRequest(HttpInboundLink.java:466)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundLink.processRequest(HttpInboundLink.java:331)
+	at com.ibm.ws.http.channel.internal.inbound.HttpICLReadCallback.complete(HttpICLReadCallback.java:70)
+	at com.ibm.ws.channel.ssl.internal.SSLReadServiceContext$SSLReadCompletedCallback.complete(SSLReadServiceContext.java:1803)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.requestComplete(WorkQueueManager.java:503)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:573)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.workerRun(WorkQueueManager.java:954)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager$Worker.run(WorkQueueManager.java:1043)
+	at com.ibm.ws.threading.internal.ExecutorServiceImpl$RunnableWrapper.run(ExecutorServiceImpl.java:239)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: Broken pipe
+	at sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:51)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+	at com.ibm.ws.tcpchannel.internal.NioSocketIOChannel.write(NioSocketIOChannel.java:201)
+	at com.ibm.ws.tcpchannel.internal.NioSocketIOChannel.attemptWriteToSocketUsingNIO(NioSocketIOChannel.java:139)
+	at com.ibm.ws.tcpchannel.internal.SocketIOChannel.attemptWriteToSocket(SocketIOChannel.java:198)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.attemptIO(WorkQueueManager.java:594)
+	at com.ibm.ws.tcpchannel.internal.WorkQueueManager.processWork(WorkQueueManager.java:303)
+	at com.ibm.ws.tcpchannel.internal.NioTCPWriteRequestContextImpl.processSyncWriteRequest(NioTCPWriteRequestContextImpl.java:65)
+	at com.ibm.ws.tcpchannel.internal.TCPWriteRequestContextImpl.write(TCPWriteRequestContextImpl.java:96)
+	at com.ibm.ws.channel.ssl.internal.SSLWriteServiceContext.write(SSLWriteServiceContext.java:171)
+	at com.ibm.ws.http.channel.internal.HttpServiceContextImpl.synchWrite(HttpServiceContextImpl.java:2692)
+	at com.ibm.ws.http.channel.internal.HttpServiceContextImpl.sendOutgoing(HttpServiceContextImpl.java:2339)
+	at com.ibm.ws.http.channel.internal.inbound.HttpInboundServiceContextImpl.sendResponseBody(HttpInboundServiceContextImpl.java:797)
+	at com.ibm.ws.http.channel.internal.outbound.HttpOutputStreamImpl.flushBuffers(HttpOutputStreamImpl.java:514)
+	at com.ibm.ws.http.channel.internal.outbound.HttpOutputStreamImpl.writeToBuffers(HttpOutputStreamImpl.java:312)
+	at com.ibm.ws.http.channel.internal.outbound.HttpOutputStreamImpl.write(HttpOutputStreamImpl.java:655)
+	at com.ibm.ws.webcontainer.osgi.response.WCOutputStream.write(WCOutputStream.java:250)
+	at com.ibm.ws.webcontainer31.osgi.response.WCOutputStream31.write(WCOutputStream31.java:217)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.writeByBytes(FileServletWrapper.java:1019)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.writeResponseToClient(FileServletWrapper.java:962)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.service(FileServletWrapper.java:695)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.handleRequest(FileServletWrapper.java:518)
+	at com.ibm.ws.webcontainer.servlet.FileServletWrapper.handleRequest(FileServletWrapper.java:268)
+	at com.ibm.ws.webcontainer.extension.DefaultExtensionProcessor.handleRequest(DefaultExtensionProcessor.java:895)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.invokeTarget(WebAppFilterChain.java:182)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:93)
+	at com.ibm.ws.app.manager.wab.internal.OsgiDirectoryProtectionFilter.doFilter(OsgiDirectoryProtectionFilter.java:90)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:201)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.security.jaspi.JaspiServletFilter.doFilter(JaspiServletFilter.java:56)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:201)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:90)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:996)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters(WebAppFilterManager.java:1134)
+	... 20 more
+
+[1/16/20 11:19:44:822 PST] 00000010 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0085I: The server myController is stopping because the JVM is exiting.
+[1/16/20 11:19:44:839 PST] 0000005f com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  A CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[1/16/20 11:19:44:864 PST] 00000031 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint-ssl has stopped listening for requests on host workstation  (IPv4: 10.0.0.1) port 9445.
+[1/16/20 11:19:44:874 PST] 00000031 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint has stopped listening for requests on host workstation  (IPv4: 10.0.0.1) port 9082.
+[1/16/20 11:19:44:874 PST] 00000031 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/adminCenter/serverConfig-1.0/
+[1/16/20 11:19:44:875 PST] 00000031 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/adminCenter/
+[1/16/20 11:19:44:875 PST] 00000031 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/adminCenter/deploy-1.0/
+[1/16/20 11:19:44:875 PST] 00000031 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/api/
+[1/16/20 11:19:44:876 PST] 00000031 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/IBMJMXConnectorREST/
+[1/16/20 11:19:44:876 PST] 00000031 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/adminCenter/explore-1.0/
+[1/16/20 11:19:44:876 PST] 00000031 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/api/collective/notify/
+[1/16/20 11:19:45:878 PST] 0000005f com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  I CWWKE1101I: Server quiesce complete.
+[1/16/20 11:19:46:196 PST] 0000005f com.ibm.ws.ui.internal.v1.pojo.POJOLoaderService             I CWWKX1015I: FILE persistence layer initialized for the Admin Center.
+[1/16/20 11:19:46:200 PST] 0000005f com.ibm.ws.ui.internal.v1.pojo.PlainTextLoaderService        I CWWKX1063I: FILE persistence layer initialized for the Admin Center tool data loader.
+[1/16/20 11:19:46:295 PST] 0000005f com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0009I: The security service has stopped.
+[1/16/20 11:19:46:313 PST] 0000005f ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1124I: The collective authentication plugin with class name CollectiveAuthenticationPluginImpl has been deactivated. 
+[1/16/20 11:19:46:371 PST] 00000036 om.ibm.ws.collective.singleton.internal.SingletonServiceImpl I CWWKX1020I: The local singleton candidate is no longer leader: host=workstation; userdir=/home/ibmdemo/cp4a-labs/shared/wlp/usr/; server=myController; port=9445; service=FailoverSingletonService; scope=collective
+[1/16/20 11:19:46:372 PST] 0000005f om.ibm.ws.collective.singleton.internal.SingletonServiceImpl I CWWKX1012I: The local singleton candidate unregistered: host=workstation; userdir=/home/ibmdemo/cp4a-labs/shared/wlp/usr/; server=myController; port=9445; service=FailoverSingletonService; scope=collective
+[1/16/20 11:19:46:372 PST] 0000005f ws.collective.singleton.internal.SingletonServiceManagerImpl I CWWKX1003I: Singleton service FailoverSingletonService for scope collective is removed.
+[1/16/20 11:19:46:373 PST] 0000005f ective.singleton.internal.SingletonServiceMessengerMBeanImpl I CWWKX1001I: The SingletonMessenger MBean is deactivated.
+[1/16/20 11:19:46:749 PST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: The server myController stopped after 6 minutes, 22.555 seconds.

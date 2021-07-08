@@ -1,0 +1,24 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: modresorts-app-twas
+  namespace: demo
+  labels:
+    app: modresorts-app-twas
+spec:
+  ports:
+    - name: 9080-tcp
+      protocol: TCP
+      port: 9080
+      targetPort: 9080
+    - name: 9443-tcp
+      protocol: TCP
+      port: 9443
+      targetPort: 9443
+  selector:
+    app: modresorts-app-twas
+    deploymentconfig: modresorts-app-twas
+  type: ClusterIP
+  sessionAffinity: None
+status:
+  loadBalancer: {}

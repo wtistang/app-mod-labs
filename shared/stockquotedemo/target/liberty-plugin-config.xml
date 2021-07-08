@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<liberty-plugin-config>
+    <activeBuildProfiles>
+        <profileId>liberty</profileId>
+    </activeBuildProfiles>
+    <installDirectory>/home/ibmdemo/cp4a-labs/shared/stockquotedemo/target/liberty/wlp</installDirectory>
+    <serverDirectory>/home/ibmdemo/cp4a-labs/shared/stockquotedemo/target/liberty/wlp/usr/servers/defaultServer</serverDirectory>
+    <userDirectory>/home/ibmdemo/cp4a-labs/shared/stockquotedemo/target/liberty/wlp/usr</userDirectory>
+    <serverOutputDirectory>/home/ibmdemo/cp4a-labs/shared/stockquotedemo/target/liberty/wlp/usr/servers/defaultServer</serverOutputDirectory>
+    <serverName>defaultServer</serverName>
+    <bootstrapProperties>
+        <default.http.port>9080</default.http.port>
+        <default.https.port>9443</default.https.port>
+    </bootstrapProperties>
+    <appsDirectory>dropins</appsDirectory>
+    <looseApplication>false</looseApplication>
+    <stripVersion>false</stripVersion>
+    <installAppPackages>project</installAppPackages>
+    <applicationFilename>stockquotedemo-1.0-SNAPSHOT.war</applicationFilename>
+    <assemblyArtifact>
+        <groupId>com.ibm.websphere.appserver.runtime</groupId>
+        <artifactId>wlp-webProfile7</artifactId>
+        <version>17.0.0.4</version>
+        <type>zip</type>
+    </assemblyArtifact>
+    <assemblyArchive>/home/ibmdemo/.m2/repository/com/ibm/websphere/appserver/runtime/wlp-webProfile7/17.0.0.4/wlp-webProfile7-17.0.0.4.zip</assemblyArchive>
+    <assemblyInstallDirectory>/home/ibmdemo/cp4a-labs/shared/stockquotedemo/target/liberty</assemblyInstallDirectory>
+    <refresh>false</refresh>
+    <installAppsConfigDropins>/home/ibmdemo/cp4a-labs/shared/stockquotedemo/target/liberty/wlp/usr/servers/defaultServer/configDropins/defaults/install_apps_configuration_1491924271.xml</installAppsConfigDropins>
+    <projectType>war</projectType>
+    <warSourceDirectory>/home/ibmdemo/cp4a-labs/shared/stockquotedemo/src/main/webapp</warSourceDirectory>
+</liberty-plugin-config>

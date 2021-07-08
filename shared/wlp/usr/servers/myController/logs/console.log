@@ -1,0 +1,83 @@
+Launching myController (WebSphere Application Server 19.0.0.6/wlp-1.0.29.cl190620190617-1530) on OpenJDK 64-Bit Server VM, version 1.8.0_232-8u232-b09-0ubuntu1~18.04.1-b09 (en_US)
+[AUDIT   ] CWWKE0001I: The server myController has been launched.
+[AUDIT   ] CWWKE0100I: This product is licensed for development, and limited production use. The full license terms can be viewed here: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/19.0.0.6/lafiles/en.html
+[AUDIT   ] CWWKZ0058I: Monitoring dropins for applications.
+[AUDIT   ] CWWKF0012I: The server installed the following features: [adminCenter-1.0, appSecurity-2.0, appSecurity-3.0, beanValidation-2.0, cdi-2.0, collectiveController-1.0, collectiveMember-1.0, distributedMap-1.0, ejbLite-3.2, el-3.0, jaspic-1.1, jaxrs-2.1, jaxrsClient-2.1, jdbc-4.2, jndi-1.0, jpa-2.2, jpaContainer-2.2, jsf-2.3, json-1.0, jsonb-1.0, jsonp-1.1, jsp-2.3, managedBeans-1.0, restConnector-2.0, servlet-4.0, ssl-1.0, webProfile-8.0, websocket-1.1].
+[AUDIT   ] CWWKF0011I: The myController server is ready to run a smarter planet. The myController server started in 8.315 seconds.
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/api/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://workstation:9082/IBMJMXConnectorREST/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/adminCenter/deploy-1.0/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/adminCenter/explore-1.0/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/api/collective/notify/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/adminCenter/serverConfig-1.0/
+[AUDIT   ] CWWKT0016I: Web application available (default_host): http://workstation:9082/adminCenter/
+[WARNING ] SRVE8115W: WARNING: Cannot set status. Response already committed.
+[WARNING ] SRVE8094W: WARNING: Cannot set header. Response already committed.  Stack trace of errant attempt to set header: 
+        at com.ibm.ws.webcontainer.srt.SRTServletResponse.addHeader(SRTServletResponse.java:2193)
+        at [internal classes].(Unknown Source)
+
+[ERROR   ] Error Page Exception: 
+                                                                                                               com.ibm.ws.ui
+                                                                                                               /adminCenter
+                                                                                                               Error Page Exception
+                                                                                                               com.ibm.ws.webcontainer.webapp.WebAppErrorReport: java.io.IOException: Broken pipe
+	at sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:51)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+	at com.ibm.ws.tcpchannel.internal.NioSocketIOChannel.write(NioSocketIOChannel.java:201)
+	at [internal classes]
+Caused by: java.io.IOException: Broken pipe
+	... 8 more
+
+[WARNING ] SRVE8115W: WARNING: Cannot set status. Response already committed.
+[WARNING ] SRVE8094W: WARNING: Cannot set header. Response already committed.  Stack trace of errant attempt to set header: 
+        at com.ibm.ws.webcontainer.srt.SRTServletResponse.addHeader(SRTServletResponse.java:2193)
+        at [internal classes].(Unknown Source)
+
+[ERROR   ] Error Page Exception: 
+                                                                                                               com.ibm.ws.ui.tool.explore
+                                                                                                               /ibm/adminCenter/explore-1.0
+                                                                                                               Error Page Exception
+                                                                                                               com.ibm.ws.webcontainer.webapp.WebAppErrorReport: java.io.IOException: Broken pipe
+	at sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:51)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+	at com.ibm.ws.tcpchannel.internal.NioSocketIOChannel.write(NioSocketIOChannel.java:201)
+	at [internal classes]
+Caused by: java.io.IOException: Broken pipe
+	... 8 more
+
+[WARNING ] SRVE8115W: WARNING: Cannot set status. Response already committed.
+[WARNING ] SRVE8094W: WARNING: Cannot set header. Response already committed.  Stack trace of errant attempt to set header: 
+        at com.ibm.ws.webcontainer.srt.SRTServletResponse.addHeader(SRTServletResponse.java:2193)
+        at [internal classes].(Unknown Source)
+
+[ERROR   ] Error Page Exception: 
+                                                                                                               com.ibm.ws.ui.tool.explore
+                                                                                                               /ibm/adminCenter/explore-1.0
+                                                                                                               Error Page Exception
+                                                                                                               com.ibm.ws.webcontainer.webapp.WebAppErrorReport: java.io.IOException: Broken pipe
+	at sun.nio.ch.FileDispatcherImpl.write0(Native Method)
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:47)
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:93)
+	at sun.nio.ch.IOUtil.write(IOUtil.java:51)
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:471)
+	at com.ibm.ws.tcpchannel.internal.NioSocketIOChannel.write(NioSocketIOChannel.java:201)
+	at [internal classes]
+Caused by: java.io.IOException: Broken pipe
+	... 8 more
+
+[AUDIT   ] CWWKE0085I: The server myController is stopping because the JVM is exiting.
+[AUDIT   ] CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/adminCenter/serverConfig-1.0/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://workstation:9082/adminCenter/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/adminCenter/deploy-1.0/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/api/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://workstation:9082/IBMJMXConnectorREST/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/adminCenter/explore-1.0/
+[AUDIT   ] CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/api/collective/notify/
+[AUDIT   ] CWWKE0036I: The server myController stopped after 6 minutes, 22.555 seconds.

@@ -1,0 +1,10 @@
+OLGH6317 JAX-RS request context modified after client request
+PH07530 KEYS ARE NOT STORED IN ICSF WITH TRIPLE-LENGTH PCICC FORMAT
+PH12644 A NullPointerException is thrown during SAFKeyRingNotificationMbeanImpl initialization
+PH12825 TRANSACTION SCOPED OBSERVERS DO NOT FIRE
+OLGH7207 EclipseLink: Deliver Bug #421056
+OLGH7433 Avoid inferring caller in LogRecord.getSourceClassName and getSourceMethodName when processing System.out calls
+OLGH7440 Investigate possible difference in values between Prometheus and JSON format metrics
+OLGH7632 EclipseLink: Deliver Bug #421056 pt2
+OLGH7695 java.sql.Connection's network timeout not getting set to the correct value.
+OLGH7831 Timing issue between deleted configuration and configuration store

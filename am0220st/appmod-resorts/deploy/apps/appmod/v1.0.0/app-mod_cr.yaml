@@ -1,0 +1,8 @@
+apiVersion: openliberty.io/v1beta1
+kind: OpenLibertyApplication
+metadata:
+  name: appmod
+spec:
+  stack: java-microprofile
+  applicationImage: image-registry.openshift-image-registry.svc:5000/demo/app-modernization:v1.0.0
+

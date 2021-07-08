@@ -1,0 +1,31 @@
+/home/ibmdemo/cp4a-labs/shared/startWASV9.sh
+
+cd /home/ibmdemo/cp4a-labs/am0400st/pbwis
+
+docker build . -t default-route-openshift-image-registry.apps.demo.ibmdte.net/am0400st/pbwis:latest
+
+docker images |grep pbwis
+
+oc login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
+
+oc new-project am0400st
+
+docker login -u $(oc whoami) -p $(oc whoami -t) default-route-openshift-image-registry.apps.demo.ibmdte.net
+
+docker push default-route-openshift-image-registry.apps.demo.ibmdte.net/am0400st/pbwis:latest
+
+oc -n am0400st delete secret db2-secret > /dev/null 2>&1
+
+oc -n am0400st  \
+    create secret generic db2-secret \
+    --from-literal=JDBC_ID=db2inst1 \
+    --from-literal=JDBC_PASSWORD=engageibm \
+    --from-literal=JDBC_HOST=10.0.0.1 \
+    --from-literal=JDBC_PORT=50000 \
+    --from-literal=JDBC_DB=PBW
+
+cd /home/ibmdemo/cp4a-labs/am0400st/pbwis/operator
+
+oc apply -f application/ -n am0400st
+
+

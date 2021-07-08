@@ -1,0 +1,65 @@
+********************************************************************************
+product = WebSphere Application Server 17.0.0.4 (wlp-1.0.19.201712061531)
+wlp.install.dir = /home/ibmdemo/eclipse-workspace1/stockquotedemo/target/liberty/wlp/
+java.home = /usr/lib/jvm/java-8-openjdk-amd64/jre
+java.version = 1.8.0_162
+java.runtime = OpenJDK Runtime Environment (1.8.0_162-8u162-b12-0ubuntu0.16.04.2-b12)
+os = Linux (4.4.0-122-generic; amd64) (en_US)
+process = 28021@icpce
+********************************************************************************
+[5/7/18 5:39:30:668 PDT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server defaultServer has been launched.
+[5/7/18 5:39:30:684 PDT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0100I: This product is licensed for development, and limited production use. The full license terms can be viewed here: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/17.0.0.4/lafiles/en.html
+[5/7/18 5:39:32:073 PDT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 1.682 seconds
+[5/7/18 5:39:32:131 PDT] 00000019 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[5/7/18 5:39:35:041 PDT] 00000012 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0007I: The security service is starting...
+[5/7/18 5:39:35:699 PDT] 00000023 com.ibm.ws.security.token.ltpa.internal.LTPAKeyInfoManager   I CWWKS4103I: Creating the LTPA keys. This may take a few seconds.
+[5/7/18 5:39:35:702 PDT] 00000012 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1123I: The collective authentication plugin with class name NullCollectiveAuthenticationPlugin has been activated. 
+[5/7/18 5:39:35:981 PDT] 00000012 com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitoring dropins for applications. 
+[5/7/18 5:39:36:062 PDT] 00000023 com.ibm.ws.security.token.ltpa.internal.LTPAKeyInfoManager   A CWWKS4104A: LTPA keys created in 0.363 seconds. LTPA key file: /home/ibmdemo/eclipse-workspace1/stockquotedemo/target/liberty/wlp/usr/servers/defaultServer/resources/security/ltpa.keys
+[5/7/18 5:39:36:080 PDT] 00000023 com.ibm.ws.security.token.ltpa.internal.LTPAKeyCreateTask    I CWWKS4105I: LTPA configuration is ready after 0.417 seconds.
+[5/7/18 5:39:36:158 PDT] 00000028 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host localhost  (IPv4: 127.0.0.1) port 9080.
+[5/7/18 5:39:36:818 PDT] 00000012 com.ibm.ws.cache.ServerCache                                 I DYNA1001I: WebSphere Dynamic Cache instance named baseCache initialized successfully.
+[5/7/18 5:39:36:820 PDT] 00000012 com.ibm.ws.cache.ServerCache                                 I DYNA1071I: The cache provider default is being used.
+[5/7/18 5:39:36:821 PDT] 00000012 com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[5/7/18 5:39:37:342 PDT] 00000026 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application stockquotedemo-1.0-SNAPSHOT.
+[5/7/18 5:39:37:342 PDT] 00000020 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application javametrics-rest.
+[5/7/18 5:39:37:342 PDT] 00000022 com.ibm.ws.app.manager.AppMessageHelper                      I CWWKZ0018I: Starting application javametrics-dash.
+[5/7/18 5:39:37:971 PDT] 00000022 org.jboss.weld.Version                                       I WELD-000900: 2.4.5 (Final)
+[5/7/18 5:39:38:142 PDT] 00000022 com.ibm.ws.session.WASSessionCore                            I SESN8501I: The session manager did not find a persistent storage location; HttpSession objects will be stored in the local application server's memory.
+[5/7/18 5:39:38:172 PDT] 00000020 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: javametrics-api.
+[5/7/18 5:39:38:175 PDT] 00000026 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: stockquotedemo.
+[5/7/18 5:39:38:175 PDT] 00000020 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module javametrics-api has been bound to default_host.
+[5/7/18 5:39:38:176 PDT] 00000026 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module stockquotedemo has been bound to default_host.
+[5/7/18 5:39:38:174 PDT] 00000022 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: javametrics.web.
+[5/7/18 5:39:38:178 PDT] 00000022 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module javametrics.web has been bound to default_host.
+[5/7/18 5:39:38:177 PDT] 00000020 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9080/javametrics/
+[5/7/18 5:39:38:182 PDT] 00000022 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9080/javametrics-dash/
+[5/7/18 5:39:38:196 PDT] 00000026 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://localhost:9080/stockquotedemo-1.0-SNAPSHOT/
+[5/7/18 5:39:38:198 PDT] 00000022 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application javametrics-dash started in 0.856 seconds.
+[5/7/18 5:39:38:201 PDT] 00000026 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application stockquotedemo-1.0-SNAPSHOT started in 0.856 seconds.
+[5/7/18 5:39:38:202 PDT] 00000020 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0001I: Application javametrics-rest started in 0.860 seconds.
+[5/7/18 5:39:38:232 PDT] 0000001f com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/javametrics
+[5/7/18 5:39:38:233 PDT] 00000025 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/stockquotedemo-1.0-SNAPSHOT
+[5/7/18 5:39:38:235 PDT] 00000019 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [jsp-2.3, ejbLite-3.2, managedBeans-1.0, servlet-3.1, jsf-2.2, beanValidation-1.1, ssl-1.0, jndi-1.0, appSecurity-2.0, jsonp-1.0, jdbc-4.1, jaxrs-2.0, el-3.0, jaxrsClient-2.0, json-1.0, jpaContainer-2.1, cdi-1.2, distributedMap-1.0, webProfile-7.0, websocket-1.1, jpa-2.1].
+[5/7/18 5:39:38:236 PDT] 00000019 com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 6.164 seconds.
+[5/7/18 5:39:38:236 PDT] 00000019 com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The server defaultServer is ready to run a smarter planet.
+[5/7/18 5:39:38:268 PDT] 00000027 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/javametrics-dash
+[5/7/18 5:39:38:272 PDT] 0000001f com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[5/7/18 5:39:38:287 PDT] 00000027 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[5/7/18 5:39:38:292 PDT] 00000025 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[5/7/18 5:39:38:517 PDT] 00000029 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /home/ibmdemo/eclipse-workspace1/stockquotedemo/target/liberty/wlp/usr/servers/defaultServer/logs/state/plugin-cfg.xml.
+[5/7/18 5:39:38:518 PDT] 0000000f com.ibm.ws.kernel.launch.internal.ServerCommandListener      A CWWKE0055I: Server shutdown requested on Monday, May 7, 2018 at 5:39 AM. The server defaultServer is shutting down.
+[5/7/18 5:39:38:521 PDT] 00000031 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  A CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[5/7/18 5:39:38:527 PDT] 0000001f com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[5/7/18 5:39:38:527 PDT] 00000032 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint has stopped listening for requests on host localhost  (IPv4: 127.0.0.1) port 9080.
+[5/7/18 5:39:38:530 PDT] 00000032 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://localhost:9080/javametrics-dash/
+[5/7/18 5:39:38:530 PDT] 00000032 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://localhost:9080/stockquotedemo-1.0-SNAPSHOT/
+[5/7/18 5:39:38:530 PDT] 00000032 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://localhost:9080/javametrics/
+[5/7/18 5:39:38:554 PDT] 00000027 com.ibm.ws.wsoc.EndpointManager                              I CWWKH0046I: Adding a WebSocket ServerEndpoint with the following URI: /javametrics-socket
+[5/7/18 5:39:38:819 PDT] 00000031 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  I CWWKE1101I: Server quiesce complete.
+[5/7/18 5:39:38:898 PDT] 00000026 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application javametrics-rest has stopped successfully.
+[5/7/18 5:39:38:916 PDT] 00000028 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application stockquotedemo-1.0-SNAPSHOT has stopped successfully.
+[5/7/18 5:39:38:918 PDT] 00000019 com.ibm.ws.app.manager.AppMessageHelper                      A CWWKZ0009I: The application javametrics-dash has stopped successfully.
+[5/7/18 5:39:38:955 PDT] 00000031 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0009I: The security service has stopped.
+[5/7/18 5:39:38:978 PDT] 00000031 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1124I: The collective authentication plugin with class name NullCollectiveAuthenticationPlugin has been deactivated. 
+[5/7/18 5:39:39:883 PDT] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: The server defaultServer stopped after 9.493 seconds.

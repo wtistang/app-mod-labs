@@ -1,0 +1,62 @@
+<server description="new server">
+
+    <!-- Enable features -->
+    <featureManager>
+   <feature>jpa-2.0</feature>
+     <feature>jndi-1.0</feature>
+     <feature>json-1.0</feature>
+     <feature>jdbc-4.0</feature>
+      <feature>servlet-3.0</feature>
+      <feature>jaxrs-1.1</feature>
+      <feature> beanValidation-1.0</feature>
+      <feature>transportSecurity-1.0</feature>
+      <feature>localConnector-1.0</feature>
+           </featureManager>
+
+
+
+    <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
+    <httpEndpoint host="*" httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint"/>
+    
+    <keyStore id="defaultKeyStore"/>
+    
+     <!--   <quickStartSecurity userName="wasadmin" userPassword="{xor}KD4sPjsyNjE="/> -->
+    
+
+    <library id="DB2JCCLib">
+     <fileset dir="/config/resources/DB2Libs" includes="db2jcc4.jar"/>
+	</library>
+
+		 <dataSource id="db2xa" jndiName="jdbc/PlantsByWebSphereDataSource" type="javax.sql.XADataSource">
+    <jdbcDriver libraryRef="DB2JCCLib"/>
+    <properties.db2.jcc 
+    serverName="${env.JDBC_HOST}"
+    portNumber="${env.JDBC_PORT}"
+    databaseName="${env.JDBC_DB}"
+    user="${env.JDBC_ID}"
+    password="${env.JDBC_PASSWORD}"
+    />
+	</dataSource>
+ 	<dataSource id="db2nonxa" jndiName="jdbc/PlantsByWebSphereDataSourceNONJTA" type="javax.sql.ConnectionPoolDataSource">
+    <jdbcDriver libraryRef="DB2JCCLib"/>
+    <properties.db2.jcc 
+    serverName="${env.JDBC_HOST}"
+    portNumber="${env.JDBC_PORT}"
+    databaseName="${env.JDBC_DB}"
+    user="${env.JDBC_ID}"
+    password="${env.JDBC_PASSWORD}"
+    />
+
+	</dataSource>
+
+   <!--  Automatically expand WAR files and EAR files -->
+
+    <applicationManager autoExpand="true"/>
+  
+   
+   <applicationMonitor updateTrigger="mbean"/>
+
+
+
+   <enterpriseApplication id="PlantsByWebSphereImageService" location="plantsbywebsphereimageservice.ear" name="PlantsByWebSphereImageService"/>
+</server>

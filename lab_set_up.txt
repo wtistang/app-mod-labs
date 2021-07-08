@@ -1,0 +1,9 @@
+1. Update DB2 password
+
+docker exec -it db2-pwb bash
+
+su - db2inst1
+
+passwd
+
+current password: engageibm

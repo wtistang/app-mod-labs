@@ -1,0 +1,18 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: modresorts-app-twas
+  namespace: demo
+  labels:
+    app: modresorts-app-twas
+spec:
+  host: modresorts-app-twas.apps.demo.ibmdte.net
+  to:
+    kind: Service
+    name: modresorts-app-twas
+    weight: 100
+  port:
+    targetPort: 9443-tcp
+  tls:
+    termination: passthrough
+  wildcardPolicy: None

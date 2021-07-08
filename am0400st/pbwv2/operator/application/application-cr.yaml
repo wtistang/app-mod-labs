@@ -1,0 +1,29 @@
+# Revised Application CR for Open Liberty Operator v0.3 
+apiVersion: openliberty.io/v1beta1
+kind: OpenLibertyApplication
+metadata:
+  name: plantsbywebsphereee6v2
+spec:
+  replicas: 1
+  applicationImage: docker-registry.default.svc:5000/am0400st/plantsbywebsphereee6v2
+  tag: latest
+# Add readiness and liveness probes
+  ports: 
+  readinessProbe:
+      httpGet:
+        path: /
+        port: 9080
+      initialDelaySeconds: 3
+      periodSeconds: 5
+  livenessProbe:
+    httpGet:
+      path: /
+      port: 9080
+    initialDelaySeconds: 40
+    periodSeconds: 10
+#Expose a route
+  expose: true
+#Environment entries from db2-secret to access PBW 
+  envFrom:
+   - secretRef:
+       name: db2-secret

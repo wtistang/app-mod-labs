@@ -1,0 +1,146 @@
+********************************************************************************
+product = WebSphere Application Server 19.0.0.6 (wlp-1.0.29.cl190620190617-1530)
+wlp.install.dir = /home/ibmdemo/cp4a-labs/shared/wlp/
+java.home = /usr/lib/jvm/java-8-openjdk-amd64/jre
+java.version = 1.8.0_232
+java.runtime = OpenJDK Runtime Environment (1.8.0_232-8u232-b09-0ubuntu1~18.04.1-b09)
+os = Linux (4.15.0-74-generic; amd64) (en_US)
+process = 6001@workstation
+********************************************************************************
+[1/16/20 10:58:46:205 PST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0001I: The server myController has been launched.
+[1/16/20 10:58:46:229 PST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0100I: This product is licensed for development, and limited production use. The full license terms can be viewed here: https://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/license/base_ilan/ilan/19.0.0.6/lafiles/en.html
+[1/16/20 10:58:47:076 PST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           I CWWKE0002I: The kernel started after 1.028 seconds
+[1/16/20 10:58:47:099 PST] 0000001c com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[1/16/20 10:58:47:326 PST] 00000013 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0007I: The security service is starting...
+[1/16/20 10:58:47:810 PST] 00000013 com.ibm.ws.app.manager.internal.monitor.DropinMonitor        A CWWKZ0058I: Monitoring dropins for applications.
+[1/16/20 10:58:47:820 PST] 0000001f com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint has been started and is now listening for requests on host workstation  (IPv4: 10.0.0.1) port 9082.
+[1/16/20 10:58:48:045 PST] 00000025 com.ibm.ws.security.token.ltpa.internal.LTPAKeyCreateTask    I CWWKS4105I: LTPA configuration is ready after 0.015 seconds.
+[1/16/20 10:58:48:054 PST] 00000013 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1123I: The collective authentication plugin with class name MemberCollectiveAuthenticationPlugin has been activated. 
+[1/16/20 10:58:48:191 PST] 00000016 com.ibm.ws.ssl.config.WSKeyStore                             I Successfully loaded default keystore: /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/myController/resources/security/key.p12 of type: PKCS12
+[1/16/20 10:58:48:198 PST] 00000013 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0008I: The security service is ready.
+[1/16/20 10:58:48:222 PST] 00000013 com.ibm.ws.security.jaspi.AuthConfigFactoryWrapper           I CWWKS1655I: The default Java Authentication SPI for Containers (JASPIC) AuthConfigFactory class com.ibm.ws.security.jaspi.ProviderRegistry is being used because the Java security property authconfigprovider.factory is not set. 
+[1/16/20 10:58:48:620 PST] 00000013 com.ibm.ws.cache.ServerCache                                 I DYNA1001I: WebSphere Dynamic Cache instance named baseCache initialized successfully.
+[1/16/20 10:58:48:622 PST] 00000013 com.ibm.ws.cache.ServerCache                                 I DYNA1071I: The cache provider default is being used.
+[1/16/20 10:58:48:623 PST] 00000013 com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[1/16/20 10:58:48:972 PST] 00000016 appe.utils.common.customization.CustomizationManager:default I CWWKX6025I: The collective controller configuration parameter disableffdc is missing. The default value false is used.
+[1/16/20 10:58:49:354 PST] 00000016 service.multiplexed.impl.ReplicationServiceMultiplexer:10010 I Sync state changed to true
+[1/16/20 10:58:49:355 PST] 00000016 service.multiplexed.impl.ReplicationServiceMultiplexer:10010 I CWWKX6012I: The collective controller is temporarily unavailable, probably due to a change in the replica set. It should become available within a few seconds. Current active replica set is []. The configured replica set is [10.0.0.1:10010].
+[1/16/20 10:58:49:356 PST] 00000016 com.ibm.ws.frappe.paxos.impl.CommandsExecutor:10010          I CWWKX6013I: The collective controller state is {S_ACCEPTOR}, last proposed command is -1, the last accepted command is 59, the last executed command is 0 and the log is 59.
+[1/16/20 10:58:49:416 PST] 00000032 com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0219I: TCP Channel defaultHttpEndpoint-ssl has been started and is now listening for requests on host workstation  (IPv4: 10.0.0.1) port 9445.
+[1/16/20 10:58:49:482 PST] 0000002e .utils.service.multiplexed.impl.UniverseAndReplicaData:10010 I CWWKX6009I: The collective controller successfully connected to replica 10.0.0.1:10010. Current active replica set is [10.0.0.1:10010]. The configured replica set is [10.0.0.1:10010]. The connected standby replicas are [].
+[1/16/20 10:58:49:716 PST] 0000001c com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [appSecurity-2.0, appSecurity-3.0, beanValidation-2.0, cdi-2.0, collectiveController-1.0, collectiveMember-1.0, distributedMap-1.0, ejbLite-3.2, el-3.0, jaspic-1.1, jaxrs-2.1, jaxrsClient-2.1, jdbc-4.2, jndi-1.0, jpa-2.2, jpaContainer-2.2, jsf-2.3, json-1.0, jsonb-1.0, jsonp-1.1, jsp-2.3, managedBeans-1.0, restConnector-2.0, servlet-4.0, ssl-1.0, webProfile-8.0, websocket-1.1].
+[1/16/20 10:58:49:717 PST] 0000001c com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0008I: Feature update completed in 2.640 seconds.
+[1/16/20 10:58:49:718 PST] 0000001c com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0011I: The myController server is ready to run a smarter planet. The myController server started in 3.671 seconds.
+[1/16/20 10:58:50:009 PST] 0000003b com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: IBMJMXConnectorREST.
+[1/16/20 10:58:50:009 PST] 0000003c com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: com.ibm.ws.collective.rest.notify.
+[1/16/20 10:58:50:010 PST] 0000003a com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: ibm/api.
+[1/16/20 10:58:50:012 PST] 0000003b com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module IBMJMXConnectorREST has been bound to default_host.
+[1/16/20 10:58:50:012 PST] 0000003c com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module com.ibm.ws.collective.rest.notify has been bound to default_host.
+[1/16/20 10:58:50:012 PST] 0000003a com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module ibm/api has been bound to default_host.
+[1/16/20 10:58:50:017 PST] 0000003b com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/IBMJMXConnectorREST/
+[1/16/20 10:58:50:020 PST] 0000003b com.ibm.ws.jmx.connector.server.rest.RESTAppListener         I CWWKX0103I: The JMX REST connector is running and is available at the following service URL: service:jmx:rest://workstation:9445/IBMJMXConnectorREST
+[1/16/20 10:58:50:021 PST] 0000003b com.ibm.ws.jmx.connector.server.rest.RESTAppListener         I CWWKX0103I: The JMX REST connector is running and is available at the following service URL: service:jmx:rest://workstation:9445/IBMJMXConnectorREST
+[1/16/20 10:58:50:023 PST] 0000003a com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/api/
+[1/16/20 10:58:50:023 PST] 0000003c com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/api/collective/notify/
+[1/16/20 10:58:50:059 PST] 00000025 com.ibm.ws.session.WASSessionCore                            I SESN8501I: The session manager did not find a persistent storage location; HttpSession objects will be stored in the local application server's memory.
+[1/16/20 10:58:50:081 PST] 00000025 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/myController/logs/state/plugin-cfg.xml.
+[1/16/20 10:58:50:108 PST] 0000001f com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ibm/api
+[1/16/20 10:58:50:108 PST] 00000024 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ibm/api/collective/notify
+[1/16/20 10:58:50:108 PST] 0000001d com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/IBMJMXConnectorREST
+[1/16/20 10:58:50:121 PST] 0000001f com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 10:58:50:131 PST] 0000001d com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 10:58:50:132 PST] 00000024 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 10:58:50:192 PST] 0000001f org.hibernate.validator.internal.util.Version                I HV000001: Hibernate Validator 6.0.13.Final
+[1/16/20 10:58:50:442 PST] 00000024 com.ibm.ws.cache.CacheServiceImpl                            I DYNA1056I: Dynamic Cache (object cache) initialized successfully.
+[1/16/20 10:58:50:470 PST] 0000001f org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 10:58:50:470 PST] 0000001d org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 10:58:50:477 PST] 00000024 com.ibm.ws.wsoc.EndpointManager                              I CWWKH0046I: Adding a WebSocket ServerEndpoint with the following URI: /
+[1/16/20 10:58:50:480 PST] 00000024 org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 10:58:50:697 PST] 0000001d com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [com.ibm.ws.jmx.connector.server.rest] [/IBMJMXConnectorREST] [JMXRESTProxyServlet]: Initialization successful.
+[1/16/20 10:58:51:536 PST] 0000002e service.multiplexed.impl.ReplicationServiceMultiplexer:10010 I Sync state changed to true
+[1/16/20 10:58:52:544 PST] 0000002e service.multiplexed.impl.ReplicationServiceMultiplexer:10010 I CWWKX6014I: This collective controller replica finished synchronizing the data with the other replicas. The log is 60.   
+[1/16/20 10:58:52:545 PST] 0000002e service.multiplexed.impl.ReplicationServiceMultiplexer:10010 I CWWKX6011I: The collective controller is ready, and can accept requests. The leader is 10.0.0.1:10010. Current active replica set is [10.0.0.1:10010]. The configured replica set is [10.0.0.1:10010].
+[1/16/20 10:58:52:554 PST] 00000039 m.ws.collective.repository.internal.CollectiveElectorFactory I CWWKX9079I: The CollectiveElectorFactory is available.
+[1/16/20 10:58:52:604 PST] 00000031 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1123I: The collective authentication plugin with class name CollectiveAuthenticationPluginImpl has been activated. 
+[1/16/20 10:58:52:607 PST] 0000002b ective.singleton.internal.SingletonServiceMessengerMBeanImpl I CWWKX1000I: The SingletonMessenger MBean is available.
+[1/16/20 10:58:52:615 PST] 0000003f collective.repository.internal.CollectiveRepositoryMBeanImpl I CWWKX9000I: The CollectiveRepository MBean is available.
+[1/16/20 10:58:52:635 PST] 0000003f collective.member.internal.publisher.RepositoryPublisherImpl I CWWKX8116I: The server STARTED state was successfully published to the collective repository.
+[1/16/20 10:58:52:660 PST] 00000031 om.ibm.ws.collective.repository.internal.SharedConfigManager I CWWKX9065I: The ControllerConfig MBean is available.
+[1/16/20 10:58:52:668 PST] 00000031 e.repository.internal.metadata.AdminMetadataManagerMBeanImpl I CWWKX9069I: The AdminMetadataManager MBean is available.
+[1/16/20 10:58:52:686 PST] 00000031 ws.collective.singleton.internal.SingletonServiceManagerImpl I CWWKX1002I: Singleton service FailoverSingletonService for scope collective is created.
+[1/16/20 10:58:52:714 PST] 00000031 om.ibm.ws.collective.singleton.internal.SingletonServiceImpl I CWWKX1019I: The local singleton candidate is elected leader: host=workstation; userdir=/home/ibmdemo/cp4a-labs/shared/wlp/usr/; server=myController; port=9445; service=FailoverSingletonService; scope=collective
+[1/16/20 10:58:52:731 PST] 00000035 ws.collective.member.internal.publisher.ServerPathsPublisher I CWWKX8114I: The server's paths were successfully published to the collective repository. 
+[1/16/20 10:58:52:781 PST] 0000002c com.ibm.ws.filetransfer.internal.mbean.FileService           I CWWKX7912I: The FileServiceMXBean attribute ReadList was successfully updated.
+[1/16/20 10:58:52:784 PST] 0000003c com.ibm.ws.filetransfer.internal.mbean.FileService           I CWWKX7912I: The FileServiceMXBean attribute WriteList was successfully updated.
+[1/16/20 10:58:52:786 PST] 00000031 bm.ws.collective.repository.internal.ClusterManagerMBeanImpl I CWWKX9030I: The ClusterManager MBean is available.
+[1/16/20 10:58:52:797 PST] 00000031 m.ibm.ws.collective.command.internal.ServerCommandsMBeanImpl I CWWKX7200I: The ServerCommands MBean is available.
+[1/16/20 10:58:52:827 PST] 00000031 lective.repository.internal.RepositoryConfigurationMBeanImpl I CWWKX9049I: The RepositoryConfiguration MBean is available.
+[1/16/20 10:58:52:854 PST] 00000031 llective.repository.internal.CollectiveRegistrationMBeanImpl I CWWKX9003I: CollectiveRegistration MBean is available.
+[1/16/20 10:58:52:863 PST] 0000002f m.ws.collective.member.internal.publisher.HostAuthConfigImpl I CWWKX8122I: The default SSH key-based configuration is being used for the host authentication configuration.
+[1/16/20 10:58:52:865 PST] 0000002f com.ibm.ws.collective.member.ServerManagementPublisher       I CWWKX8154I: The remote host authentication for this server has been configured with the collective-wide SSH key.
+[1/16/20 10:58:52:873 PST] 00000031 com.ibm.ws.collective.deploy.internal.DeployServiceImpl      I CWWKX7240I: The DeployService is available.
+[1/16/20 10:58:52:921 PST] 0000003e com.ibm.ws.collective.member.ServerManagementPublisher       I CWWKX8112I: The server's host information was successfully published to the collective repository. 
+[1/16/20 11:02:08:902 PST] 00000042 com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/16/20 11:02:08:935 PST] 0000003c com.ibm.ws.kernel.feature.internal.FeatureManager            I CWWKF0007I: Feature update started.
+[1/16/20 11:02:09:282 PST] 0000003c com.ibm.ws.ui.internal.v1.pojo.POJOLoaderService             I CWWKX1015I: FILE persistence layer initialized for the Admin Center.
+[1/16/20 11:02:09:310 PST] 0000003c com.ibm.ws.ui.internal.v1.pojo.PlainTextLoaderService        I CWWKX1063I: FILE persistence layer initialized for the Admin Center tool data loader.
+[1/16/20 11:02:09:434 PST] 0000003c com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: The Liberty Explore Tool.
+[1/16/20 11:02:09:434 PST] 0000003c com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module The Liberty Explore Tool has been bound to default_host.
+[1/16/20 11:02:09:434 PST] 0000003c com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/adminCenter/explore-1.0/
+[1/16/20 11:02:09:450 PST] 0000003a com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ibm/adminCenter/explore-1.0
+[1/16/20 11:02:09:451 PST] 0000003a com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 11:02:09:454 PST] 0000003c com.ibm.ws.ui.internal.v1.pojo.POJOLoaderService             I CWWKX1015I: COLLECTIVE persistence layer initialized for the Admin Center.
+[1/16/20 11:02:09:454 PST] 0000003c com.ibm.ws.ui.internal.v1.pojo.PlainTextLoaderService        I CWWKX1063I: COLLECTIVE persistence layer initialized for the Admin Center tool data loader.
+[1/16/20 11:02:09:460 PST] 0000002c com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0017I: The server configuration was successfully updated in 0.559 seconds.
+[1/16/20 11:02:09:468 PST] 00000029 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: The Liberty Deploy Tool.
+[1/16/20 11:02:09:468 PST] 00000029 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module The Liberty Deploy Tool has been bound to default_host.
+[1/16/20 11:02:09:468 PST] 00000029 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/adminCenter/deploy-1.0/
+[1/16/20 11:02:09:473 PST] 0000004b com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ibm/adminCenter/deploy-1.0
+[1/16/20 11:02:09:473 PST] 0000004b com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 11:02:09:492 PST] 0000003c com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0012I: The server installed the following features: [adminCenter-1.0].
+[1/16/20 11:02:09:492 PST] 0000003c com.ibm.ws.kernel.feature.internal.FeatureManager            A CWWKF0008I: Feature update completed in 0.568 seconds.
+[1/16/20 11:02:09:514 PST] 00000036 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: The Liberty Admin Center.
+[1/16/20 11:02:09:514 PST] 00000036 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module The Liberty Admin Center has been bound to default_host.
+[1/16/20 11:02:09:514 PST] 00000036 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/adminCenter/
+[1/16/20 11:02:09:515 PST] 00000041 com.ibm.ws.webcontainer.osgi.webapp.WebGroup                 I SRVE0169I: Loading Web Module: The Liberty Server Config Tool.
+[1/16/20 11:02:09:518 PST] 0000004b org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 11:02:09:519 PST] 00000041 com.ibm.ws.webcontainer                                      I SRVE0250I: Web Module The Liberty Server Config Tool has been bound to default_host.
+[1/16/20 11:02:09:519 PST] 00000041 com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0016I: Web application available (default_host): http://workstation:9082/ibm/adminCenter/serverConfig-1.0/
+[1/16/20 11:02:09:524 PST] 00000037 com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/ibm/adminCenter/serverConfig-1.0
+[1/16/20 11:02:09:525 PST] 00000037 com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 11:02:09:533 PST] 0000003a org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 11:02:09:536 PST] 0000001d com.ibm.ws.session.WASSessionCore                            I SESN0176I: A new session context will be created for application key default_host/adminCenter
+[1/16/20 11:02:09:536 PST] 0000001d com.ibm.ws.util                                              I SESN0172I: The session manager is using the Java default SecureRandom implementation for session ID generation.
+[1/16/20 11:02:09:587 PST] 00000037 org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 11:02:09:590 PST] 0000001d org.apache.myfaces.ee.MyFacesContainerInitializer            I Using org.apache.myfaces.ee.MyFacesContainerInitializer
+[1/16/20 11:02:09:683 PST] 00000044 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/myController/logs/state/plugin-cfg.xml.
+[1/16/20 11:02:09:714 PST] 00000046 com.ibm.ws.webcontainer.osgi.mbeans.PluginGenerator          I SRVE9103I: A configuration file for a web server plugin was automatically generated for this server at /home/ibmdemo/cp4a-labs/shared/wlp/usr/servers/myController/logs/state/plugin-cfg.xml.
+[1/16/20 11:03:18:661 PST] 0000002f com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0016I: Starting server configuration update.
+[1/16/20 11:03:18:668 PST] 0000002f com.ibm.ws.config.xml.internal.ConfigRefresher               A CWWKG0018I: The server configuration was not updated. No functional changes were detected.
+[1/16/20 11:07:18:633 PST] 00000028 com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [com.ibm.ws.ui] [/adminCenter] [/login.jsp]: Initialization successful.
+[1/16/20 11:07:25:605 PST] 0000002c com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [com.ibm.ws.ui] [/adminCenter] [/toolbox.jsp]: Initialization successful.
+[1/16/20 11:07:25:758 PST] 0000003a com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [com.ibm.ws.rest.handler] [/ibm/api] [RESTProxyServlet]: Initialization successful.
+[1/16/20 11:07:25:996 PST] 0000003a com.ibm.ws.ui.internal.v1.pojo.POJOLoaderService             I CWWKX1029I: The Admin Center default toolbox for user admin loaded.
+[1/16/20 11:07:25:997 PST] 0000003a com.ibm.ws.ui.internal.v1.pojo.POJOLoaderService             I CWWKX1000I: The Admin Center default catalog loaded.
+[1/16/20 11:07:29:535 PST] 0000003c com.ibm.ws.webcontainer.servlet                              I SRVE0242I: [com.ibm.ws.ui.tool.explore] [/ibm/adminCenter/explore-1.0] [/index.jsp]: Initialization successful.
+[1/16/20 11:09:21:995 PST] 00000010 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0085I: The server myController is stopping because the JVM is exiting.
+[1/16/20 11:09:21:999 PST] 00000062 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  A CWWKE1100I: Waiting for up to 30 seconds for the server to quiesce.
+[1/16/20 11:09:22:012 PST] 0000003e com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint-ssl has stopped listening for requests on host workstation  (IPv4: 10.0.0.1) port 9445.
+[1/16/20 11:09:22:016 PST] 0000003e com.ibm.ws.tcpchannel.internal.TCPChannel                    I CWWKO0220I: TCP Channel defaultHttpEndpoint has stopped listening for requests on host workstation  (IPv4: 10.0.0.1) port 9082.
+[1/16/20 11:09:22:016 PST] 0000003e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/adminCenter/serverConfig-1.0/
+[1/16/20 11:09:22:016 PST] 0000003e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/adminCenter/
+[1/16/20 11:09:22:016 PST] 0000003e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/adminCenter/deploy-1.0/
+[1/16/20 11:09:22:016 PST] 0000003e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/IBMJMXConnectorREST/
+[1/16/20 11:09:22:017 PST] 0000003e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/api/
+[1/16/20 11:09:22:017 PST] 0000003e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/api/collective/notify/
+[1/16/20 11:09:22:017 PST] 0000003e com.ibm.ws.http.internal.VirtualHostImpl                     A CWWKT0017I: Web application removed (default_host): http://workstation:9082/ibm/adminCenter/explore-1.0/
+[1/16/20 11:09:23:023 PST] 00000062 com.ibm.ws.runtime.update.internal.RuntimeUpdateManagerImpl  I CWWKE1101I: Server quiesce complete.
+[1/16/20 11:09:23:192 PST] 00000062 com.ibm.ws.ui.internal.v1.pojo.POJOLoaderService             I CWWKX1015I: FILE persistence layer initialized for the Admin Center.
+[1/16/20 11:09:23:192 PST] 00000062 com.ibm.ws.ui.internal.v1.pojo.PlainTextLoaderService        I CWWKX1063I: FILE persistence layer initialized for the Admin Center tool data loader.
+[1/16/20 11:09:23:292 PST] 00000062 com.ibm.ws.security.ready.internal.SecurityReadyServiceImpl  I CWWKS0009I: The security service has stopped.
+[1/16/20 11:09:23:302 PST] 00000062 ibm.ws.security.authentication.internal.jaas.JAASServiceImpl I CWWKS1124I: The collective authentication plugin with class name CollectiveAuthenticationPluginImpl has been deactivated. 
+[1/16/20 11:09:23:324 PST] 0000002e om.ibm.ws.collective.singleton.internal.SingletonServiceImpl I CWWKX1020I: The local singleton candidate is no longer leader: host=workstation; userdir=/home/ibmdemo/cp4a-labs/shared/wlp/usr/; server=myController; port=9445; service=FailoverSingletonService; scope=collective
+[1/16/20 11:09:23:324 PST] 00000062 om.ibm.ws.collective.singleton.internal.SingletonServiceImpl I CWWKX1012I: The local singleton candidate unregistered: host=workstation; userdir=/home/ibmdemo/cp4a-labs/shared/wlp/usr/; server=myController; port=9445; service=FailoverSingletonService; scope=collective
+[1/16/20 11:09:23:324 PST] 00000062 ws.collective.singleton.internal.SingletonServiceManagerImpl I CWWKX1003I: Singleton service FailoverSingletonService for scope collective is removed.
+[1/16/20 11:09:23:325 PST] 00000062 ective.singleton.internal.SingletonServiceMessengerMBeanImpl I CWWKX1001I: The SingletonMessenger MBean is deactivated.
+[1/16/20 11:09:23:575 PST] 00000001 com.ibm.ws.kernel.launch.internal.FrameworkManager           A CWWKE0036I: The server myController stopped after 10 minutes, 37.528 seconds.

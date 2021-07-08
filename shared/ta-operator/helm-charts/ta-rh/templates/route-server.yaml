@@ -1,0 +1,19 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: {{ template "fullname" . }}-server
+    component: route-server
+  name: {{ template "fullname" . }}-server-route
+spec:
+  host: {{ .Values.route.hostname }}
+  path: /lands_advisor
+  port:
+    targetPort: {{ .Release.Name }}-server
+  tls:
+    termination: edge
+  to:
+    kind: Service
+    name: {{ template "fullname" . }}-server
+    weight: 100
+  wildcardPolicy: None

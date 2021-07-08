@@ -1,0 +1,142 @@
+2019-11-07 17:56:43,978 p=10 u=root |  Executing playbook install.yaml
+2019-11-07 17:56:43,985 p=10 u=root |  Starting Install ***************************************************************
+2019-11-07 17:56:43,985 p=10 u=root |  - Install on hosts: 127.0.0.1 -
+
+2019-11-07 17:56:44,012 p=10 u=root |  Login To Cluster...
+2019-11-07 17:56:45,725 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/login.sh",
+    "delta": "0:00:01.303028",
+    "end": "2019-11-07 17:56:45.694384",
+    "rc": 0,
+    "start": "2019-11-07 17:56:44.391356",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "Using provided cluster configuration.\nLogged in as admin.",
+    "stdout_lines": [
+        "Using provided cluster configuration.",
+        "Logged in as admin."
+    ]
+}
+2019-11-07 17:56:45,735 p=10 u=root |  Get Cluster Server Address...
+2019-11-07 17:56:47,242 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "cmd": "oc whoami --show-server",
+    "delta": "0:00:01.326329",
+    "end": "2019-11-07 17:56:47.214582",
+    "rc": 0,
+    "start": "2019-11-07 17:56:45.888253",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "https://master.ibm.demo:8443",
+    "stdout_lines": [
+        "https://master.ibm.demo:8443"
+    ]
+}
+2019-11-07 17:56:47,252 p=10 u=root |  Save Cluster Server Address...
+2019-11-07 17:56:47,278 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_facts": {
+        "clusterUrl": "https://master.ibm.demo:8443"
+    },
+    "changed": false
+}
+2019-11-07 17:56:47,287 p=10 u=root |  Check Cluster Version...
+2019-11-07 17:56:48,804 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "cmd": "python3 /installer/playbook/roles/openshift/scripts/check-version.py",
+    "delta": "0:00:01.337552",
+    "end": "2019-11-07 17:56:48.777700",
+    "rc": 0,
+    "start": "2019-11-07 17:56:47.440148",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "OpenShift 3.11 detected.",
+    "stdout_lines": [
+        "OpenShift 3.11 detected."
+    ]
+}
+2019-11-07 17:56:48,813 p=10 u=root |  Check Cluster Administrator Role...
+2019-11-07 17:56:50,340 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "cmd": "oc auth can-i '*' '*' --all-namespaces",
+    "delta": "0:00:01.348351",
+    "end": "2019-11-07 17:56:50.307583",
+    "failed_when_result": false,
+    "rc": 0,
+    "start": "2019-11-07 17:56:48.959232",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "yes",
+    "stdout_lines": [
+        "yes"
+    ]
+}
+2019-11-07 17:56:50,349 p=10 u=root |  Get Authorization Endpoint...
+2019-11-07 17:56:51,901 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "cmd": "python3 /installer/playbook/roles/openshift/scripts/get-authorization-endpoint.py",
+    "delta": "0:00:01.368451",
+    "end": "2019-11-07 17:56:51.873865",
+    "rc": 0,
+    "start": "2019-11-07 17:56:50.505414",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "https://master.ibm.demo:8443/oauth/authorize",
+    "stdout_lines": [
+        "https://master.ibm.demo:8443/oauth/authorize"
+    ]
+}
+2019-11-07 17:56:51,910 p=10 u=root |  Save Authorization Endpoint...
+2019-11-07 17:56:51,936 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_facts": {
+        "cluster": {
+            "authorizationEndpoint": "https://master.ibm.demo:8443/oauth/authorize"
+        }
+    },
+    "changed": false
+}
+2019-11-07 17:56:51,945 p=10 u=root |  Get Default Cluster Subdomain...
+2019-11-07 17:56:53,955 p=10 u=root |  127.0.0.1 ok: {
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/get_default_domain.sh",
+    "delta": "0:00:01.819076",
+    "end": "2019-11-07 17:56:53.919960",
+    "rc": 0,
+    "start": "2019-11-07 17:56:52.100884",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "10.0.10.2.nip.io",
+    "stdout_lines": [
+        "10.0.10.2.nip.io"
+    ]
+}
+2019-11-07 17:56:53,973 p=10 u=root |  Set Cluster Subdomain...
+2019-11-07 17:56:53,998 p=10 u=root |  127.0.0.1 ok: {
+    "ansible_facts": {
+        "clusterSubdomain": "10.0.10.2.nip.io"
+    },
+    "changed": false
+}
+2019-11-07 17:56:54,007 p=10 u=root |  Check Entitled Registry Variables...
+2019-11-07 17:56:55,354 p=10 u=root |  127.0.0.1 failed: {
+    "changed": false,
+    "cmd": "/installer/playbook/../scripts/common/check-registry.sh",
+    "delta": "0:00:01.153206",
+    "end": "2019-11-07 17:56:55.327778",
+    "msg": "non-zero return code",
+    "rc": 1,
+    "start": "2019-11-07 17:56:54.174572",
+    "stderr": "",
+    "stderr_lines": [],
+    "stdout": "The ENTITLED_REGISTRY_USER environment variable must be set.\nThe ENTITLED_REGISTRY_KEY environment variable must be set.",
+    "stdout_lines": [
+        "The ENTITLED_REGISTRY_USER environment variable must be set.",
+        "The ENTITLED_REGISTRY_KEY environment variable must be set."
+    ]
+}
+2019-11-07 17:56:55,357 p=10 u=root |  - Play recap -
+2019-11-07 17:56:55,357 p=10 u=root |    127.0.0.1                  : ok=9    changed=0    unreachable=0    failed=1    rescued=0    ignored=0   
+2019-11-07 17:56:55,357 p=10 u=root |  Install failed *****************************************************************
