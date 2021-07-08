@@ -1,4 +1,4 @@
-cd /home/ibmdemo/app-mod-labs/dk0200
+cd /home/ibmdemo/app-mod-labs/dk0200st
 
 oc login https://api.demo.ibmdte.net:6443
 
@@ -12,13 +12,13 @@ kubectl get pods -n default
 
 kubectl get pods --all-namespaces 
 
-cd /home/ibmdemo/app-mod-labs/dk0100
+cd /home/ibmdemo/app-mod-labs/dk0100st
 
 docker build . -t simpleapp
 
-cd /home/ibmdemo/app-mod-labs/dk0200
+cd /home/ibmdemo/app-mod-labs/dk0200st
 
-oc new-project dk0200
+oc new-project dk0200st
 
 export INTERNAL_REG_HOST=`oc get route default-route --template='{{ .spec.host }}' -n openshift-image-registry`
 
