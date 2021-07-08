@@ -1,4 +1,4 @@
-cd /home/student/cp4a-roks-labs/dk0100
+cd /home/ibmdemo/app-mod-labs/dk0100st
 
 ls -l
 
