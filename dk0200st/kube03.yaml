@@ -3,7 +3,7 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: simpleapp
-  namespace: dk0200
+  namespace: dk0200st
   labels:
     app: simpleapp
 spec:
