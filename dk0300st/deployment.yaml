@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: example
-  namespace: project1
+  namespace: dk0300st
 spec:
   selector:
     matchLabels:
