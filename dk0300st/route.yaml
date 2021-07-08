@@ -1,0 +1,11 @@
+piVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: example
+  namespace: dk0300st
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: example
