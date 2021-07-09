@@ -1,0 +1,13 @@
+# A simple yaml file to create a service
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: simpleapp
+  name: simpleapp
+spec:
+  selector:
+    app: simpleapp
+  ports:
+  - port: 9080
+  type: NodePort
