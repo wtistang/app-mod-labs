@@ -28,9 +28,9 @@ export CLUSTER_URL=`echo $INTERNAL_REG_HOST | sed 's/default-route-openshift-ima
 
 docker login -u $(oc whoami) -p $(oc whoami -t) $INTERNAL_REG_HOST
 
-docker tag simpleapp:latest $INTERNAL_REG_HOST/`oc project -q`/simpleapp:latest
+docker tag simpleapp:latest $INTERNAL_REG_HOST/dk0200st/simpleapp:latest
 
-docker push $INTERNAL_REG_HOST/`oc project -q`/simpleapp:latest
+docker push $INTERNAL_REG_HOST/dk0200st/simpleapp:latest
 
 ls -l
 
