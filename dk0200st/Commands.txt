@@ -32,17 +32,17 @@ docker push $INTERNAL_REG_HOST/`oc project -q`/simpleapp:latest
 
 ls -l
 
-cat kube01.yaml 
+cat deployment.yaml 
 
-kubectl apply -f kube01.yaml
+kubectl apply -f deployment.yaml
 
 kubectl get pod
 
-cat kube02.yaml 
+cat service.yaml 
 
-kubectl apply -f kube02.yaml
+kubectl apply -f service.yaml
 
-cat kube03.yaml 
+cat route.yaml 
 
-kubectl apply -f kube03.yaml
+kubectl apply -f route.yaml
   
