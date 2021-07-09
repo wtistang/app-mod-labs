@@ -20,7 +20,7 @@ docker build . -t simpleapp
 
 cd /home/ibmdemo/app-mod-labs/dk0200st
 
-oc new-project dk0200st
+kubectl create namespace dk0200st
 
 export INTERNAL_REG_HOST=`oc get route default-route --template='{{ .spec.host }}' -n openshift-image-registry`
 
