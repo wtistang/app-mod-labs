@@ -1,0 +1,14 @@
+# A simple yaml file to create a ghost pod
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simpleapp
+  labels:
+    app: simpleapp
+spec:
+  containers:
+    - image: image-registry.openshift-image-registry.svc:5000/dk0200st/simpleapp:latest
+      name: simpleapp
+      ports:
+      - containerPort: 9080
+        protocol: TCP
