@@ -22,6 +22,8 @@ cd /home/ibmdemo/app-mod-labs/dk0200st
 
 kubectl create namespace dk0200st
 
+oc project dk0200st
+
 export INTERNAL_REG_HOST=`oc get route default-route --template='{{ .spec.host }}' -n openshift-image-registry`
 
 export CLUSTER_URL=`echo $INTERNAL_REG_HOST | sed 's/default-route-openshift-image-registry.//g'`
