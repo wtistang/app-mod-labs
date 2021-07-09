@@ -42,6 +42,8 @@ kubectl apply -f deployment.yaml
 
 kubectl get pod
 
+kubectl get pods -o wide
+
 cat service.yaml 
 
 kubectl apply -f service.yaml
