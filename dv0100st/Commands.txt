@@ -1,61 +1,51 @@
-cd /home/ibmdemo
 
-git clone https://github.com/wtistang/tekton-lab.git
-
-cd tekton-lab
+cd /home/ibmdemo/app-mod-labs/dv0100st/cloudnative_sample_app_deploy
 
 ls -l
 
-cd tekton-pipeline
-ls -l
+ls -l openshift/
 
-oc login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/wtistang/cloudnative_sample_app_deploy.git
+git push -u origin main
 
-oc new-project tekton-lab
+oc login https://api.demo.ibmdte.net:6443
 
-oc create serviceaccount tekton-sa -n tekton-lab
+oc new-project dv0100st
 
-oc adm policy add-scc-to-user privileged -n tekton-lab -z tekton-sa  
+export ARGOCD_USER=$(oc get secret argocd-access -n tools -o jsonpath='{.data.ARGOCD_USER}' | base64 -d)
+echo $ARGOCD_USER
 
-oc adm policy add-role-to-user edit -n tekton-lab -z tekton-sa
+export ARGOCD_PASSWORD=$(oc get secret argocd-access -n tools -o jsonpath='{.data.ARGOCD_PASSWORD}' | base64 -d)
+echo $ARGOCD_PASSWORD
 
-oc adm policy add-role-to-user system:image-builder -n tekton-lab -z tekton-sa
+export ARGOCD_URL=$(oc get secret argocd-access -n tools -o jsonpath='{.data.ARGOCD_URL}' | base64 -d)
+export ARGOCD_SERVER=$(echo $ARGOCD_URL|sed -E 's/^\s*.*:\/\///g')
+echo $ARGOCD_SERVER
 
-oc get secret $(oc get secret -n tekton-lab | grep tekton-sa-token | head -1 | awk '{print $1}') -n tekton-lab -o jsonpath="{.data.token}" | base64 -d > token.txt
+oc get route -n dv0100st
 
-cat token.txt
+git add .
+git commit -m "change commit"
+git push -u origin main
 
-oc create secret generic tekton-lab-deployer-secret --from-literal=user=sa --from-file=token=token.txt -n tekton-lab
+oc get route -n dv0100st
 
-oc describe secret tekton-lab-deployer-secret
+export APP_URL="http://$(oc get route cloudnative-sample -o jsonpath='{.status.ingress[0].host}')"
+echo $APP_URL
 
-cd /home/ibmdemo/tekton-lab/tekton-pipeline
+curl "$APP_URL/greeting?name=Carlos"
 
-cat git-resource.yaml 
+argocd login --username $ARGOCD_USER --password $ARGOCD_PASSWORD $ARGOCD_SERVER
 
-cat img-resource.yaml 
+argocd app list
 
-oc create -f git-resource.yaml
-oc create -f img-resource.yaml
+argocd app get sample
 
-oc get pipelineresources 
-
-cat task.yaml
-
-oc create -f ./task.yaml
-oc get tasks
-
-cat oc-deploy.yaml
-
-cat deployment.yaml
-
-oc create -f ./oc-deploy.yaml
-oc get tasks
-
-cat pipeline.yaml
-
-oc create -f ./pipeline.yaml
-oc get pipelines
+argocd app history sample
 
 
 
