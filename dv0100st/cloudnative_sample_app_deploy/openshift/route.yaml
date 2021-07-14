@@ -5,6 +5,7 @@ metadata:
   labels:
     chart: cloudnativesampleapp-1.0.0
   name: cloudnative-sample
+  namespace: default
 spec:
   port:
     targetPort: 9080
