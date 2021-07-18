@@ -1,4 +1,6 @@
-cd /home/ibmdemo/app-mod-labs/dk0100st
+/home/ibmdemo/get-lab-materials.sh
+
+cd /home/ibmdemo/app-mod-labs/dk0100st/ 
 
 ls -l
 
@@ -8,23 +10,26 @@ cat Dockerfile
 
 cat server.xml 
 
-docker build . -t simpleapp 
+docker build . -t simpleapp
 
-docker images 
+docker images
 
-docker images |grep simpleapp
+docker images | grep simpleapp  
 
-docker run --name=simpleC1 --hostname=localhost -d -p 8081:9080 simpleapp
+docker run --name=simpleC1 --hostname=localhost -d -p 8081:9080 simpleapp  
 
 docker ps
 
 docker container inspect simpleC1
 
-docker run --name=simpleC2 --hostname=localhost -d -p 8082:9080 simpleapp 
+docker run --name=simpleC2 --hostname=localhost -d -p 8082:9080 simpleapp  
 
 docker ps | grep simple 
 
-docker stop simpleC1 simpleC2
+docker stop simpleC1 simpleC2  
 
-docker rm simpleC1 simpleC2  
+docker rm simpleC1 simpleC2 
+
+docker ps | grep simple 
+
 
