@@ -1,4 +1,6 @@
-cd /home/ibmdemo/app-mod-labs/dk0200st
+/home/ibmdemo/get-lab-materials.sh
+
+cd /home/ibmdemo/app-mod-labs/dk0200st/ 
 
 oc login https://api.demo.ibmdte.net:6443
 
@@ -10,7 +12,7 @@ kubectl describe node master1
 
 kubectl get pods -n default
 
-kubectl get pods --all-namespaces 
+kubectl get pods --all-namespaces
 
 kubectl get pods --all-namespaces | grep -i etcd
 
@@ -18,37 +20,42 @@ cd /home/ibmdemo/app-mod-labs/dk0100st
 
 docker build . -t simpleapp
 
-cd /home/ibmdemo/app-mod-labs/dk0200st
-
 kubectl create namespace dk0200st
 
 oc project dk0200st
 
 export INTERNAL_REG_HOST=`oc get route default-route --template='{{ .spec.host }}' -n openshift-image-registry`
-
 export CLUSTER_URL=`echo $INTERNAL_REG_HOST | sed 's/default-route-openshift-image-registry.//g'`
 
 docker login -u $(oc whoami) -p $(oc whoami -t) $INTERNAL_REG_HOST
 
-docker tag simpleapp:latest $INTERNAL_REG_HOST/dk0200st/simpleapp:latest
 
-docker push $INTERNAL_REG_HOST/dk0200st/simpleapp:latest
+docker tag simpleapp:latest $INTERNAL_REG_HOST/dk0200st/simpleapp:latest 
+
+docker push $INTERNAL_REG_HOST/dk0200st/simpleapp:latest 
+
+cd /home/ibmdemo/app-mod-labs/dk0200st
 
 ls -l
 
-cat deployment.yaml 
+cat deployment.yaml
 
 kubectl apply -f deployment.yaml
 
-kubectl get pod
+kubectl get pods
 
 kubectl get pods -o wide
 
-cat service.yaml 
+cat service.yaml
 
 kubectl apply -f service.yaml
 
-cat route.yaml 
+kubectl get svc
+
+cat route.yaml
 
 kubectl apply -f route.yaml
-  
+
+kubectl get route
+
+
