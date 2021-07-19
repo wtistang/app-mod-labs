@@ -1,15 +1,56 @@
+/home/ibmdemo/get-lab-materials.sh
 
-/home/ibmdemo/cp4a-labs/shared/startWAS.sh
-
-cd /home/ibmdemo/Downloads/
+cd /home/ibmdemo/app-mod-labs/cn0100st/ 
 
 ls -l
 
-tar xvfz transformationadvisor-Linux_Evaluation_Server1.tgz
+cat colors-service-blue.yaml
 
-cd /home/ibmdemo/Downloads/transformationadvisor-2.1.1
+cat colors-service-green.yaml
 
-sudo ./bin/transformationadvisor -w /opt/IBM/WebSphere/AppServer -p AppSrv01 wsadmin passw0rd 
+oc login https://api.demo.ibmdte.net:6443
+
+oc new-project cn0100st
+
+oc apply -f colors-service-blue.yaml
+
+kn service describe blue-green-canary -o url
+
+oc apply -f colors-service-green.yaml
+
+kn revision list
+
+kn service update blue-green-canary --tag=blue-green-canary-00001=blue
+kn service update blue-green-canary --tag=blue-green-canary-00002=green
+kn service update blue-green-canary --tag=@latest=latest
+
+kn revision list
+
+kn service update blue-green-canary --traffic blue=100,green=0,latest=0
+
+kn revision list
+
+oc get pod
+
+kn service update blue-green-canary --traffic="blue=80" --traffic="green=20"
+
+kn revision list
+
+oc get pod
+
+cat service-10.yaml
+
+oc apply -f service-10.yaml
+
+export SVC_URL=$(kn service describe prime-generator -o url) 
+hey -c 50 -z 10s "$SVC_URL/?sleep=3&upto=10000&memload=100"
+
+cat service-min-max-scale.yaml
+
+oc apply -f service-min-max-scale.yaml
+
+hey -c 50 -z 10s "$SVC_URL/?sleep=3&upto=10000&memload=100"
+
 
 
 
