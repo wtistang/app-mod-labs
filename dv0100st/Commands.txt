@@ -1,3 +1,4 @@
+/home/ibmdemo/get-lab-materials.sh
 
 cd /home/ibmdemo/app-mod-labs/dv0100st/cloudnative_sample_app_deploy
 
@@ -13,8 +14,6 @@ git remote add origin https://github.com/wtistang/cloudnative_sample_app_deploy.
 git push -u origin main
 
 oc login https://api.demo.ibmdte.net:6443
-
-oc new-project dv0100st
 
 export ARGOCD_USER=$(oc get secret argocd-access -n tools -o jsonpath='{.data.ARGOCD_USER}' | base64 -d)
 echo $ARGOCD_USER
@@ -39,14 +38,15 @@ echo $APP_URL
 
 curl "$APP_URL/greeting?name=Carlos"
 
+
 argocd login --username $ARGOCD_USER --password $ARGOCD_PASSWORD $ARGOCD_SERVER
+
 
 argocd app list
 
 argocd app get sample
 
 argocd app history sample
-
 
 
 
