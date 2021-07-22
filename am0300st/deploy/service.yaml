@@ -2,7 +2,6 @@ kind: Service
 apiVersion: v1
 metadata:
   name: modresorts-app-twas
-  namespace: demo
   labels:
     app: modresorts-app-twas
 spec:
