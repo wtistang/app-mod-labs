@@ -26,7 +26,7 @@ items:
           deploymentconfig: modresorts-app-twas
       spec:
         containers:
-        - image: image-registry.openshift-image-registry.svc:5000/demo/modresorts-twas:latest
+        - image: image-registry.openshift-image-registry.svc:5000/am0300/modresorts-twas:latest
           name: modresorts-app-twas
           resources: {}
     test: false
@@ -39,7 +39,6 @@ items:
         from:
           kind: ImageStreamTag
           name: modresorts-twas:latest
-          namespace: demo
       type: ImageChange
   status:
     availableReplicas: 0
