@@ -1,21 +1,33 @@
-/home/ibmdemo/cp4a-labs/shared/startWAS.sh
+/home/ibmdemo/get-lab-materials.sh
+
+/home/ibmdemo/app-mod-labs/shared/startWAS.sh
 
 sudo /opt/IBM/WebSphere/AppServer/profiles/AppSrv01/bin/stopServer.sh server1
 
-cd /home/ibmdemo/cp4a-labs/am0220st/appmod-resorts/
-
-docker build -t default-route-openshift-image-registry.apps.demo.ibmdte.net/demo/app-modernization:v1.0.0 .
+cd /home/ibmdemo/app-mod-labs/am0220st/appmod-resorts/
+docker build . -t app-modernization:v1.0.0
 
 docker images | grep app-modernization
 
-oc login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
+docker run --name modsorts-loc -p 9443:9443 -d app-modernization:v1.0.0
+
+oc login https://api.demo.ibmdte.net:6443
 
 oc new-project demo
 
-docker login -u ibmadmin -p $(oc whoami -t) default-route-openshift-image-registry.apps.demo.ibmdte.net
+export INTERNAL_REG_HOST=`oc get route default-route --template='{{ .spec.host }}' -n openshift-image-registry`
+export CLUSTER_URL=`echo $INTERNAL_REG_HOST | sed 's/default-route-openshift-image-registry.//g'`
 
-docker push default-route-openshift-image-registry.apps.demo.ibmdte.net/demo/app-modernization:v1.0.0
+docker login -u $(oc whoami) -p $(oc whoami -t) $INTERNAL_REG_HOST
 
+docker tag app-modernization:v1.0.0 $INTERNAL_REG_HOST/`oc project -q`/app-modernization:v1.0.0
+docker push $INTERNAL_REG_HOST/`oc project -q`/app-modernization:v1.0.0
+
+cd /home/ibmdemo/app-mod-labs/am0220st/appmod-resorts/
 oc apply -f deploy/apps/appmod/v1.0.0/app-mod_cr.yaml -n demo
+
+
+
+
 
 
