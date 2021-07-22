@@ -1,0 +1,28 @@
+cd /home/student
+
+git clone https://github.com/<your GitHub username>/my-repo
+
+cd my-repo
+
+unzip /home/student/cp4a-roks-labs/dv0200/modresorts_src.zip
+
+cd /home/student/my-repo 
+code .
+
+cd /home/student/my-repo
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+git add .
+git commit -m "added ModResorts source code"
+git push 
+
+cd /home/student/cp4a-roks-labs/dv0200
+
+code .
+
+cd /home/student/my-repo
+
+git add .
+git commit -m "update ModResorts source code"
+git push 
