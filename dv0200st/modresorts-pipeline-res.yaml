@@ -1,0 +1,20 @@
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+ name: modresorts-git
+spec:
+ type: git
+ params:
+   - name: url
+     value: [GIT-URL]
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+ name: modresorts-image
+spec:
+ type: image
+ params:
+   - name: url
+     value: image-registry.openshift-image-registry.svc:5000/kabanero/modresorts:[IMAGE-TAG]
