@@ -7,3 +7,24 @@ su - db2inst1
 passwd
 
 current password: engageibm
+
+2. Update gitlab container
+
+docker rm -f gitlab
+
+docker pull gitlab/gitlab-ee
+
+sudo rm -R /srv/gitlab/logs/*
+sudo rm -R /srv/gitlab/logs/*.*
+sudo rm -R /srv/gitlab/data/*
+sudo rm -R /srv/gitlab/data/*.*
+sudo rm -R /srv/gitlab/config/*
+sudo rm -R /srv/gitlab/config/*.*
+
+
+docker run --detach --hostname 10.0.0.1 --publish 445:443 --publish 82:80 --publish 24:22 --name gitlab --restart always --volume /srv/gitlab/config:/etc/gitlab --volume /srv/gitlab/logs:/var/log/gitlab --volume /srv/gitlab/data:/var/opt/gitlab gitlab/gitlab-ee:latest
+
+Reset root password as passw0rd
+Docker exec -it gitlab bash
+./bin/gitlab-rake "gitlab:password:reset[root]"
+
