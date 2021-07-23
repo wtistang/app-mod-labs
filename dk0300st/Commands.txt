@@ -1,9 +1,40 @@
+/home/ibmdemo/get-lab-materials.sh
+
+cd /home/ibmdemo/app-mod-labs/dk0300st
+
+oc login https://api.demo.ibmdte.net:6443
+
+oc api-resources
+
+oc get projects
+
+oc get pods --all-namespaces
+
 oc get nodes
 
-kubectl get nodes
+ oc project dk0300st
+
+oc get deployments
+
+oc get deployment example -o yaml
 
 oc get pods
 
-oc get pods -–all-namespaces 
+oc describe pod example-5fb6876865-mtpmt
 
-oc project dk0200
+oc logs example-5fb6876865-mtpmt
+
+oc get pods
+
+oc delete pod example-5fb6876865-mtpmt
+
+oc patch deployment example -p '{ "spec": { "replicas": 2 } }'
+
+oc edit deployment example
+
+oc get pods
+
+
+
+
+
