@@ -1,28 +1,56 @@
-cd /home/student
+/home/ibmdemo/get-lab-materials.sh
 
-git clone https://github.com/<your GitHub username>/my-repo
+cd /home/ibmdemo/app-mod-labs/dv0200st
+git clone https://github.com/wtistang/tekton-lab.git
+cd tekton-lab
 
-cd my-repo
+ls -l
 
-unzip /home/student/cp4a-roks-labs/dv0200/modresorts_src.zip
+cd tekton-pipeline
+ls -l
 
-cd /home/student/my-repo 
-code .
+oc login https://api.demo.ibmdte.net:6443
 
-cd /home/student/my-repo
+oc new-project tekton-lab
 
-git config --global user.email "you@example.com"
-git config --global user.name "Your Name"
-git add .
-git commit -m "added ModResorts source code"
-git push 
+oc get serviceaccounts -n tekton-lab
 
-cd /home/student/cp4a-roks-labs/dv0200
+oc get secret $(oc get secret -n tekton-lab | grep pipeline-token | head -1 | awk '{print $1}') -n tekton-lab -o jsonpath="{.data.token}" | base64 -d > token.txt
 
-code .
+cat token.txt
 
-cd /home/student/my-repo
+oc create secret generic tekton-lab-deployer-secret --from-literal=user=sa --from-file=token=token.txt -n tekton-lab
 
-git add .
-git commit -m "update ModResorts source code"
-git push 
+oc describe secret tekton-lab-deployer-secret -n tekton-lab
+
+cd /home/ibmdemo/app-mod-labs/dv0200st/tekton-lab/tekton-pipeline
+
+cat git-resource.yaml 
+
+cat img-resource.yaml 
+
+oc create -f git-resource.yaml -n tekton-lab
+oc create -f img-resource.yaml -n tekton-lab
+
+oc get pipelineresources -n tekton-lab
+
+cat task.yaml
+
+oc create -f ./task.yaml -n tekton-lab
+oc get tasks
+
+cat oc-deploy.yaml
+
+cat deployment.yaml
+
+oc create -f ./oc-deploy.yaml -n tekton-lab
+oc get tasks
+
+cat pipeline.yaml
+
+oc create -f ./pipeline.yaml -n tekton-lab
+oc get pipelines
+
+cat pipeline-run.yaml
+
+oc apply -f ./pipeline-run.yaml -n tekton-lab
