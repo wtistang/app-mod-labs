@@ -1,0 +1,62 @@
+---
+# This the deployment YAML
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: acmeair
+  name: acmeair
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: acmeair
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: acmeair
+    spec:
+      containers:
+      - image: image-registry.openshift-image-registry.svc:5000/devops-lab/acmeair:latest
+        name: acmeair
+        resources: {}
+status: {}
+---
+# This the service yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: acmeair
+  name: acmeair-svc
+spec:
+  ports:
+    - port: 3000
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app: acmeair
+  type: LoadBalancer
+---
+# This the route yaml
+
+apiVersion: v1
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: acmeair-rou
+  labels:
+    app: acmeair
+spec:
+  host: tekton1.apps.demo.ibmdte.net
+  to:
+    kind: Service
+    name: acmeair-svc
+    weight: 100
+  port:
+    targetPort: 3000
+  wildcardPolicy: None
