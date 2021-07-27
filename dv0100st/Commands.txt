@@ -15,6 +15,8 @@ git push -u origin main
 
 oc login https://api.demo.ibmdte.net:6443
 
+oc new-project dv0100st
+
 export ARGOCD_USER=$(oc get secret argocd-access -n tools -o jsonpath='{.data.ARGOCD_USER}' | base64 -d)
 echo $ARGOCD_USER
 
