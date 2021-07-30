@@ -39,6 +39,10 @@ echo $APP_URL
 
 curl "$APP_URL/greeting?name=Carlos"
 
+cd /home/ibmdemo/app-mod-labs/dv0100st/cloudnative_sample_app_deploy
+git add .
+git commit -m "change commit"
+git push
 
 argocd login --username $ARGOCD_USER --password $ARGOCD_PASSWORD $ARGOCD_SERVER
 
