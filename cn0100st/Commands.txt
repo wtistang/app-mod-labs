@@ -1,5 +1,45 @@
 /home/ibmdemo/get-lab-materials.sh
 
+cd /home/ibmdemo/Downloads
+tar xvzf kn-linux-amd64.tar.gz
+sudo mv kn /usr/local/bin/kn
+
+kn version
+
+cd /home/ibmdemo/app-mod-labs/cn0100st/
+mkdir greetings
+cd greetings/
+
+kn func create
+
+ls -l
+
+code .
+
+function handleGet(context) {
+  let name = 'Stranger';
+  if (context.query.name != undefined ) {
+    name = context.query.name;
+  }
+  return ( 'Greetings ' + name + ' !')
+
+};
+
+kn func build -r default-route-openshift-image-registry.apps.demo.ibmdte.net/cn0100st
+
+kn func run
+
+oc login https://api.demo.ibmdte.net:6443
+
+oc new-project cn0100st
+
+export INTERNAL_REG_HOST=`oc get route default-route --template='{{ .spec.host }}' -n openshift-image-registry`
+export CLUSTER_URL=`echo $INTERNAL_REG_HOST | sed 's/default-route-openshift-image-registry.//g'`
+
+docker login -u $(oc whoami) -p $(oc whoami -t) $INTERNAL_REG_HOST
+
+docker push $INTERNAL_REG_HOST/`oc project -q`/greetings:latest
+
 cd /home/ibmdemo/app-mod-labs/cn0100st/ 
 
 ls -l
@@ -7,10 +47,6 @@ ls -l
 cat colors-service-blue.yaml
 
 cat colors-service-green.yaml
-
-oc login https://api.demo.ibmdte.net:6443
-
-oc new-project cn0100st
 
 oc apply -f colors-service-blue.yaml
 
@@ -50,6 +86,8 @@ cat service-min-max-scale.yaml
 oc apply -f service-min-max-scale.yaml
 
 hey -c 50 -z 10s "$SVC_URL/?sleep=3&upto=10000&memload=100"
+
+
 
 
 
