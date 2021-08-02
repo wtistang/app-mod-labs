@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?atoc version='0.0.1'?>
+<cset q="plugin" >
+<summary  count="5"  totalSize="226989" >
+<digs da="MD5"  count="1" />
+<digs da="MD5"  count="1" />
+</summary>
+<cset id="com.ibm.im*" >
+<summary  count="1"  totalSize="70030" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset v="1.*" >
+<summary  count="1"  totalSize="70030" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="1"  totalSize="70030" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="com.ibm.im.dependency.was.apar"  v="1.0.15.v20170317_1458"  p=""  ex="false"  sz="70030" >
+<dig da="MD5"  dv="eaf052060a64cf425a27941de582eaea" />
+
+</af>
+</cset>
+</cset>
+</cset>
+<cset id="com.ibm.was*" >
+<summary  count="2"  totalSize="21277" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset v="8.*" >
+<summary  count="2"  totalSize="21277" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="2"  totalSize="21277" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="com.ibm.was.ifix.prereq.osarch"  v="8.0.0.201601112108"  p=""  ex="false"  sz="14911" >
+<dig da="MD5"  dv="87b031ce800f86f9395122e7cd75b0ba" />
+
+</af>
+<af id="com.ibm.was.ifix.prereq.detect.temp.fix"  v="8.0.0.201206111438"  p=""  ex="false"  sz="6366" >
+<dig da="MD5"  dv="c28e92b4a9d6c52a2fb69a61a93ef965" />
+
+</af>
+</cset>
+</cset>
+</cset>
+<cset id="com.ibm.ws*" >
+<summary  count="2"  totalSize="135682" >
+<digs da="MD5"  count="1" />
+<digs da="MD5"  count="1" />
+</summary>
+<cset v="9.*" >
+<summary  count="1"  totalSize="64584" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="1"  totalSize="64584" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="com.ibm.ws.detect.running.process.v90"  v="9.0.0.20160121_0000"  p=""  ex="false"  sz="64584" >
+<dig da="MD5"  dv="0db9fb01b87def4ec6ea5eb6173fa657" />
+
+</af>
+</cset>
+</cset>
+<cset v="8.*" >
+<summary  count="1"  totalSize="71098" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="1"  totalSize="71098" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="com.ibm.ws.check.os.v80"  v="8.0.2.20130111_1128"  p=""  ex="false"  sz="71098" >
+<dig da="MD5"  dv="5b442dfefae2cfc8c3215283eae81010" />
+
+</af>
+</cset>
+</cset>
+</cset>
+</cset>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?repositoryDigest version='0.0.1'?>
+<repositoryDigest>
+  <repository>
+    <property name='LayoutPolicy' value='P1'/>
+    <property name='LayoutPolicyVersion' value='0.0.0.1'/>
+    <fix id='9.0.0.11-WS-WASProd-IFPH25074' version='9.0.11.20200616_1232' offeringId='EnhancedFix' offeringVersion='0.0.0.EnhancedFix'>
+      <information name='9.0.0.11-WS-WASProd-IFPH25074' version='9.0.11.20200616_1232'>
+        WEBSPHERE APPLICATION SERVER IIOP DESERIALIZATION OF UNTRUSTED DATA REMOTE CODE EXECUTION VULNERABILITY (CVE-2020-4449 AND CVE-2020-4450)
+      </information>
+      <property name='applicable.offerings' value='com.ibm.websphere.BASE.v90 [9.0.11,9.0.12);com.ibm.websphere.ND.v90 [9.0.11,9.0.12);com.ibm.websphere.zOS.v90 [9.0.11,9.0.12);com.ibm.websphere.WEBENAB.v90 [9.0.11,9.0.12);com.ibm.websphere.ILAN.v90 [9.0.11,9.0.12)'/>
+      <property name='beta.compatible' value='true'/>
+      <property name='recommended' value='true'/>
+      <property name='offering.type' value=''/>
+      <property name='default.profile' value=''/>
+      <property name='default.user.profile' value=''/>
+      <property name='vendor.name' value=''/>
+      <property name='offering.service.repositories' value=''/>
+      <file name='Fixes/9.0.0.11-WS-WASProd-IFPH25074_9.0.11.20200616_1232.fix'/>
+    </fix>
+  </repository>
+</repositoryDigest>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ICT>
+	<VersionInfo>
+		<Name>Interim Fix Creation Tool</Name>
+		<BuildLevel>cl20200506-1126.37</BuildLevel>
+		<BuildDate>05/06/2020</BuildDate>
+	</VersionInfo>
+	<PackageName platform="linux">ictv8.linux.x86.zip</PackageName>
+	<PackageName platform="windows">ictv8.windows.x86.zip </PackageName>
+</ICT>

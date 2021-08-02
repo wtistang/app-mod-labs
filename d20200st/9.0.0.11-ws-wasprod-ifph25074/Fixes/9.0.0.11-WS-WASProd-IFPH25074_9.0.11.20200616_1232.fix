@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?metadata version='0.0.4'?>
+<fix id='9.0.0.11-WS-WASProd-IFPH25074' version='9.0.11.20200616_1232' assemblyId='9.0.0.11-WS-WASProd-IFPH25074a' assemblyVersion='9.0.11.20200616_1232' iseCount='5'>
+  <applicability>
+    <offering id='com.ibm.websphere.BASE.v90' tolerance='[9.0.11,9.0.12)'/>
+    <offering id='com.ibm.websphere.ND.v90' tolerance='[9.0.11,9.0.12)'/>
+    <offering id='com.ibm.websphere.zOS.v90' tolerance='[9.0.11,9.0.12)'/>
+    <offering id='com.ibm.websphere.WEBENAB.v90' tolerance='[9.0.11,9.0.12)'/>
+    <offering id='com.ibm.websphere.ILAN.v90' tolerance='[9.0.11,9.0.12)'/>
+  </applicability>
+  <categories/>
+  <information name='9.0.0.11-WS-WASProd-IFPH25074' version='9.0.11.20200616_1232'>
+    WEBSPHERE APPLICATION SERVER IIOP DESERIALIZATION OF UNTRUSTED DATA REMOTE CODE EXECUTION VULNERABILITY (CVE-2020-4449 AND CVE-2020-4450)
+  </information>
+  <property name='dependencies.bundles' value='com.ibm.im.dependency.was.apar:CheckAparDependencies'/>
+  <property name='im.tolerance' value='1.5.2000'/>
+  <property name='displayable.im.tolerance' value='1.5.2'/>
+  <property name='com.ibm.ws.superseded.apars' value='com.ibm.ws.apar.PH18042'/>
+  <property name='prereq.bundles' value='com.ibm.ws.detect.running.process.v90:DetectRunningProcessSelector,com.ibm.was.ifix.prereq.detect.temp.fix:DetectTempIFixSelector,com.ibm.was.ifix.prereq.osarch:DetectOSArchSelector'/>
+  <property name='beta.compatible' value='true'/>
+  <property name='recommended' value='true'/>
+  <property name='was.install.supported.os.arch' value='AllOS'/>
+  <property name='eclipseCompatibility' value='both'/>
+  <iu id='com.ibm.im.dependency.was.apar' version='999.999.999.413586754' adapterId='eclipse'>
+    <selectedBy id='InstallDependencyHandler'/>
+    <adapterSpecificData>
+      <artifact key='artifact:/plugin/com.ibm.im.dependency.was.apar/1.0.15.v20170317_1458' type='plugin' exploded='false' downloadSize='70030' installSize='70030'/>
+      <agentBundle
+        id='com.ibm.im.dependency.was.apar'
+        version='1.0.15.v20170317_1458'/>
+    </adapterSpecificData>
+  </iu>
+  <iu id='com.ibm.ws.detect.running.process.v90' version='999.999.999.436369522' adapterId='eclipse'>
+    <selectedBy id='InstallHandler'/>
+    <adapterSpecificData>
+      <artifact key='artifact:/plugin/com.ibm.ws.detect.running.process.v90/9.0.0.20160121_0000' type='plugin' exploded='false' downloadSize='64584' installSize='64584'/>
+      <agentBundle
+        id='com.ibm.ws.detect.running.process.v90'
+        version='9.0.0.20160121_0000'/>
+    </adapterSpecificData>
+  </iu>
+  <iu id='com.ibm.was.ifix.prereq.detect.temp.fix' version='999.999.999.-595851090' adapterId='eclipse'>
+    <selectedBy id='InstallHandler'/>
+    <adapterSpecificData>
+      <artifact key='artifact:/plugin/com.ibm.was.ifix.prereq.detect.temp.fix/8.0.0.201206111438' type='plugin' exploded='false' downloadSize='6366' installSize='6366'/>
+      <agentBundle
+        id='com.ibm.was.ifix.prereq.detect.temp.fix'
+        version='8.0.0.201206111438'/>
+    </adapterSpecificData>
+  </iu>
+  <iu id='com.ibm.ws.check.os.v80' version='999.999.999.1049846940' adapterId='eclipse'>
+    <selectedBy id='InstallHandler'/>
+    <adapterSpecificData>
+      <artifact key='artifact:/plugin/com.ibm.ws.check.os.v80/8.0.2.20130111_1128' type='plugin' exploded='false' downloadSize='71098' installSize='71098'/>
+      <agentBundle
+        id='com.ibm.ws.check.os.v80'
+        version='8.0.2.20130111_1128'/>
+    </adapterSpecificData>
+  </iu>
+  <iu id='com.ibm.was.ifix.prereq.osarch' version='999.999.999.1971240316' adapterId='eclipse'>
+    <selectedBy id='InstallHandler'/>
+    <adapterSpecificData>
+      <artifact key='artifact:/plugin/com.ibm.was.ifix.prereq.osarch/8.0.0.201601112108' type='plugin' exploded='false' downloadSize='14911' installSize='14911'/>
+      <agentBundle
+        id='com.ibm.was.ifix.prereq.osarch'
+        version='8.0.0.201601112108'/>
+    </adapterSpecificData>
+  </iu>
+  <resolves problemCount='2' description='%resolves.description' showList='true'>
+    <problem id='com.ibm.ws.apar.PH25074' displayId='PH25074' description='PH25074'/>
+    <problem id='com.ibm.ws.apar.PH18042' displayId='PH18042'/>
+  </resolves>
+  <assembly id='9.0.0.11-WS-WASProd-IFPH25074a' version='9.0.11.20200616_1232' seCount='1'>
+    <selector id='fragment.core'/>
+    <includedSuFragment id='9.0.0.11-WS-WASProd-IFPH25074-1s' version='9.0.11.20200616_1232'/>
+  </assembly>
+  <suFragment id='9.0.0.11-WS-WASProd-IFPH25074-1s' version='9.0.11.20200616_1232' targetSuId='com.ibm.websphere.WAS.embed.core' targetSuTolerance='[0.0.0,99.0.0)' iuCount='2'>
+    <property name='order.dependencies.categories' value='PH25074,PH18042,PH25074_SUPERSEDABLE'/>
+    <property name='passive.order.dependencies' value='category:was.offering.su,category:jdk8.offering.su,category:PH18042_SUPERSEDABLE'/>
+    <selector id='fragment.core'>
+      <selectedByTarget id='required.com.ibm.websphere.WAS.embed.core'/>
+    </selector>
+    <iu id='9.0.0.11-WS-WASProd-IFPH25074-1s-1i' version='9.0.11.20200616_1232' adapterId='native'>
+      <selectedByExpression>
+        <and>
+          <selectedBy id='fragment.core'/>
+          <selectedBy id='accessRights' value='group'/>
+        </and>
+      </selectedByExpression>
+      <adapterSpecificData>
+        <sizeInfo installSize='585604'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.exec.chmod'
+          active='true'
+          version='8.0.0.201203071708'
+          ext='jar' downloadSize='3409' installSize='3409'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.patchinstaller'
+          active='true'
+          version='8.0.1.201512152128'
+          ext='jar' downloadSize='45763' installSize='45763'/>
+        <artifact
+          type='file'
+          id='9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations'
+          active='true'
+          version='9.0.0.20200616_1232'
+          ext='zip' downloadSize='142967' installSize='142967'/>
+        <perform duringPhases='install'>
+          <invoke
+            class='com.ibm.ws.patchinstaller.PatchInstaller'
+            classpath='${artifact:id=com.ibm.ws.patchinstaller,version=8.0.1.201512152128,type=file,ext=jar}'>
+            <arg>artifactId=${artifact:id=9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations,version=9.0.0.20200616_1232,type=file,ext=zip}</arg>
+            <arg>backupPath=${profile:installLocation}/properties/patches/backup/</arg>
+          </invoke>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>664</arg>
+            <arg>${context:installLocation}/plugins/com.ibm.ws.prereq.wsdl4j.jar</arg>
+            <arg>${context:installLocation}/plugins/com.ibm.ws.runtime.jar</arg>
+          </invoke>
+        </perform>
+        <perform duringPhases='uninstall'>
+          <invoke
+            class='com.ibm.ws.patchinstaller.PatchInstaller'
+            classpath='${artifact:id=com.ibm.ws.patchinstaller,version=8.0.1.201512152128,type=file,ext=jar}'>
+            <arg>artifactId=${artifact:id=9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations,version=9.0.0.20200616_1232,type=file,ext=zip}</arg>
+            <arg>backupPath=${profile:installLocation}/properties/patches/backup/</arg>
+          </invoke>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>664</arg>
+            <arg>${context:installLocation}/plugins/com.ibm.ws.prereq.wsdl4j.jar</arg>
+            <arg>${context:installLocation}/plugins/com.ibm.ws.runtime.jar</arg>
+          </invoke>
+        </perform>
+      </adapterSpecificData>
+    </iu>
+    <iu id='9.0.0.11-WS-WASProd-IFPH25074-1s-ng-1i' version='9.0.11.20200616_1232' adapterId='native'>
+      <selectedByExpression>
+        <and>
+          <selectedBy id='fragment.core'/>
+          <not>
+            <selectedBy id='accessRights' value='group'/>
+          </not>
+        </and>
+      </selectedByExpression>
+      <adapterSpecificData>
+        <sizeInfo installSize='1173256'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.exec.chmod'
+          active='true'
+          version='8.0.0.201203071708'
+          ext='jar' downloadSize='3409' installSize='3409'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.patchinstaller'
+          active='true'
+          version='8.0.1.201512152128'
+          ext='jar' downloadSize='45763' installSize='45763'/>
+        <artifact
+          type='file'
+          id='9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations'
+          active='true'
+          version='9.0.0.20200616_1232'
+          ext='zip' downloadSize='142967' installSize='142967'/>
+        <perform duringPhases='install'>
+          <invoke
+            class='com.ibm.ws.patchinstaller.PatchInstaller'
+            classpath='${artifact:id=com.ibm.ws.patchinstaller,version=8.0.1.201512152128,type=file,ext=jar}'>
+            <arg>artifactId=${artifact:id=9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations,version=9.0.0.20200616_1232,type=file,ext=zip}</arg>
+            <arg>backupPath=${profile:installLocation}/properties/patches/backup/</arg>
+          </invoke>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>644</arg>
+            <arg>${context:installLocation}/plugins/com.ibm.ws.prereq.wsdl4j.jar</arg>
+            <arg>${context:installLocation}/plugins/com.ibm.ws.runtime.jar</arg>
+          </invoke>
+        </perform>
+        <perform duringPhases='uninstall'>
+          <invoke
+            class='com.ibm.ws.patchinstaller.PatchInstaller'
+            classpath='${artifact:id=com.ibm.ws.patchinstaller,version=8.0.1.201512152128,type=file,ext=jar}'>
+            <arg>artifactId=${artifact:id=9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations,version=9.0.0.20200616_1232,type=file,ext=zip}</arg>
+            <arg>backupPath=${profile:installLocation}/properties/patches/backup/</arg>
+          </invoke>
+          <invoke
+            class='com.ibm.ws.exec.chmod.ExecChmod'
+            classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+            <arg>644</arg>
+            <arg>${context:installLocation}/plugins/com.ibm.ws.prereq.wsdl4j.jar</arg>
+            <arg>${context:installLocation}/plugins/com.ibm.ws.runtime.jar</arg>
+          </invoke>
+        </perform>
+      </adapterSpecificData>
+    </iu>
+  </suFragment>
+</fix>

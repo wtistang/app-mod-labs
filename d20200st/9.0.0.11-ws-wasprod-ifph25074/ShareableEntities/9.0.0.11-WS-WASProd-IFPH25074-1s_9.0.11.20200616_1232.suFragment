@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?metadata version='0.0.4'?>
+<suFragment id='9.0.0.11-WS-WASProd-IFPH25074-1s' version='9.0.11.20200616_1232' targetSuId='com.ibm.websphere.WAS.embed.core' targetSuTolerance='[0.0.0,99.0.0)' iuCount='2'>
+  <property name='order.dependencies.categories' value='PH25074,PH18042,PH25074_SUPERSEDABLE'/>
+  <property name='passive.order.dependencies' value='category:was.offering.su,category:jdk8.offering.su,category:PH18042_SUPERSEDABLE'/>
+  <selector id='fragment.core'>
+    <selectedByTarget id='required.com.ibm.websphere.WAS.embed.core'/>
+  </selector>
+  <iu id='9.0.0.11-WS-WASProd-IFPH25074-1s-1i' version='9.0.11.20200616_1232' adapterId='native'>
+    <selectedByExpression>
+      <and>
+        <selectedBy id='fragment.core'/>
+        <selectedBy id='accessRights' value='group'/>
+      </and>
+    </selectedByExpression>
+    <adapterSpecificData>
+      <sizeInfo installSize='585604'/>
+      <artifact
+        type='file'
+        id='com.ibm.ws.exec.chmod'
+        active='true'
+        version='8.0.0.201203071708'
+        ext='jar' downloadSize='3409' installSize='3409'/>
+      <artifact
+        type='file'
+        id='com.ibm.ws.patchinstaller'
+        active='true'
+        version='8.0.1.201512152128'
+        ext='jar' downloadSize='45763' installSize='45763'/>
+      <artifact
+        type='file'
+        id='9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations'
+        active='true'
+        version='9.0.0.20200616_1232'
+        ext='zip' downloadSize='142967' installSize='142967'/>
+      <perform duringPhases='install'>
+        <invoke
+          class='com.ibm.ws.patchinstaller.PatchInstaller'
+          classpath='${artifact:id=com.ibm.ws.patchinstaller,version=8.0.1.201512152128,type=file,ext=jar}'>
+          <arg>artifactId=${artifact:id=9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations,version=9.0.0.20200616_1232,type=file,ext=zip}</arg>
+          <arg>backupPath=${profile:installLocation}/properties/patches/backup/</arg>
+        </invoke>
+        <invoke
+          class='com.ibm.ws.exec.chmod.ExecChmod'
+          classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+          <arg>664</arg>
+          <arg>${context:installLocation}/plugins/com.ibm.ws.prereq.wsdl4j.jar</arg>
+          <arg>${context:installLocation}/plugins/com.ibm.ws.runtime.jar</arg>
+        </invoke>
+      </perform>
+      <perform duringPhases='uninstall'>
+        <invoke
+          class='com.ibm.ws.patchinstaller.PatchInstaller'
+          classpath='${artifact:id=com.ibm.ws.patchinstaller,version=8.0.1.201512152128,type=file,ext=jar}'>
+          <arg>artifactId=${artifact:id=9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations,version=9.0.0.20200616_1232,type=file,ext=zip}</arg>
+          <arg>backupPath=${profile:installLocation}/properties/patches/backup/</arg>
+        </invoke>
+        <invoke
+          class='com.ibm.ws.exec.chmod.ExecChmod'
+          classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+          <arg>664</arg>
+          <arg>${context:installLocation}/plugins/com.ibm.ws.prereq.wsdl4j.jar</arg>
+          <arg>${context:installLocation}/plugins/com.ibm.ws.runtime.jar</arg>
+        </invoke>
+      </perform>
+    </adapterSpecificData>
+  </iu>
+  <iu id='9.0.0.11-WS-WASProd-IFPH25074-1s-ng-1i' version='9.0.11.20200616_1232' adapterId='native'>
+    <selectedByExpression>
+      <and>
+        <selectedBy id='fragment.core'/>
+        <not>
+          <selectedBy id='accessRights' value='group'/>
+        </not>
+      </and>
+    </selectedByExpression>
+    <adapterSpecificData>
+      <sizeInfo installSize='1173256'/>
+      <artifact
+        type='file'
+        id='com.ibm.ws.exec.chmod'
+        active='true'
+        version='8.0.0.201203071708'
+        ext='jar' downloadSize='3409' installSize='3409'/>
+      <artifact
+        type='file'
+        id='com.ibm.ws.patchinstaller'
+        active='true'
+        version='8.0.1.201512152128'
+        ext='jar' downloadSize='45763' installSize='45763'/>
+      <artifact
+        type='file'
+        id='9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations'
+        active='true'
+        version='9.0.0.20200616_1232'
+        ext='zip' downloadSize='142967' installSize='142967'/>
+      <perform duringPhases='install'>
+        <invoke
+          class='com.ibm.ws.patchinstaller.PatchInstaller'
+          classpath='${artifact:id=com.ibm.ws.patchinstaller,version=8.0.1.201512152128,type=file,ext=jar}'>
+          <arg>artifactId=${artifact:id=9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations,version=9.0.0.20200616_1232,type=file,ext=zip}</arg>
+          <arg>backupPath=${profile:installLocation}/properties/patches/backup/</arg>
+        </invoke>
+        <invoke
+          class='com.ibm.ws.exec.chmod.ExecChmod'
+          classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+          <arg>644</arg>
+          <arg>${context:installLocation}/plugins/com.ibm.ws.prereq.wsdl4j.jar</arg>
+          <arg>${context:installLocation}/plugins/com.ibm.ws.runtime.jar</arg>
+        </invoke>
+      </perform>
+      <perform duringPhases='uninstall'>
+        <invoke
+          class='com.ibm.ws.patchinstaller.PatchInstaller'
+          classpath='${artifact:id=com.ibm.ws.patchinstaller,version=8.0.1.201512152128,type=file,ext=jar}'>
+          <arg>artifactId=${artifact:id=9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations,version=9.0.0.20200616_1232,type=file,ext=zip}</arg>
+          <arg>backupPath=${profile:installLocation}/properties/patches/backup/</arg>
+        </invoke>
+        <invoke
+          class='com.ibm.ws.exec.chmod.ExecChmod'
+          classpath='${artifact:id=com.ibm.ws.exec.chmod,version=8.0.0.201203071708,type=file,ext=jar}'>
+          <arg>644</arg>
+          <arg>${context:installLocation}/plugins/com.ibm.ws.prereq.wsdl4j.jar</arg>
+          <arg>${context:installLocation}/plugins/com.ibm.ws.runtime.jar</arg>
+        </invoke>
+      </perform>
+    </adapterSpecificData>
+  </iu>
+</suFragment>

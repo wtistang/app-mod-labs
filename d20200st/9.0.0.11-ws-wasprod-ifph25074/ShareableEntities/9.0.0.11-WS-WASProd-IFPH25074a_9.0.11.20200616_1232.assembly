@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?metadata version='0.0.4'?>
+<assembly id='9.0.0.11-WS-WASProd-IFPH25074a' version='9.0.11.20200616_1232' seCount='1'>
+  <selector id='fragment.core'/>
+  <includedSuFragment id='9.0.0.11-WS-WASProd-IFPH25074-1s' version='9.0.11.20200616_1232'/>
+</assembly>

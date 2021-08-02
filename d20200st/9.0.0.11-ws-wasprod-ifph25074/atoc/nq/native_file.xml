@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?atoc version='0.0.1'?>
+<cset q="file" >
+<summary  count="3"  totalSize="192139" >
+<digs da="MD5"  count="1" />
+<digs da="MD5"  count="1" />
+</summary>
+<cset id="com.ibm.ws*" >
+<summary  count="2"  totalSize="49172" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset v="8.*" >
+<summary  count="2"  totalSize="49172" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="2"  totalSize="49172" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="com.ibm.ws.exec.chmod"  v="8.0.0.201203071708"  p="jar"  ex="false"  sz="3409" >
+<dig da="MD5"  dv="f0ad0d8033ff6f9bf39843aebeb2970d" />
+
+</af>
+<af id="com.ibm.ws.patchinstaller"  v="8.0.1.201512152128"  p="jar"  ex="false"  sz="45763" >
+<dig da="MD5"  dv="ec128dade442a90377040c12c0145708" />
+
+</af>
+</cset>
+</cset>
+</cset>
+<cset id="9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations" >
+<summary  count="1"  totalSize="142967" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset v="9.*" >
+<summary  count="1"  totalSize="142967" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="1"  totalSize="142967" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="9.0.0.11-WS-WASProd-IFPH25074-1s-1i.jar.operations"  v="9.0.0.20200616_1232"  p="zip"  ex="false"  sz="142967" >
+<dig da="MD5"  dv="b20d3d63aa18816ba648c9b07899aede" />
+
+</af>
+</cset>
+</cset>
+</cset>
+</cset>
