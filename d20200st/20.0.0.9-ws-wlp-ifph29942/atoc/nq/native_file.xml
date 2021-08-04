@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?atoc version='0.0.1'?>
+<cset q="file" >
+<summary  count="3"  totalSize="2354042" >
+<digs da="MD5"  count="1" />
+<digs da="MD5"  count="1" />
+</summary>
+<cset id="com.ibm.was*" >
+<summary  count="1"  totalSize="114191" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset v="16.*" >
+<summary  count="1"  totalSize="114191" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="1"  totalSize="114191" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="com.ibm.was.liberty.asset.selection.invoke"  v="16.0.2.20160526_2338"  p="jar"  ex="false"  sz="114191" >
+<dig da="MD5"  dv="353b0699e80d8830cffae70d706167eb" />
+
+</af>
+</cset>
+</cset>
+</cset>
+<cset id="20.0.0.9-WS-WLP-IFPH29942" >
+<summary  count="1"  totalSize="2200348" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset v="20.*" >
+<summary  count="1"  totalSize="2200348" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="1"  totalSize="2200348" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="20.0.0.9-WS-WLP-IFPH29942"  v="20.0.9.20201009_2126"  p="file"  ex="false"  sz="2200348" >
+<dig da="MD5"  dv="7f1bf58bbb6444a464ae0b38932062ae" />
+
+</af>
+</cset>
+</cset>
+</cset>
+<cset id="com.ibm.ws*" >
+<summary  count="1"  totalSize="39503" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset v="18.*" >
+<summary  count="1"  totalSize="39503" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="1"  totalSize="39503" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="com.ibm.ws.liberty.uninstall.archive.fixes"  v="18.0.4.20180829_1745"  p="jar"  ex="false"  sz="39503" >
+<dig da="MD5"  dv="62a067aeaaee3061dfc0a13571cbba62" />
+
+</af>
+</cset>
+</cset>
+</cset>
+</cset>

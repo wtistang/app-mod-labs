@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?metadata version='0.0.4'?>
+<fix id='20.0.0.9-WS-WLP-IFPH29942' version='20.0.9.20201009_2126' assemblyId='20.0.0.9-WS-WLP-IFPH29942.asm' assemblyVersion='20.0.9.20201009_2126' iseCount='2'>
+  <applicability>
+    <offering id='com.ibm.websphere.liberty.CORE' tolerance='[20.0.9,20.0.10)'/>
+    <offering id='com.ibm.websphere.liberty.v85' tolerance='[8.5.200009,8.5.200010)'/>
+    <offering id='com.ibm.websphere.liberty.TRIAL.v85' tolerance='[8.5.200009,8.5.200010)'/>
+    <offering id='com.ibm.websphere.liberty.WEBENAB' tolerance='[20.0.9,20.0.10)'/>
+    <offering id='com.ibm.websphere.liberty.WEBENAB.v85' tolerance='[8.5.200009,8.5.200010)'/>
+    <offering id='com.ibm.websphere.liberty.ILAN' tolerance='[20.0.9,20.0.10)'/>
+    <offering id='com.ibm.websphere.liberty.NDTRIAL.v85' tolerance='[8.5.200009,8.5.200010)'/>
+    <offering id='com.ibm.websphere.liberty.EXPRESS.v85' tolerance='[8.5.200009,8.5.200010)'/>
+    <offering id='com.ibm.websphere.liberty.ND' tolerance='[20.0.9,20.0.10)'/>
+    <offering id='com.ibm.websphere.liberty.ND.v85' tolerance='[8.5.200009,8.5.200010)'/>
+    <offering id='com.ibm.websphere.liberty.DEVELOPERS.v85' tolerance='[8.5.200009,8.5.200010)'/>
+    <offering id='com.ibm.websphere.liberty.DEVELOPERSILAN.v85' tolerance='[8.5.200009,8.5.200010)'/>
+    <offering id='com.ibm.websphere.liberty.zOS' tolerance='[20.0.9,20.0.10)'/>
+    <offering id='com.ibm.websphere.liberty.zOS.v85' tolerance='[8.5.200009,8.5.200010)'/>
+    <offering id='com.ibm.websphere.liberty.BASE' tolerance='[20.0.9,20.0.10)'/>
+    <offering id='com.ibm.websphere.liberty.BASE.v85' tolerance='[8.5.200009,8.5.200010)'/>
+    <offering id='com.ibm.websphere.liberty.BASETRIAL.v85' tolerance='[8.5.200009,8.5.200010)'/>
+  </applicability>
+  <categories/>
+  <information name='20.0.0.9-WS-WLP-IFPH29942' version='20.0.0009.20201009_2126'>
+    Security Bulletin: Vulnerability in Hibernate Validator affects WebSphere Application Server Liberty (CVE-2020-10693)
+  </information>
+  <property name='im.tolerance' value='1.8.5000'/>
+  <property name='displayable.im.tolerance' value='1.8.5'/>
+  <property name='prereq.bundles' value='com.ibm.was.ifix.prereq.detect.temp.fix:DetectTempIFixSelector'/>
+  <property name='recommended' value='true'/>
+  <property name='eclipseCompatibility' value='both'/>
+  <iu id='com.ibm.was.ifix.prereq.detect.temp.fix' version='999.999.999.1754906522' adapterId='eclipse'>
+    <selectedBy id='InstallHandler'/>
+    <adapterSpecificData>
+      <artifact key='artifact:/plugin/com.ibm.was.ifix.prereq.detect.temp.fix/16.0.2.20160413_1245' type='plugin' exploded='false' downloadSize='11959' installSize='11959'/>
+      <agentBundle
+        id='com.ibm.was.ifix.prereq.detect.temp.fix'
+        version='16.0.2.20160413_1245'/>
+    </adapterSpecificData>
+  </iu>
+  <iu id='com.ibm.was.determine.job.type' version='999.999.999.989728037' adapterId='eclipse'>
+    <selectedBy id='InstallHandler'/>
+    <adapterSpecificData>
+      <artifact key='artifact:/plugin/com.ibm.was.determine.job.type/9.0.0.20201009_1716' type='plugin' exploded='false' downloadSize='8416' installSize='8416'/>
+      <agentBundle
+        id='com.ibm.was.determine.job.type'
+        version='9.0.0.20201009_1716'/>
+    </adapterSpecificData>
+  </iu>
+  <resolves problemCount='1' description='This fix resolves APARS:' showList='true'>
+    <problem id='com.ibm.ws.apar.PH29942' displayId='PH29942' description='PH29942'/>
+  </resolves>
+  <assembly id='20.0.0.9-WS-WLP-IFPH29942.asm' version='20.0.9.20201009_2126' seCount='2'>
+    <selector id='fragment.core'/>
+    <includedShareableEntity id='20.0.0.9-WS-WLP-IFPH29942-1s' version='20.0.9.20201009_2126' tolerance='[20.0.9,21.0.0)'>
+      <includedSelector selectorId='required.ifix'>
+        <selectedByExpression>
+          <or>
+            <selectedBy id='os' value='win32'/>
+            <selectedBy id='os' value='linux'/>
+            <selectedBy id='os' value='aix'/>
+            <selectedBy id='os' value='hpux'/>
+            <selectedBy id='os' value='macosx'/>
+            <selectedBy id='os' value='os400'/>
+            <selectedBy id='os' value='solaris'/>
+            <selectedBy id='os' value='zos'/>
+          </or>
+        </selectedByExpression>
+      </includedSelector>
+    </includedShareableEntity>
+    <includedSuFragment id='20.0.0.9-WS-WLP-IFPH29942-suFragment-1s' version='20.0.9.20201009_2126'/>
+  </assembly>
+  <su id='20.0.0.9-WS-WLP-IFPH29942-1s' version='20.0.9.20201009_2126' iuCount='1'>
+    <property name='order.dependencies.categories' value='PH29942,PH29942_SUPERSEDABLE,wlp.ifix.su'/>
+    <property name='passive.order.dependencies' value='category:was.offering.su'/>
+    <selector id='required.ifix'/>
+    <iu id='20.0.0.9-WS-WLP-IFPH29942-1u' version='20.0.9.20201009_2126' adapterId='native'>
+      <property name='allow.reinstall.iu' value='true'/>
+      <selectedByExpression>
+        <and>
+          <selectedBy id='required.ifix'/>
+          <selectedByBundle id='com.ibm.was.determine.job.type' class='IsModifyJob'/>
+        </and>
+      </selectedByExpression>
+      <adapterSpecificData>
+        <sizeInfo installSize='2146121'/>
+        <artifact
+          type='file'
+          id='com.ibm.was.liberty.asset.selection.invoke'
+          active='true'
+          version='16.0.2.20160526_2338'
+          ext='jar' downloadSize='114191' installSize='114191'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.liberty.uninstall.archive.fixes'
+          active='true'
+          version='18.0.4.20180829_1745'
+          ext='jar' downloadSize='39503' installSize='39503'/>
+        <artifact
+          type='file'
+          id='20.0.0.9-WS-WLP-IFPH29942'
+          active='true'
+          version='20.0.9.20201009_2126'
+          ext='file' downloadSize='2200348' installSize='2200348'/>
+        <perform duringPhases='pre_install_configure'>
+          <invoke
+            class='com.ibm.was.liberty.asset.selection.invoke.SetInvokeBundleClassPath'
+            classpath='${artifact:id=com.ibm.was.liberty.asset.selection.invoke,version=16.0.2.20160526_2338,type=file,ext=jar}'/>
+          <invoke
+            class='com.ibm.ws.liberty.uninstall.archive.fixes.UninstallAnArchiveFix'
+            classpath='${artifact:id=com.ibm.ws.liberty.uninstall.archive.fixes,version=18.0.4.20180829_1745,type=file,ext=jar};${system:com.ibm.websphere.liberty.offering.8559.invoke.bundle.classpath}'>
+            <arg>${context:installLocation}</arg>
+            <arg>20009-wlp-archive-IFPH29942</arg>
+          </invoke>
+        </perform>
+        <perform duringPhases='post_install_configure'>
+          <exec
+            command='${system:java.home}/bin/java'
+            workingDirectory='${context:installLocation}'>
+            <arg>-jar</arg>
+            <arg>${artifact:id=20.0.0.9-WS-WLP-IFPH29942,version=20.0.9.20201009_2126,type=file,ext=file}</arg>
+            <arg>${context:installLocation}</arg>
+          </exec>
+        </perform>
+      </adapterSpecificData>
+    </iu>
+  </su>
+  <suFragment id='20.0.0.9-WS-WLP-IFPH29942-suFragment-1s' version='20.0.9.20201009_2126' targetSuId='com.ibm.websphere.liberty.feature.liberty' targetSuTolerance='[0.0.0,9999.0.0)' iuCount='1'>
+    <property name='order.dependencies.categories' value='PH29942,PH29942_SUPERSEDABLE,wlp.ifix.su'/>
+    <property name='passive.order.dependencies' value='category:was.offering.su'/>
+    <selector id='fragment.core'>
+      <selectedByTarget id='required.com.ibm.websphere.liberty.feature.liberty'/>
+    </selector>
+    <iu id='20.0.0.9-WS-WLP-IFPH29942-suFragment-1u' version='20.0.9.20201009_2126' adapterId='native'>
+      <selectedByExpression>
+        <and>
+          <selectedBy id='fragment.core'/>
+          <not>
+            <selectedByBundle id='com.ibm.was.determine.job.type' class='IsModifyJob'/>
+          </not>
+        </and>
+      </selectedByExpression>
+      <adapterSpecificData>
+        <sizeInfo installSize='2146121'/>
+        <artifact
+          type='file'
+          id='com.ibm.was.liberty.asset.selection.invoke'
+          active='true'
+          version='16.0.2.20160526_2338'
+          ext='jar' downloadSize='114191' installSize='114191'/>
+        <artifact
+          type='file'
+          id='com.ibm.ws.liberty.uninstall.archive.fixes'
+          active='true'
+          version='18.0.4.20180829_1745'
+          ext='jar' downloadSize='39503' installSize='39503'/>
+        <artifact
+          type='file'
+          id='20.0.0.9-WS-WLP-IFPH29942'
+          active='true'
+          version='20.0.9.20201009_2126'
+          ext='file' downloadSize='2200348' installSize='2200348'/>
+        <perform duringPhases='pre_uninstall_configure'>
+          <invoke
+            class='com.ibm.was.liberty.asset.selection.invoke.SetInvokeBundleClassPath'
+            classpath='${artifact:id=com.ibm.was.liberty.asset.selection.invoke,version=16.0.2.20160526_2338,type=file,ext=jar}'/>
+          <invoke
+            class='com.ibm.ws.liberty.uninstall.archive.fixes.UninstallAnArchiveFix'
+            classpath='${artifact:id=com.ibm.ws.liberty.uninstall.archive.fixes,version=18.0.4.20180829_1745,type=file,ext=jar};${system:com.ibm.websphere.liberty.offering.8559.invoke.bundle.classpath}'>
+            <arg>${context:installLocation}</arg>
+            <arg>20009-wlp-archive-IFPH29942</arg>
+          </invoke>
+        </perform>
+        <perform duringPhases='post_install_configure'>
+          <exec
+            command='${system:java.home}/bin/java'
+            workingDirectory='${context:installLocation}'>
+            <arg>-jar</arg>
+            <arg>${artifact:id=20.0.0.9-WS-WLP-IFPH29942,version=20.0.9.20201009_2126,type=file,ext=file}</arg>
+            <arg>${context:installLocation}</arg>
+          </exec>
+        </perform>
+      </adapterSpecificData>
+    </iu>
+  </suFragment>
+</fix>

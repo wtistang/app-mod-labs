@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?atoc version='0.0.2'?>
+<atoc>
+<summary  count='5'  totalSize='2374417' >
+<digs da='MD5'  count='1' />
+<digs da='MD5'  count='1' />
+</summary>
+<cset n='native' >
+<summary  count='3'  totalSize='2354042' >
+<digs da='MD5'  count='1' />
+<digs da='MD5'  count='1' />
+</summary>
+<cset q='file'  href='nq/native_file.xml'  size='1708' md5='5968c82aeb4c2e2295933eaccb6d53b8'>
+<summary  count='3'  totalSize='2354042' >
+<digs da='MD5'  count='1' />
+<digs da='MD5'  count='1' />
+</summary>
+</cset>
+</cset>
+<cset n='eclipse' >
+<summary  count='2'  totalSize='20375' >
+<digs da='MD5'  count='1' />
+</summary>
+<cset q='plugin'  href='nq/eclipse_plugin.xml'  size='1088' md5='e507f6286121674c66ec7a9ed7203d66'>
+<summary  count='2'  totalSize='20375' >
+<digs da='MD5'  count='1' />
+</summary>
+</cset>
+</cset></atoc>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?atoc version='0.0.1'?>
+<cset q="plugin" >
+<summary  count="2"  totalSize="20375" >
+<digs da="MD5"  count="1" />
+<digs da="MD5"  count="1" />
+</summary>
+<cset id="com.ibm.was*" >
+<summary  count="2"  totalSize="20375" >
+<digs da="MD5"  count="1" />
+<digs da="MD5"  count="1" />
+</summary>
+<cset v="9.*" >
+<summary  count="1"  totalSize="8416" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="1"  totalSize="8416" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="com.ibm.was.determine.job.type"  v="9.0.0.20201009_1716"  p=""  ex="false"  sz="8416" >
+<dig da="MD5"  dv="5bf9847412a7f39c6d5bfb0b3dfa4d26" />
+
+</af>
+</cset>
+</cset>
+<cset v="16.*" >
+<summary  count="1"  totalSize="11959" >
+<digs da="MD5"  count="1" />
+</summary>
+<cset p="*" >
+<summary  count="1"  totalSize="11959" >
+<digs da="MD5"  count="1" />
+</summary>
+<af id="com.ibm.was.ifix.prereq.detect.temp.fix"  v="16.0.2.20160413_1245"  p=""  ex="false"  sz="11959" >
+<dig da="MD5"  dv="7c705b00c1b01a2b430938538e7d8b63" />
+
+</af>
+</cset>
+</cset>
+</cset>
+</cset>
