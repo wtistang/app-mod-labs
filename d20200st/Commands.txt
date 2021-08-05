@@ -1,58 +1,57 @@
-
 /home/ibmdemo/get-lab-materials.sh
-
-cd /home/ibmdemo/app-mod-labs/d20100st/ 
-
-ls -l
 
 oc login https://api.demo.ibmdte.net:6443
 
-oc new-project bookinfo
+oc project websphere-automation
 
-oc apply -f bookinfo/platform/kube/bookinfo.yaml
+sudo echo https://$(oc get route cpd -n websphere-automation -o jsonpath='{.spec.host}')/websphereauto/meteringapi > /opt/IBM/WebSphere/metering-url.txt
 
-oc get pods
+sudo oc -n websphere-automation get secret wsa-secure-metering-apis-encrypted-tokens -o jsonpath='{.data.wsa-secure-metering-apis-sa}' | base64 -d > /opt/IBM/WebSphere/api-key.txt; echo >> /opt/IBM/WebSphere/api-key.txt
 
-oc create -f bookinfo/networking/bookinfo-gateway.yaml
+sudo oc get secret external-tls-secret -n websphere-automation -o jsonpath='{.data.cert\.crt}' | base64 -d > /opt/IBM/WebSphere/cacert.pem
 
-oc get routes -n istio-system istio-ingressgateway
+sudo /opt/IBM/WebSphere/Liberty20009/bin/server create Liberty_20009_server
 
-export INGRESS_HOST=istio-ingressgateway-istio-system.apps.demo.ibmdte.net
+sudo cp -f /home/ibmdemo/app-mod-labs/d20200st/20009_server.xml /opt/IBM/WebSphere/Liberty20009/usr/servers/Liberty_20009_server/server.xml
 
-for i in {1..20}; do sleep 0.5; curl -I $INGRESS_HOST/productpage; done
+sudo cp -f /home/ibmdemo/app-mod-labs/d20200st/20009_server.env /opt/IBM/WebSphere/Liberty20009/usr/servers/Liberty_20009_server/server.env
 
-oc create -f bookinfo/networking/destination-rule-all.yaml
+sudo /opt/IBM/WebSphere/Liberty20009/bin/server start Liberty_20009_server
 
-oc create -f bookinfo/networking/virtual-service-all-v1.yaml
+sudo keytool -import -trustcacerts -file /opt/IBM/WebSphere/cacert.pem -keystore /opt/IBM/WebSphere/Liberty20009/usr/servers/Liberty_20009_server/resources/security/key.p12 -storetype PKCS12 -storepass th1nkpassword -noprompt
 
-cat <<EOF | oc replace -f -
-apiVersion: networking.istio.io/v1alpha3
-kind: VirtualService
-metadata:
-  name: reviews
-spec:
-  hosts:
-  - reviews
-  http:
-  - match:
-    - headers:
-        user-agent:
-          regex: '.*Firefox.*'
-    route:
-    - destination:
-        host: reviews
-        subset: v2
-  - route:
-    - destination:
-        host: reviews
-        subset: v3
-EOF
+sudo gedit /opt/IBM/WebSphere/Liberty20009/usr/servers/Liberty_20009_server/server.xml
 
+<feature>usageMetering-1.0</feature>
 
-oc replace -f bookinfo/networking/virtual-service-reviews-80-20.yaml
+<usageMetering url="metering-url" apiKey="api-key" sslRef="meteringSSL"/>
 
-oc replace -f bookinfo/networking/virtual-service-reviews-v3.yaml
+cat /opt/IBM/WebSphere/metering-url.txt
 
-oc replace -f bookinfo/networking/destination-rule-all-mtls.yaml
+cat /opt/IBM/WebSphere/api-key.txt
 
+sudo /opt/IBM/WebSphere/Liberty20009/bin/server stop Liberty_20009_server
 
+sudo /opt/IBM/WebSphere/Liberty20009/bin/server start Liberty_20009_server
+
+/home/ibmdemo/app-mod-labs/shared/startWASV9.sh
+
+sudo /opt/IBM/WebSphere/AppServer_V90/bin/wsadmin.sh -f /home/ibmdemo/app-mod-labs/d20200st/configuretWasUsageMetering.py url=$(cat /opt/IBM/WebSphere/metering-url.txt) apiKey=$(cat /opt/IBM/WebSphere/api-key.txt) trustStorePassword=th1nkpassword
+
+sudo gedit /opt/IBM/WebSphere/Liberty20009/usr/servers/Liberty_20009_server/server.xml
+
+<!-- <feature>beanValidation-2.0</feature> -->
+
+sudo gedit /opt/IBM/WebSphere/Liberty20009/usr/servers/Liberty_20009_server/server.xml
+
+sudo /opt/IBM/WebSphere/Liberty20009/bin/server stop Liberty_20009_server
+
+/home/ibmdemo/app-mod-labs/d20200st/imcl_ifix_install.sh 20009
+
+sudo /opt/IBM/WebSphere/Liberty20009/bin/server start Liberty_20009_server
+
+/home/ibmdemo/app-mod-labs/shared/stopWASV9.sh
+
+/home/ibmdemo/app-mod-labs/d20200st/imcl_ifix_install.sh 9057
+
+/home/ibmdemo/app-mod-labs/shared/startWASV9.sh
