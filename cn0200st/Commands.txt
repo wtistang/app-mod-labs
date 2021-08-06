@@ -1,1 +1,38 @@
-test
+/home/ibmdemo/get-lab-materials.sh
+
+cd /home/ibmdemo
+mkdir my-odo-app 
+cd my-odo-app/
+
+odo login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
+
+odo project create myodo
+
+cd /home/ibmdemo/my-odo-app/
+cp -R /home/ibmdemo/app-mod-labs/cn0200st/modresorts-devfile/* .
+
+ls -l
+
+mvn package
+
+ls -l
+
+odo create java-openliberty my-odo-app
+
+ls -l
+
+odo push
+
+oc login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
+
+oc get pod -n myodo
+
+oc get service -n myodo
+
+oc get route -n myodo
+
+cd /home/ibmdemo/my-odo-app/
+
+code .
+
+
