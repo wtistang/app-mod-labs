@@ -1,0 +1,83 @@
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: db2
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: cos-db-liberty
+  labels:
+    app: cos-db-liberty
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cos-db-liberty
+  template:
+    metadata:
+      labels:
+        app: cos-db-liberty
+    spec:
+      containers:
+        - resources: {}
+          terminationMessagePath: /dev/termination-log
+          name: cos-db
+          env:
+            - name: LICENSE
+              value: accept
+            - name: DB2INSTANCE
+              value: db2inst1
+            - name: DB2INST1_PASSWORD
+              value: db2inst1
+            - name: DBPORT
+              value: '50000'
+            - name: TSPORT
+              value: '55000'
+            - name: DBNAME
+              value: ORDERDB
+          securityContext:
+            privileged: true
+            runAsUser: 0
+            runAsNonRoot: false
+          ports:
+            - containerPort: 50000
+              protocol: TCP
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: cos-db-1
+              mountPath: /database
+            - name: cos-db-2
+              mountPath: /hadr
+          image: modernization/customer-order-services:db2-liberty
+      serviceAccount: db2
+      volumes:
+        - name: cos-db-1
+          emptyDir: {}
+        - name: cos-db-2
+          emptyDir: {}
+      dnsPolicy: ClusterFirst
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+---  
+kind: Service
+apiVersion: v1
+metadata:
+  name: cos-db-liberty
+  labels:
+    app: cos-db-liberty
+spec:
+  ports:
+    - name: 50000-tcp
+      protocol: TCP
+      port: 50000
+      targetPort: 50000
+  selector:
+    app: cos-db-liberty
+  type: ClusterIP
+  sessionAffinity: None
