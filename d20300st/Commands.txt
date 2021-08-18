@@ -1,1 +1,35 @@
-test
+/home/ibmdemo/get-lab-materials.sh
+
+oc login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
+
+cd /home/ibmdemo/app-mod-labs/shared/CustomerOrderServices-liberty
+
+oc new-project apps-lib
+
+oc label namespace apps-lib app-monitoring=true
+
+docker build . --tag default-route-openshift-image-registry.apps.demo.ibmdte.net/apps-lib/cos 
+
+docker login -u $(oc whoami) -p $(oc whoami -t) default-route-openshift-image-registry.apps.demo.ibmdte.net
+
+docker push default-route-openshift-image-registry.apps.demo.ibmdte.net/apps-lib/cos
+
+oc apply -k deploy/overlay-apps
+
+oc get pods 
+
+oc get route cos
+
+echo http://$(oc get route cos  --template='{{ .spec.host }}')/CustomerOrderServicesWeb
+
+cd /home/ibmdemo/app-mod-labs/d20300st
+
+oc apply -f dashboards/grafana/grafana-dashboard-cos.yaml
+
+oc patch olapp cos -n apps-lib --patch '{"spec":{"serviceability":{"volumeClaimName":"liberty"}}}' --type=merge
+
+oc get olapp cos -n apps-lib -o wide
+
+oc rsh <pod-name>
+
+ls -R serviceability/apps-lib
