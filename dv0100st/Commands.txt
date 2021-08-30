@@ -12,7 +12,7 @@ git commit -m "first commit"
 git remote add origin http://10.0.0.1:82/root/cloudnative_sample_app_deploy.git
 git push -u origin master
 
-oc login https://api.demo.ibmdte.net:6443
+oc login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
 
 oc new-project dv0100st
 
