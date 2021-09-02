@@ -2,11 +2,19 @@
 
 docker exec -it db2-pwb bash
 
-su - db2inst1
+passwd -x 0 db2inst1
 
-passwd
+passwd db2inst1
 
-current password: engageibm
+## change password to hello2021
+
+passwd db2inst1
+
+## change password back to engageibm
+
+passwd -x 99999 db2inst1
+
+
 
 2. Update gitlab container
 
