@@ -29,7 +29,7 @@ kn func build -r default-route-openshift-image-registry.apps.demo.ibmdte.net/cn0
 
 kn func run
 
-oc login https://api.demo.ibmdte.net:6443
+oc login -u ibmadmin -p engageibm https://api.demo.ibmdte.net:6443
 
 oc new-project cn0100st
 
